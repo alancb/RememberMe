@@ -9,11 +9,18 @@
 /* Begin PBXBuildFile section */
 		2C836B561AFD5C660066C6DE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C836B551AFD5C660066C6DE /* main.m */; };
 		2C836B591AFD5C660066C6DE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C836B581AFD5C660066C6DE /* AppDelegate.m */; };
-		2C836B5C1AFD5C660066C6DE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C836B5B1AFD5C660066C6DE /* ViewController.m */; };
 		2C836B5F1AFD5C660066C6DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C836B5D1AFD5C660066C6DE /* Main.storyboard */; };
 		2C836B611AFD5C660066C6DE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C836B601AFD5C660066C6DE /* Images.xcassets */; };
 		2C836B641AFD5C660066C6DE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C836B621AFD5C660066C6DE /* LaunchScreen.xib */; };
 		2C836B701AFD5C660066C6DE /* RememberMeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C836B6F1AFD5C660066C6DE /* RememberMeTests.m */; };
+		2C836B7E1AFD5DC70066C6DE /* AddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C836B7D1AFD5DC70066C6DE /* AddViewController.m */; };
+		2C836B811AFD5DD40066C6DE /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C836B801AFD5DD40066C6DE /* ListViewController.m */; };
+		2C836B841AFD5DDD0066C6DE /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C836B831AFD5DDD0066C6DE /* SettingsViewController.m */; };
+		2C836B8A1AFD5EAB0066C6DE /* Stack.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C836B891AFD5EAB0066C6DE /* Stack.m */; };
+		2C836B8F1AFD60600066C6DE /* PersonController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C836B8E1AFD60600066C6DE /* PersonController.m */; };
+		2C836B911AFD607E0066C6DE /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C836B901AFD607E0066C6DE /* CoreData.framework */; };
+		2C836B941AFD61170066C6DE /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2C836B921AFD61170066C6DE /* Model.xcdatamodeld */; };
+		2C836B9D1AFD62AB0066C6DE /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C836B9C1AFD62AB0066C6DE /* Person.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,14 +39,26 @@
 		2C836B551AFD5C660066C6DE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2C836B571AFD5C660066C6DE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		2C836B581AFD5C660066C6DE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		2C836B5A1AFD5C660066C6DE /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		2C836B5B1AFD5C660066C6DE /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		2C836B5E1AFD5C660066C6DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2C836B601AFD5C660066C6DE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		2C836B631AFD5C660066C6DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		2C836B691AFD5C660066C6DE /* RememberMeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RememberMeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C836B6E1AFD5C660066C6DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2C836B6F1AFD5C660066C6DE /* RememberMeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RememberMeTests.m; sourceTree = "<group>"; };
+		2C836B7C1AFD5DC70066C6DE /* AddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddViewController.h; sourceTree = "<group>"; };
+		2C836B7D1AFD5DC70066C6DE /* AddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddViewController.m; sourceTree = "<group>"; };
+		2C836B7F1AFD5DD40066C6DE /* ListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListViewController.h; sourceTree = "<group>"; };
+		2C836B801AFD5DD40066C6DE /* ListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewController.m; sourceTree = "<group>"; };
+		2C836B821AFD5DDC0066C6DE /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		2C836B831AFD5DDD0066C6DE /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		2C836B881AFD5EAB0066C6DE /* Stack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Stack.h; sourceTree = "<group>"; };
+		2C836B891AFD5EAB0066C6DE /* Stack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Stack.m; sourceTree = "<group>"; };
+		2C836B8D1AFD60600066C6DE /* PersonController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonController.h; sourceTree = "<group>"; };
+		2C836B8E1AFD60600066C6DE /* PersonController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonController.m; sourceTree = "<group>"; };
+		2C836B901AFD607E0066C6DE /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		2C836B931AFD61170066C6DE /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		2C836B9B1AFD62AB0066C6DE /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		2C836B9C1AFD62AB0066C6DE /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C836B911AFD607E0066C6DE /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +86,7 @@
 				2C836B521AFD5C660066C6DE /* RememberMe */,
 				2C836B6C1AFD5C660066C6DE /* RememberMeTests */,
 				2C836B511AFD5C660066C6DE /* Products */,
+				2C836B901AFD607E0066C6DE /* CoreData.framework */,
 			);
 			sourceTree = "<group>";
 		};
@@ -83,11 +104,14 @@
 			children = (
 				2C836B571AFD5C660066C6DE /* AppDelegate.h */,
 				2C836B581AFD5C660066C6DE /* AppDelegate.m */,
-				2C836B5A1AFD5C660066C6DE /* ViewController.h */,
-				2C836B5B1AFD5C660066C6DE /* ViewController.m */,
+				2C836B8D1AFD60600066C6DE /* PersonController.h */,
+				2C836B8E1AFD60600066C6DE /* PersonController.m */,
+				2C836B8B1AFD5EB80066C6DE /* Models */,
+				2C836B8C1AFD5ED30066C6DE /* Views */,
 				2C836B5D1AFD5C660066C6DE /* Main.storyboard */,
 				2C836B601AFD5C660066C6DE /* Images.xcassets */,
 				2C836B621AFD5C660066C6DE /* LaunchScreen.xib */,
+				2C836B921AFD61170066C6DE /* Model.xcdatamodeld */,
 				2C836B531AFD5C660066C6DE /* Supporting Files */,
 			);
 			path = RememberMe;
@@ -117,6 +141,30 @@
 				2C836B6E1AFD5C660066C6DE /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2C836B8B1AFD5EB80066C6DE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2C836B9B1AFD62AB0066C6DE /* Person.h */,
+				2C836B9C1AFD62AB0066C6DE /* Person.m */,
+				2C836B881AFD5EAB0066C6DE /* Stack.h */,
+				2C836B891AFD5EAB0066C6DE /* Stack.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		2C836B8C1AFD5ED30066C6DE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2C836B7C1AFD5DC70066C6DE /* AddViewController.h */,
+				2C836B7D1AFD5DC70066C6DE /* AddViewController.m */,
+				2C836B7F1AFD5DD40066C6DE /* ListViewController.h */,
+				2C836B801AFD5DD40066C6DE /* ListViewController.m */,
+				2C836B821AFD5DDC0066C6DE /* SettingsViewController.h */,
+				2C836B831AFD5DDD0066C6DE /* SettingsViewController.m */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,8 +267,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2C836B5C1AFD5C660066C6DE /* ViewController.m in Sources */,
+				2C836B8F1AFD60600066C6DE /* PersonController.m in Sources */,
+				2C836B8A1AFD5EAB0066C6DE /* Stack.m in Sources */,
+				2C836B811AFD5DD40066C6DE /* ListViewController.m in Sources */,
 				2C836B591AFD5C660066C6DE /* AppDelegate.m in Sources */,
+				2C836B941AFD61170066C6DE /* Model.xcdatamodeld in Sources */,
+				2C836B841AFD5DDD0066C6DE /* SettingsViewController.m in Sources */,
+				2C836B9D1AFD62AB0066C6DE /* Person.m in Sources */,
+				2C836B7E1AFD5DC70066C6DE /* AddViewController.m in Sources */,
 				2C836B561AFD5C660066C6DE /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -426,6 +480,19 @@
 			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		2C836B921AFD61170066C6DE /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				2C836B931AFD61170066C6DE /* Model.xcdatamodel */,
+			);
+			currentVersion = 2C836B931AFD61170066C6DE /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 2C836B481AFD5C660066C6DE /* Project object */;
 }
