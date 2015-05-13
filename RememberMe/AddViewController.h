@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PersonController.h"
+
 
 @interface AddViewController : UIViewController
 

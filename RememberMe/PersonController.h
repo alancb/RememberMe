@@ -11,9 +11,12 @@
 #import "AddViewController.h"
 #import "ListViewController.h"
 #import "SettingsViewController.h"
+#import "Stack.h"
 
 
 @interface PersonController : NSObject
+@property (strong, nonatomic, readonly) NSArray *people;
+
 
 + (PersonController *) sharedInstance;
 

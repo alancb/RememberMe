@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PersonController.h"
 
 @interface SettingsViewController : UIViewController
 

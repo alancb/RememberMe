@@ -104,10 +104,9 @@
 			children = (
 				2C836B571AFD5C660066C6DE /* AppDelegate.h */,
 				2C836B581AFD5C660066C6DE /* AppDelegate.m */,
-				2C836B8D1AFD60600066C6DE /* PersonController.h */,
-				2C836B8E1AFD60600066C6DE /* PersonController.m */,
 				2C836B8B1AFD5EB80066C6DE /* Models */,
 				2C836B8C1AFD5ED30066C6DE /* Views */,
+				2CC686161B030748005AC1D4 /* Controllers */,
 				2C836B5D1AFD5C660066C6DE /* Main.storyboard */,
 				2C836B601AFD5C660066C6DE /* Images.xcassets */,
 				2C836B621AFD5C660066C6DE /* LaunchScreen.xib */,
@@ -165,6 +164,15 @@
 				2C836B831AFD5DDD0066C6DE /* SettingsViewController.m */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		2CC686161B030748005AC1D4 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				2C836B8D1AFD60600066C6DE /* PersonController.h */,
+				2C836B8E1AFD60600066C6DE /* PersonController.m */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -470,6 +478,7 @@
 				2C836B751AFD5C660066C6DE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2C836B761AFD5C660066C6DE /* Build configuration list for PBXNativeTarget "RememberMeTests" */ = {
 			isa = XCConfigurationList;
@@ -478,6 +487,7 @@
 				2C836B781AFD5C660066C6DE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

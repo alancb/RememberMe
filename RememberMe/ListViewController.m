@@ -7,7 +7,6 @@
 //
 
 #import "ListViewController.h"
-#import "PersonController.h"
 
 @interface ListViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -21,7 +20,13 @@
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+  //  Person *person = [PersonController sharedInstance].people[indexPath.row];
+    
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"entryCell"];
+    
+  //  cell.textLabel.text = [NSString stringWithFormat:@"%@", person.name];
+    
     return cell;
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
