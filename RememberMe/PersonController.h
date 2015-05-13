@@ -7,7 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Person.h"
+#import "AddViewController.h"
+#import "ListViewController.h"
+#import "SettingsViewController.h"
+
 
 @interface PersonController : NSObject
+
++ (PersonController *) sharedInstance;
 
 @end

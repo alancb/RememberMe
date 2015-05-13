@@ -7,8 +7,9 @@
 //
 
 #import "ListViewController.h"
+#import "PersonController.h"
 
-@interface ListViewController ()
+@interface ListViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @end
 
@@ -17,6 +18,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"entryCell"];
+    return cell;
+}
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 5;
 }
 
 - (void)didReceiveMemoryWarning {

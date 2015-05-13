@@ -7,11 +7,17 @@
 //
 
 #import "PersonController.h"
-#import "Person.h"
-#import "AddViewController.h"
-#import "ListViewController.h"
-#import "SettingsViewController.h"
+
 
 @implementation PersonController
+
++ (PersonController *) sharedInstance {
+    static PersonController *sharedInstance = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        sharedInstance = [PersonController new];
+    });
+    return sharedInstance;
+}
 
 @end
