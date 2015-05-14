@@ -25,6 +25,9 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OdQ-ag-HiQ" id="T2n-ME-aUK">
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="luv-I6-RcT" kind="show" id="Iag-nM-3Os"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -37,9 +40,9 @@
                     </view>
                     <toolbarItems>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="aVs-Bb-6Th"/>
-                        <barButtonItem title="Item" systemItem="add" id="PN2-Zq-S5b">
+                        <barButtonItem systemItem="add" id="PN2-Zq-S5b">
                             <connections>
-                                <segue destination="1et-OV-wox" kind="show" id="rKx-Iq-oeC"/>
+                                <segue destination="1et-OV-wox" kind="show" id="waK-9M-Ny5"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="h90-CV-V1v"/>
@@ -59,7 +62,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="fDx-bA-WY9">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="categoryCell" id="fDx-bA-WY9">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fDx-bA-WY9" id="i4K-ob-4sP">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -99,7 +102,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Xgt-N7-rbh">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="personCell" id="Xgt-N7-rbh">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Xgt-N7-rbh" id="rpo-qh-WSP">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -120,13 +123,13 @@
         <!--Category Options-->
         <scene sceneID="1J8-TW-6AL">
             <objects>
-                <tableViewController id="HHf-po-stH" sceneMemberID="viewController">
+                <tableViewController id="HHf-po-stH" customClass="CategoryOptionsViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="1UP-lU-HnR">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="fFY-g2-39I">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="categoryOptionsCell" id="fFY-g2-39I">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fFY-g2-39I" id="91f-9l-Y3I">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -139,7 +142,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Category Options" id="2hz-tt-5Nu">
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="qua-X1-zDP"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="qua-X1-zDP">
+                            <connections>
+                                <action selector="doneButton:" destination="HHf-po-stH" id="fqq-PY-Zck"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cc5-eH-QEe" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -222,4 +229,7 @@
             <point key="canvasLocation" x="3511" y="655"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Iag-nM-3Os"/>
+    </inferredMetricsTieBreakers>
 </document>

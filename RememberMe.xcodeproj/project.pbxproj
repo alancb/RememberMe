@@ -21,6 +21,7 @@
 		2C836B941AFD61170066C6DE /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2C836B921AFD61170066C6DE /* Model.xcdatamodeld */; };
 		2C836B9D1AFD62AB0066C6DE /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C836B9C1AFD62AB0066C6DE /* Person.m */; };
 		2CC686191B042C55005AC1D4 /* CategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC686181B042C55005AC1D4 /* CategoryViewController.m */; };
+		2CC6861C1B04381A005AC1D4 /* CategoryOptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC6861B1B04381A005AC1D4 /* CategoryOptionsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,8 @@
 		2C836B9C1AFD62AB0066C6DE /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
 		2CC686171B042C55005AC1D4 /* CategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryViewController.h; sourceTree = "<group>"; };
 		2CC686181B042C55005AC1D4 /* CategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryViewController.m; sourceTree = "<group>"; };
+		2CC6861A1B04381A005AC1D4 /* CategoryOptionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryOptionsViewController.h; sourceTree = "<group>"; };
+		2CC6861B1B04381A005AC1D4 /* CategoryOptionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryOptionsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +165,8 @@
 				2C836B801AFD5DD40066C6DE /* ListViewController.m */,
 				2CC686171B042C55005AC1D4 /* CategoryViewController.h */,
 				2CC686181B042C55005AC1D4 /* CategoryViewController.m */,
+				2CC6861A1B04381A005AC1D4 /* CategoryOptionsViewController.h */,
+				2CC6861B1B04381A005AC1D4 /* CategoryOptionsViewController.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -280,6 +285,7 @@
 				2C836B811AFD5DD40066C6DE /* ListViewController.m in Sources */,
 				2C836B591AFD5C660066C6DE /* AppDelegate.m in Sources */,
 				2CC686191B042C55005AC1D4 /* CategoryViewController.m in Sources */,
+				2CC6861C1B04381A005AC1D4 /* CategoryOptionsViewController.m in Sources */,
 				2C836B941AFD61170066C6DE /* Model.xcdatamodeld in Sources */,
 				2C836B9D1AFD62AB0066C6DE /* Person.m in Sources */,
 				2C836B7E1AFD5DC70066C6DE /* AddViewController.m in Sources */,
