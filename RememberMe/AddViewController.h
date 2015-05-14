@@ -10,6 +10,6 @@
 #import "PersonController.h"
 
 
-@interface AddViewController : UIViewController
+@interface AddViewController : UITableViewController
 
 @end

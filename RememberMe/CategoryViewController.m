@@ -1,18 +1,18 @@
 //
-//  SettingsViewController.m
+//  CategoryViewController.m
 //  RememberMe
 //
-//  Created by Alan Barth on 5/8/15.
+//  Created by Alan Barth on 5/13/15.
 //  Copyright (c) 2015 Alan Barth. All rights reserved.
 //
 
-#import "SettingsViewController.h"
+#import "CategoryViewController.h"
 
-@interface SettingsViewController ()
+@interface CategoryViewController ()
 
 @end
 
-@implementation SettingsViewController
+@implementation CategoryViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

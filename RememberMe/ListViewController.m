@@ -21,11 +21,11 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-  //  Person *person = [PersonController sharedInstance].people[indexPath.row];
+   // Person *person = [PersonController sharedInstance].people[indexPath.row];
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"entryCell"];
     
-  //  cell.textLabel.text = [NSString stringWithFormat:@"%@", person.name];
+   // cell.textLabel.text = [NSString stringWithFormat:@"%@", person.name];
     
     return cell;
 }

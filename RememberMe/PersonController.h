@@ -10,7 +10,6 @@
 #import "Person.h"
 #import "AddViewController.h"
 #import "ListViewController.h"
-#import "SettingsViewController.h"
 #import "Stack.h"
 
 
