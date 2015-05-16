@@ -1,16 +1,35 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7549" systemVersion="14D136" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Group" representedClassName="Group" syncable="YES">
+        <attribute name="birthdate" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="birthplace" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="email" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="home" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="interestingFact" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="location" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="major" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <attribute name="phoneNumber" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="photo" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="physicalAttribute" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Person" syncable="YES"/>
+    </entity>
     <entity name="Person" representedClassName="Person" syncable="YES">
+        <attribute name="birthdate" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="birthplace" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="career" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="home" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="interestingFact" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="location" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="number" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="major" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <attribute name="phoneNumber" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="photo" optional="YES" attributeType="Binary" syncable="YES"/>
-        <relationship name="category" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Person" inverseName="category" inverseEntity="Person" syncable="YES"/>
+        <attribute name="physicalAttribute" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="category" maxCount="1" deletionRule="Cascade" destinationEntity="Person" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Person" positionX="-63" positionY="-18" width="128" height="165"/>
+        <element name="Group" positionX="-54" positionY="54" width="128" height="225"/>
+        <element name="Person" positionX="-63" positionY="-18" width="128" height="225"/>
     </elements>
 </model>

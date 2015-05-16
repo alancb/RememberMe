@@ -9,6 +9,17 @@
 #import "CategoryOptionsViewController.h"
 
 @interface CategoryOptionsViewController ()
+@property (weak, nonatomic) IBOutlet UISwitch *birthPlaceSwitch;
+@property (weak, nonatomic) IBOutlet UISwitch *birthDateSwitch;
+@property (weak, nonatomic) IBOutlet UISwitch *interestingFactSwitch;
+@property (weak, nonatomic) IBOutlet UISwitch *emailSwitch;
+@property (weak, nonatomic) IBOutlet UISwitch *physicalAttributeSwitch;
+@property (weak, nonatomic) IBOutlet UISwitch *photoSwitch;
+@property (weak, nonatomic) IBOutlet UISwitch *majorSwitch;
+@property (weak, nonatomic) IBOutlet UISwitch *phoneNumberSwitch;
+@property (weak, nonatomic) IBOutlet UISwitch *homeSwitch;
+@property (weak, nonatomic) IBOutlet UISwitch *locationSwitch;
+@property (weak, nonatomic) IBOutlet UITextField *nameField;
 
 @end
 
@@ -22,9 +33,16 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+
+    self.birthPlaceSwitch.thumbTintColor = [UIColor blueColor];
 }
 - (IBAction)doneButton:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    if (self.nameField.text && self.nameField.text.length > 0) {
+        [[CategoryController sharedInstance] createGroupWithName:self.nameField.text birthPlace:self.birthPlaceSwitch birthDate:self.birthDateSwitch interestingFact:self.interestingFactSwitch email:self.emailSwitch phsyicalAttribute:self.physicalAttributeSwitch photo:self.photoSwitch major:self.majorSwitch phoneNumber:self.phoneNumberSwitch home:self.homeSwitch location:self.locationSwitch];
+        [self dismissViewControllerAnimated:YES completion:nil];
+    } else {
+        // TODO: Add popup to tell them to enter a name.
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -32,15 +50,23 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Table view data source
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"categoryOptionsCell"];
-    return cell;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 5;
-}
+//#pragma mark - Table view data source
+//-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+//    UITableViewCell *cell;
+//    
+//    if (indexPath.section == 0) {
+//        cell = [tableView dequeueReusableCellWithIdentifier:@"categoryOptionsCell"];
+//    }
+//    else if (indexPath.section == 1)
+//    {
+//        cell = [tableView dequeueReusableCellWithIdentifier:@"categoryOptionsCell2"];
+//    }
+//    return cell;
+//}
+//
+//- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+//    return 1;
+//}
 
 /*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

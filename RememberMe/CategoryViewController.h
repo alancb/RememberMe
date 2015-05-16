@@ -7,6 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AddViewController.h"
+#import "CategoryController.h"
+
 
 @interface CategoryViewController : UITableViewController
 

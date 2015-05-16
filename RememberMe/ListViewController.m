@@ -25,6 +25,7 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"entryCell"];
     
+    
    // cell.textLabel.text = [NSString stringWithFormat:@"%@", person.name];
     
     return cell;
@@ -36,6 +37,11 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"toPersonFromList"]) {
+        AddViewController *addView = segue.destinationViewController;
+    }
 }
 
 /*

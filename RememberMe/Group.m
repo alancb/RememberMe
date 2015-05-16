@@ -1,26 +1,28 @@
 //
-//  Person.m
+//  Group.m
 //  RememberMe
 //
 //  Created by Alan Barth on 5/14/15.
 //  Copyright (c) 2015 Alan Barth. All rights reserved.
 //
 
+#import "Group.h"
 #import "Person.h"
 
-@implementation Person
 
+@implementation Group
+
+@dynamic name;
+@dynamic birthdate;
 @dynamic birthplace;
-@dynamic major;
+@dynamic email;
+@dynamic home;
 @dynamic interestingFact;
 @dynamic location;
-@dynamic name;
+@dynamic major;
 @dynamic phoneNumber;
 @dynamic photo;
-@dynamic home;
-@dynamic birthdate;
-@dynamic email;
 @dynamic physicalAttribute;
-@dynamic category;
+@dynamic relationship;
 
 @end

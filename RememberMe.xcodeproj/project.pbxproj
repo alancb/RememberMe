@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C50C77E1B0583B2000D6899 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C50C77D1B0583B2000D6899 /* Person.m */; };
+		2C50C79C1B05AA98000D6899 /* Group.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C50C79B1B05AA98000D6899 /* Group.m */; };
+		2C50C79F1B05AC42000D6899 /* CategoryController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C50C79E1B05AC42000D6899 /* CategoryController.m */; };
 		2C836B561AFD5C660066C6DE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C836B551AFD5C660066C6DE /* main.m */; };
 		2C836B591AFD5C660066C6DE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C836B581AFD5C660066C6DE /* AppDelegate.m */; };
 		2C836B5F1AFD5C660066C6DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C836B5D1AFD5C660066C6DE /* Main.storyboard */; };
@@ -19,7 +22,6 @@
 		2C836B8F1AFD60600066C6DE /* PersonController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C836B8E1AFD60600066C6DE /* PersonController.m */; };
 		2C836B911AFD607E0066C6DE /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C836B901AFD607E0066C6DE /* CoreData.framework */; };
 		2C836B941AFD61170066C6DE /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2C836B921AFD61170066C6DE /* Model.xcdatamodeld */; };
-		2C836B9D1AFD62AB0066C6DE /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C836B9C1AFD62AB0066C6DE /* Person.m */; };
 		2CC686191B042C55005AC1D4 /* CategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC686181B042C55005AC1D4 /* CategoryViewController.m */; };
 		2CC6861C1B04381A005AC1D4 /* CategoryOptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC6861B1B04381A005AC1D4 /* CategoryOptionsViewController.m */; };
 /* End PBXBuildFile section */
@@ -35,6 +37,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2C50C77C1B0583B2000D6899 /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		2C50C77D1B0583B2000D6899 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
+		2C50C79A1B05AA98000D6899 /* Group.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Group.h; sourceTree = "<group>"; };
+		2C50C79B1B05AA98000D6899 /* Group.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Group.m; sourceTree = "<group>"; };
+		2C50C79D1B05AC42000D6899 /* CategoryController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryController.h; sourceTree = "<group>"; };
+		2C50C79E1B05AC42000D6899 /* CategoryController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryController.m; sourceTree = "<group>"; };
 		2C836B501AFD5C660066C6DE /* RememberMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RememberMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C836B541AFD5C660066C6DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2C836B551AFD5C660066C6DE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -56,8 +64,6 @@
 		2C836B8E1AFD60600066C6DE /* PersonController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonController.m; sourceTree = "<group>"; };
 		2C836B901AFD607E0066C6DE /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		2C836B931AFD61170066C6DE /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
-		2C836B9B1AFD62AB0066C6DE /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
-		2C836B9C1AFD62AB0066C6DE /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
 		2CC686171B042C55005AC1D4 /* CategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryViewController.h; sourceTree = "<group>"; };
 		2CC686181B042C55005AC1D4 /* CategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryViewController.m; sourceTree = "<group>"; };
 		2CC6861A1B04381A005AC1D4 /* CategoryOptionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryOptionsViewController.h; sourceTree = "<group>"; };
@@ -148,8 +154,10 @@
 		2C836B8B1AFD5EB80066C6DE /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				2C836B9B1AFD62AB0066C6DE /* Person.h */,
-				2C836B9C1AFD62AB0066C6DE /* Person.m */,
+				2C50C79A1B05AA98000D6899 /* Group.h */,
+				2C50C79B1B05AA98000D6899 /* Group.m */,
+				2C50C77C1B0583B2000D6899 /* Person.h */,
+				2C50C77D1B0583B2000D6899 /* Person.m */,
 				2C836B881AFD5EAB0066C6DE /* Stack.h */,
 				2C836B891AFD5EAB0066C6DE /* Stack.m */,
 			);
@@ -176,6 +184,8 @@
 			children = (
 				2C836B8D1AFD60600066C6DE /* PersonController.h */,
 				2C836B8E1AFD60600066C6DE /* PersonController.m */,
+				2C50C79D1B05AC42000D6899 /* CategoryController.h */,
+				2C50C79E1B05AC42000D6899 /* CategoryController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -280,14 +290,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C50C79C1B05AA98000D6899 /* Group.m in Sources */,
 				2C836B8F1AFD60600066C6DE /* PersonController.m in Sources */,
 				2C836B8A1AFD5EAB0066C6DE /* Stack.m in Sources */,
+				2C50C77E1B0583B2000D6899 /* Person.m in Sources */,
 				2C836B811AFD5DD40066C6DE /* ListViewController.m in Sources */,
+				2C50C79F1B05AC42000D6899 /* CategoryController.m in Sources */,
 				2C836B591AFD5C660066C6DE /* AppDelegate.m in Sources */,
 				2CC686191B042C55005AC1D4 /* CategoryViewController.m in Sources */,
 				2CC6861C1B04381A005AC1D4 /* CategoryOptionsViewController.m in Sources */,
 				2C836B941AFD61170066C6DE /* Model.xcdatamodeld in Sources */,
-				2C836B9D1AFD62AB0066C6DE /* Person.m in Sources */,
 				2C836B7E1AFD5DC70066C6DE /* AddViewController.m in Sources */,
 				2C836B561AFD5C660066C6DE /* main.m in Sources */,
 			);

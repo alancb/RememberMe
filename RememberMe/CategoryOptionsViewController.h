@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CategoryController.h"
 
 @interface CategoryOptionsViewController : UITableViewController
+
+@property (strong, nonatomic) Group *group;
 
 @end

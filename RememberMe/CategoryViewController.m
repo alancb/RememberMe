@@ -22,18 +22,26 @@
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    Group *group = [CategoryController sharedInstance].groups [indexPath.row];
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"categoryCell"];
+    cell.textLabel.text = group.name;
     return cell;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 5;
+    return [CategoryController sharedInstance].groups.count;
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"toPersonFromCategory"]) {
+        AddViewController *addView = segue.destinationViewController;
+        
+    }
+}
 /*
 #pragma mark - Navigation
 

@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "PersonController.h"
+#import "AddViewController.h"
+
 
 @interface ListViewController : UIViewController
 
