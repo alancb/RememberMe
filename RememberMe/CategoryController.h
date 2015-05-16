@@ -29,5 +29,6 @@
                     phoneNumber:(UISwitch *)phoneNumberSwitch
                            home:(UISwitch *)homeSwitch
                        location:(UISwitch *)locationSwitch;
+-(void) deleteEntry:(Group *) group;
 
 @end

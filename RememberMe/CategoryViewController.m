@@ -31,6 +31,13 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [CategoryController sharedInstance].groups.count;
 }
+-(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        Group *group = [CategoryController sharedInstance].groups[indexPath.row];
+        [[CategoryController sharedInstance] deleteEntry:group];
+        [tableView reloadData];
+    }
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

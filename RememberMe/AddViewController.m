@@ -18,10 +18,15 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
+- (IBAction)cancelButton:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+- (IBAction)saveButton:(id)sender {
+}
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"personCell"];
-    return cell;
+    UITableViewCell *nameCell = [tableView dequeueReusableCellWithIdentifier:@"nameCell"];
+    return nameCell;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
