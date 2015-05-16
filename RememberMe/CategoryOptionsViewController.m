@@ -8,7 +8,7 @@
 
 #import "CategoryOptionsViewController.h"
 
-@interface CategoryOptionsViewController ()
+@interface CategoryOptionsViewController () <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UISwitch *birthPlaceSwitch;
 @property (weak, nonatomic) IBOutlet UISwitch *birthDateSwitch;
 @property (weak, nonatomic) IBOutlet UISwitch *interestingFactSwitch;
@@ -20,6 +20,7 @@
 @property (weak, nonatomic) IBOutlet UISwitch *homeSwitch;
 @property (weak, nonatomic) IBOutlet UISwitch *locationSwitch;
 @property (weak, nonatomic) IBOutlet UITextField *nameField;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *doneButton;
 
 @end
 
@@ -35,6 +36,9 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 
     self.birthPlaceSwitch.thumbTintColor = [UIColor blueColor];
+    if (self.nameField.text.length == 0) {
+        self.doneButton.enabled = NO;
+    }
 }
 - (IBAction)doneButton:(id)sender {
     if (self.nameField.text && self.nameField.text.length > 0) {
@@ -44,7 +48,22 @@
         // TODO: Add popup to tell them to enter a name.
     }
 }
+- (IBAction)cancelButton:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
+-(BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    return YES;
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField {
+    if (self.nameField.text.length >0 ) {
+        self.doneButton.enabled = YES;
+    } else {
+        self.doneButton.enabled = NO;
+    }
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

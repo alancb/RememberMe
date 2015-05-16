@@ -115,7 +115,9 @@
                             <outlet property="delegate" destination="luv-I6-RcT" id="ede-vL-590"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Person" id="agn-eH-6Qb"/>
+                    <navigationItem key="navigationItem" title="Person" id="agn-eH-6Qb">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="j7K-4q-NWB"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0bj-ST-auB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -125,7 +127,7 @@
         <scene sceneID="1J8-TW-6AL">
             <objects>
                 <tableViewController id="HHf-po-stH" customClass="CategoryOptionsViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="1UP-lU-HnR">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="1UP-lU-HnR">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -141,6 +143,9 @@
                                                     <rect key="frame" x="231" y="7" width="139" height="30"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="HHf-po-stH" id="qNJ-T9-hdn"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -161,9 +166,6 @@
                                             <subviews>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="twW-z5-C9f">
                                                     <rect key="frame" x="1" y="6" width="51" height="31"/>
-                                                    <connections>
-                                                        <action selector="birthPlaceSwitch:" destination="HHf-po-stH" eventType="valueChanged" id="cSz-Nk-uF2"/>
-                                                    </connections>
                                                 </switch>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BirthPlace" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DRW-wQ-SOV">
                                                     <rect key="frame" x="261" y="11" width="79" height="21"/>
@@ -193,9 +195,6 @@
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GaM-wJ-q0q">
                                                     <rect key="frame" x="8" y="6" width="51" height="31"/>
-                                                    <connections>
-                                                        <action selector="birthDateSwitch:" destination="HHf-po-stH" eventType="valueChanged" id="GZm-up-wjh"/>
-                                                    </connections>
                                                 </switch>
                                             </subviews>
                                             <constraints>
@@ -218,9 +217,6 @@
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FfZ-pO-W6b">
                                                     <rect key="frame" x="8" y="6" width="51" height="31"/>
-                                                    <connections>
-                                                        <action selector="interestingFactSwitch:" destination="HHf-po-stH" eventType="valueChanged" id="NeG-Mr-B2Z"/>
-                                                    </connections>
                                                 </switch>
                                             </subviews>
                                             <constraints>
@@ -394,7 +390,12 @@
                     </tableView>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" title="Category Options" id="2hz-tt-5Nu">
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="qua-X1-zDP">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="ez6-YM-MwE">
+                            <connections>
+                                <action selector="cancelButton:" destination="HHf-po-stH" id="rcC-KH-KRJ"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="qua-X1-zDP">
                             <connections>
                                 <action selector="doneButton:" destination="HHf-po-stH" id="fqq-PY-Zck"/>
                             </connections>
@@ -403,6 +404,7 @@
                     <connections>
                         <outlet property="birthDateSwitch" destination="GaM-wJ-q0q" id="04z-O8-0Lx"/>
                         <outlet property="birthPlaceSwitch" destination="twW-z5-C9f" id="I7P-mh-SMP"/>
+                        <outlet property="doneButton" destination="qua-X1-zDP" id="PhZ-u1-lgU"/>
                         <outlet property="emailSwitch" destination="exK-Ch-61i" id="KkG-hK-X0L"/>
                         <outlet property="homeSwitch" destination="r3J-CK-vPC" id="7fw-ba-Xhp"/>
                         <outlet property="interestingFactSwitch" destination="FfZ-pO-W6b" id="Ojl-T1-1ag"/>
