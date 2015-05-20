@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "PersonController.h"
+#import "CategoryController.h"
 
 
 @interface AddViewController : UITableViewController

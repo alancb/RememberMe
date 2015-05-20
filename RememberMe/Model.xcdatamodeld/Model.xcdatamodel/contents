@@ -4,11 +4,12 @@
         <attribute name="birthdate" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="birthplace" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="email" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="groupName" attributeType="String" syncable="YES"/>
         <attribute name="home" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="interestingFact" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="location" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="major" optional="YES" attributeType="Boolean" syncable="YES"/>
-        <attribute name="name" attributeType="String" syncable="YES"/>
+        <attribute name="personName" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="phoneNumber" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="photo" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="physicalAttribute" optional="YES" attributeType="Boolean" syncable="YES"/>
@@ -29,7 +30,7 @@
         <relationship name="category" maxCount="1" deletionRule="Cascade" destinationEntity="Person" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Group" positionX="-54" positionY="54" width="128" height="225"/>
+        <element name="Group" positionX="-54" positionY="54" width="128" height="240"/>
         <element name="Person" positionX="-63" positionY="-18" width="128" height="225"/>
     </elements>
 </model>

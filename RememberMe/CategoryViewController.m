@@ -24,7 +24,7 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     Group *group = [CategoryController sharedInstance].groups [indexPath.row];
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"categoryCell"];
-    cell.textLabel.text = group.name;
+    cell.textLabel.text = group.groupName;
     return cell;
 }
 
@@ -46,6 +46,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"toPersonFromCategory"]) {
         AddViewController *addView = segue.destinationViewController;
+        
         
     }
 }
