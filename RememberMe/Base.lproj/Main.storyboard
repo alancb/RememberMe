@@ -140,6 +140,9 @@
                                                     <state key="normal" title="Add Photo">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="addPhotoButton:" destination="luv-I6-RcT" eventType="touchUpInside" id="Qqj-qh-b9J"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -332,17 +335,16 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="addPhotoButton" destination="Ur9-Rb-8p4" id="eDJ-P6-V2J"/>
                         <outlet property="birthDatePicker" destination="4EF-Fh-9hz" id="BGd-Lv-f9f"/>
                         <outlet property="birthplaceText" destination="fKx-82-stb" id="6gL-Im-JEk"/>
                         <outlet property="emailAddressText" destination="5GH-YP-rB1" id="aNM-kU-vR8"/>
                         <outlet property="homeText" destination="TOT-AY-yU5" id="PFR-mw-duU"/>
+                        <outlet property="imageView" destination="0mR-6d-JnX" id="Rgm-Xn-C3G"/>
                         <outlet property="interestingFactText" destination="pYf-CG-LxO" id="Jsy-I0-PfR"/>
                         <outlet property="locationText" destination="GrR-zF-Q6K" id="Ve5-r8-QgJ"/>
                         <outlet property="majorText" destination="9sK-rJ-zDX" id="hD4-uC-Am7"/>
                         <outlet property="nameText" destination="heu-HE-4XN" id="Zbm-8c-1xn"/>
                         <outlet property="phoneNumerText" destination="hLf-sS-G7c" id="qsE-EA-jBJ"/>
-                        <outlet property="photoView" destination="0mR-6d-JnX" id="zRU-g4-6hR"/>
                         <outlet property="physicallAttributeText" destination="fEc-6G-AKE" id="TiA-zh-Yki"/>
                     </connections>
                 </tableViewController>

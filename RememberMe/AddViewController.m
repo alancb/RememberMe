@@ -9,10 +9,8 @@
 #import "AddViewController.h"
 #import "ListViewController.h"
 
-@interface AddViewController () <UITableViewDataSource, UITableViewDelegate>
+@interface AddViewController () <UITableViewDataSource, UITableViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *nameText;
-@property (weak, nonatomic) IBOutlet UIImageView *photoView;
-@property (weak, nonatomic) IBOutlet UIButton *addPhotoButton;
 @property (weak, nonatomic) IBOutlet UITextField *birthplaceText;
 @property (weak, nonatomic) IBOutlet UIDatePicker *birthDatePicker;
 @property (weak, nonatomic) IBOutlet UITextField *interestingFactText;
@@ -22,6 +20,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *phoneNumerText;
 @property (weak, nonatomic) IBOutlet UITextField *homeText;
 @property (weak, nonatomic) IBOutlet UITextField *locationText;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
 @property (strong, nonatomic) Group *template;
 
@@ -142,58 +141,60 @@
     }
 }
 
-//-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-//    UITableViewCell *nameCell = [tableView dequeueReusableCellWithIdentifier:@"nameCell"];
-//    UITableViewCell *photoCell = [tableView dequeueReusableCellWithIdentifier:@"photoCell"];
-//    UITableViewCell *birthPlaceCell = [tableView dequeueReusableCellWithIdentifier:@"birthPlaceCell"];
-//    UITableViewCell *birthDateCell = [tableView dequeueReusableCellWithIdentifier:@"birthDateCell"];
-//    UITableViewCell *interestingFactCell = [tableView dequeueReusableCellWithIdentifier:@"interestingFactCell"];
-//    UITableViewCell *emailCell = [tableView dequeueReusableCellWithIdentifier:@"emailCell"];
-//    UITableViewCell *physicalAttributeCell = [tableView dequeueReusableCellWithIdentifier:@"physicalAttributeCell"];
-//    UITableViewCell *majorCell = [tableView dequeueReusableCellWithIdentifier:@"majorCell"];
-//    UITableViewCell *phoneNumberCell = [tableView dequeueReusableCellWithIdentifier:@"phoneNumberCell"];
-//    UITableViewCell *homeCell = [tableView dequeueReusableCellWithIdentifier:@"homeCell"];
-//    UITableViewCell *locationCell = [tableView dequeueReusableCellWithIdentifier:@"locationCell"];
-//    
-//    Group *template = [CategoryController sharedInstance].groups[indexPath.row];
-//    if (template.photo.boolValue == YES) {
-//        photoCell.hidden = YES;
-//    }
-//    if ([template.birthplace isEqualToNumber:0]) {
-//        birthPlaceCell.hidden = YES;
-//    }
-//    if ([template.birthdate isEqualToNumber:0]) {
-//        birthDateCell.hidden = YES;
-//    }
-//    if ([template.interestingFact isEqualToNumber:0]) {
-//        interestingFactCell.hidden = YES;
-//    }
-//    if ([template.email isEqualToNumber:0]) {
-//        emailCell.hidden = YES;
-//    }
-//    if ([template.physicalAttribute isEqualToNumber:0]) {
-//        physicalAttributeCell.hidden = YES;
-//    }
-//    if ([template.major isEqualToNumber:0]) {
-//        majorCell.hidden = YES;
-//    }
-//    if ([template.phoneNumber isEqualToNumber:0]) {
-//        phoneNumberCell.hidden = YES;
-//    }
-//    if ([template.home isEqualToNumber:0]) {
-//        homeCell.hidden = YES;
-//    }
-//    if ([template.location isEqualToNumber:0]) {
-//        locationCell.hidden = YES;
-//    }
-//    
-//    
-//    return nameCell, photoCell, birthPlaceCell, birthDateCell, interestingFactCell, emailCell, physicalAttributeCell, majorCell, phoneNumberCell, homeCell,locationCell;
-//}
+
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return 11;
 }
+
+#pragma mark Image Picker Methods
+- (IBAction)addPhotoButton:(id)sender {
+    UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
+    imagePicker.delegate.self;
+    
+    UIAlertController *photoActionSheet = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+    
+    UIAlertAction *cameraRollAction = [UIAlertAction actionWithTitle:@"From Library" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+        [self presentViewController:imagePicker animated:YES completion:nil];
+    }];
+    [photoActionSheet addAction:cameraRollAction];
+    
+    UIAlertAction *takePictureAction = [UIAlertAction actionWithTitle:@"Take Picture" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera] == YES) {
+            imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+            imagePicker.cameraDevice = UIImagePickerControllerCameraDeviceFront;
+            imagePicker.allowsEditing = YES;
+            
+            [self presentViewController:imagePicker animated:YES completion:nil];
+        }
+        else {
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Camera Not Available on Device" message:@"This device does not have a camera option. Please choose photo from library." preferredStyle:UIAlertControllerStyleAlert];
+            
+            UIAlertAction *dismissAction = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+                [self dismissViewControllerAnimated:YES completion:nil];
+            }];
+            [alert addAction:dismissAction];
+            
+            [self presentViewController:alert animated:YES completion:nil];
+        }
+    }];
+    
+    [photoActionSheet addAction:takePictureAction];
+    
+    [self presentViewController:photoActionSheet animated:YES completion:nil];
+}
+
+-(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+    UIImage *image = [info objectForKey:@"UIImagePickerControllerOriginalImage"];
+    
+    [picker dismissViewControllerAnimated:YES completion:nil];
+    
+    self.imageView.image = image;
+    
+}
+
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
