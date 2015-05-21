@@ -16,7 +16,7 @@
         <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Person" syncable="YES"/>
     </entity>
     <entity name="Person" representedClassName="Person" syncable="YES">
-        <attribute name="birthdate" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="birthdate" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="birthplace" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="home" optional="YES" attributeType="String" syncable="YES"/>
@@ -24,7 +24,7 @@
         <attribute name="location" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="major" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
-        <attribute name="phoneNumber" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="phoneNumber" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="photo" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="physicalAttribute" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="category" maxCount="1" deletionRule="Cascade" destinationEntity="Person" syncable="YES"/>

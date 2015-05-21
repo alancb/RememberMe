@@ -19,4 +19,15 @@
 
 + (PersonController *) sharedInstance;
 
+- (Person *) createPersonWithName:(NSString *)name
+                       birthPlace:(NSString *)birthPlace
+                        birthDate:(NSDate *)birthDate
+                  interestingFact:(NSString *)interestingFact
+                            email:(NSString *)email
+                physicalAttribute:(NSString *)physicalAttribute
+                            photo:(NSData *)photo
+                            major:(NSString *)major
+                      phoneNumber:(NSString *)phoneNumber home:(NSString *)home
+                         location:(NSString *)location;
+
 @end

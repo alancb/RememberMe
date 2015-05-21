@@ -23,10 +23,29 @@
 #pragma mark Core Data methods
 
 // Puts into ManagesObjectContext, then saves down
-- (Person *) createPersonWithName: (NSString *)name {
+- (Person *) createPersonWithName:(NSString *)name
+                       birthPlace:(NSString *)birthPlace
+                        birthDate:(NSDate *)birthDate
+                  interestingFact:(NSString *)interestingFact
+                            email:(NSString *)email
+                physicalAttribute:(NSString *)physicalAttribute
+                            photo:(NSData *)photo
+                            major:(NSString *)major
+                      phoneNumber:(NSString *)phoneNumber home:(NSString *)home
+                         location:(NSString *)location {
+    
     Person *person = [NSEntityDescription insertNewObjectForEntityForName:@"Person" inManagedObjectContext:[Stack sharedInstance].managedObjectContext];
     person.name = name;
-    // TODO: Add the other attributes to the method
+    person.birthplace = birthPlace;
+    person.birthdate = birthDate;
+    person.interestingFact = interestingFact;
+    person.email = email;
+    person.physicalAttribute = physicalAttribute;
+    person.photo = photo;
+    person.major = major;
+    person.phoneNumber = phoneNumber;
+    person.location = location;
+
     [self saveToPersistentStorage];
     
     return person;

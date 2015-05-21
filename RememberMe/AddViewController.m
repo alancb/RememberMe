@@ -7,6 +7,7 @@
 //
 
 #import "AddViewController.h"
+#import "ListViewController.h"
 
 @interface AddViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *nameText;
@@ -50,6 +51,10 @@
 }
 
 - (IBAction)saveButton:(id)sender {
+    // TODO: get the photo to save correctly
+    [[PersonController sharedInstance] createPersonWithName:self.nameText.text birthPlace:self.birthplaceText.text birthDate:self.birthDatePicker.date interestingFact:self.interestingFactText.text email:self.emailAddressText.text physicalAttribute:self.physicallAttributeText.text photo:nil major:self.majorText.text phoneNumber:self.phoneNumerText.text home:self.homeText.text location:self.locationText.text];
+    
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
