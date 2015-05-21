@@ -8,21 +8,20 @@
 
 #import "AddViewController.h"
 #import "ListViewController.h"
+#import "InterestingFactCell.h"
+
+typedef NS_ENUM(NSInteger, ContactAttribute) {
+    ContactAttributeBirthDate = 0,
+    ContactAttributeMajorText,
+    ContactAttributeLocation,
+    ContactAttributeInterestingFact
+};
 
 @interface AddViewController () <UITableViewDataSource, UITableViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
-@property (weak, nonatomic) IBOutlet UITextField *nameText;
-@property (weak, nonatomic) IBOutlet UITextField *birthplaceText;
-@property (weak, nonatomic) IBOutlet UIDatePicker *birthDatePicker;
-@property (weak, nonatomic) IBOutlet UITextField *interestingFactText;
-@property (weak, nonatomic) IBOutlet UITextField *emailAddressText;
-@property (weak, nonatomic) IBOutlet UITextField *physicallAttributeText;
-@property (weak, nonatomic) IBOutlet UITextField *majorText;
-@property (weak, nonatomic) IBOutlet UITextField *phoneNumerText;
-@property (weak, nonatomic) IBOutlet UITextField *homeText;
-@property (weak, nonatomic) IBOutlet UITextField *locationText;
-@property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
 @property (strong, nonatomic) Group *template;
+
+@property (strong, nonatomic) NSMutableArray *attributes;
 
 @end
 
@@ -30,6 +29,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.attributes = [NSMutableArray new];
+    if (self.template.interestingFact.boolValue) {
+        [self.attributes addObject:@(ContactAttributeInterestingFact)];
+    }
+//    self.attributes = @[ @(ContactAttributeInterestingFact) ].mutableCopy;
     // Do any additional setup after loading the view.
 }
 
@@ -45,7 +49,6 @@
     
 }
 - (void) updateViewWithCategory:(Group *)template {
-
     self.template = template;
 }
 
@@ -56,95 +59,52 @@
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
+- (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    switch ([self.attributes[indexPath.row] integerValue]) {
+        case ContactAttributeInterestingFact:
+            NSLog(@"Was interesting fact");
+            return [self cellForInterestingFact];
+            break;
+        default: NSLog(@"didn't find one");
+            return nil;
+    }
+}
+
+#define WeakSelf __weak typeof(self) weakSelf = self;
+
+- (UITableViewCell *)cellForInterestingFact {
+    InterestingFactCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"InterestingFact"];
+    // customize cell...
+    cell.factField.text = @"Fact!";
+    cell.accessoryType = UITableViewCellAccessoryDetailButton;
+    WeakSelf
+    cell.didChangeText = ^(NSString *text) {
+        NSLog(@"%@", text);
+    };
+    return cell;
+}
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    switch (indexPath.row) {
-        case 0:
-            if (self.template.personName.boolValue == NO) {
-                return 0;
-            } else {
-                return 30;
-            }
+    
+    switch ([self.attributes[indexPath.row] integerValue]) {
+        case ContactAttributeInterestingFact:
+            return 44;
             break;
-        case 1:
-            if (self.template.photo.boolValue == NO) {
-                return 0;
-            } else {
-                return 85;
-            }
-            break;
-        case 2:
-            if (self.template.birthplace.boolValue == NO) {
-                return 0;
-            } else {
-                return 30;
-            }
-            break;
-        case 3:
-            if (self.template.birthdate.boolValue == NO) {
-                return 0;
-            } else {
-                return 202;
-            }
-            break;
-        case 4:
-            if (self.template.interestingFact.boolValue == NO) {
-                return 0;
-            } else {
-                return 35;
-            }
-            break;
-        case 5:
-            if (self.template.email.boolValue == NO) {
-                return 0;
-            } else {
-                return 35;
-            }
-            break;
-        case 6:
-            if (self.template.physicalAttribute.boolValue == NO) {
-                return 0;
-            } else {
-                return 35;
-            }
-            break;
-        case 7:
-            if (self.template.major.boolValue == NO) {
-                return 0;
-            } else {
-                return 35;
-            }
-            break;
-        case 8:
-            if (self.template.phoneNumber.boolValue == NO) {
-                return 0;
-            } else {
-                return 35;
-            }
-            break;
-        case 9:
-            if (self.template.home.boolValue == NO) {
-                return 0;
-            } else {
-                return 35;
-            }
-            break;
-        case 10:
-            if (self.template.location.boolValue == NO) {
-                return 0;
-            } else {
-                return 35;
-            }
+        case ContactAttributeMajorText:
+            NSLog(@"lll");
+            return 44;
             break;
         default:
-            return 35;
-            break;
+            NSLog(@"didn't find one");
+            return 44;
     }
+
 }
 
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 11;
+    return self.attributes.count;
 }
 
 #pragma mark Image Picker Methods

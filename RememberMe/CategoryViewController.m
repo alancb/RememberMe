@@ -50,6 +50,7 @@
         
         AddViewController *addView = segue.destinationViewController;
         NSIndexPath *indexPath = [self.categoryListTableView indexPathForCell:sender];
+
         [addView updateViewWithCategory:[CategoryController sharedInstance].groups [indexPath.row]];
 
     }
