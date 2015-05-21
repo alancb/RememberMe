@@ -22,17 +22,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *homeText;
 @property (weak, nonatomic) IBOutlet UITextField *locationText;
 
-@property (weak, nonatomic) IBOutlet UITableViewCell *nameCell;
-@property (weak, nonatomic) IBOutlet UITableViewCell *photoCell;
-@property (weak, nonatomic) IBOutlet UITableViewCell *birthPlaceCell;
-@property (weak, nonatomic) IBOutlet UITableViewCell *birthDateCell;
-@property (weak, nonatomic) IBOutlet UITableViewCell *interestingFactCell;
-@property (weak, nonatomic) IBOutlet UITableViewCell *emailCell;
-@property (weak, nonatomic) IBOutlet UITableViewCell *physicallAttributeCell;
-@property (weak, nonatomic) IBOutlet UITableViewCell *majorCell;
-@property (weak, nonatomic) IBOutlet UITableViewCell *phoneNumberCell;
-@property (weak, nonatomic) IBOutlet UITableViewCell *homeCell;
-@property (weak, nonatomic) IBOutlet UITableViewCell *locationCell;
+@property (strong, nonatomic) Group *template;
 
 @end
 
@@ -42,48 +32,109 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
-- (IBAction)cancelButton:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
 
++ (AddViewController *) sharedInstance {
+    static AddViewController *sharedInstance = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        sharedInstance = [AddViewController new];
+    });
+    return sharedInstance;
+}
 - (void)updateWithCategory:(NSString *)categoty {
     
 }
-- (void) updateViewWithCategory {
-    Group *template = [CategoryController sharedInstance].groups;
-    if (template.photo.boolValue == NO) {
-        self.photoCell.hidden = YES;
-    }
-    if (template.birthplace.boolValue == NO) {
-        self.birthPlaceCell.hidden = YES;
-    }
-    if (template.birthdate.boolValue == NO) {
-        self.birthDateCell.hidden = YES;
-    }
-    if (template.interestingFact.boolValue == NO) {
-        self.interestingFactCell.hidden = YES;
-    }
-    if (template.email.boolValue == NO) {
-        self.emailCell.hidden = YES;
-    }
-    if (template.physicalAttribute.boolValue == NO) {
-        self.physicallAttributeCell.hidden = YES;
-    }
-    if (template.major.boolValue == NO) {
-        self.majorCell.hidden = YES;
-    }
-    if (template.phoneNumber.boolValue == NO) {
-        self.phoneNumberCell.hidden = YES;
-    }
-    if (template.home.boolValue == NO) {
-        self.homeCell.hidden = YES;
-    }
-    if (template.location.boolValue == NO) {
-        self.locationCell.hidden = YES;
-    }
+- (void) updateViewWithCategory:(Group *)template {
+
+    self.template = template;
 }
 
 - (IBAction)saveButton:(id)sender {
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    switch (indexPath.row) {
+        case 0:
+            if (self.template.personName.boolValue == NO) {
+                return 0;
+            } else {
+                return 30;
+            }
+            break;
+        case 1:
+            if (self.template.photo.boolValue == NO) {
+                return 0;
+            } else {
+                return 85;
+            }
+            break;
+        case 2:
+            if (self.template.birthplace.boolValue == NO) {
+                return 0;
+            } else {
+                return 30;
+            }
+            break;
+        case 3:
+            if (self.template.birthdate.boolValue == NO) {
+                return 0;
+            } else {
+                return 202;
+            }
+            break;
+        case 4:
+            if (self.template.interestingFact.boolValue == NO) {
+                return 0;
+            } else {
+                return 35;
+            }
+            break;
+        case 5:
+            if (self.template.email.boolValue == NO) {
+                return 0;
+            } else {
+                return 35;
+            }
+            break;
+        case 6:
+            if (self.template.physicalAttribute.boolValue == NO) {
+                return 0;
+            } else {
+                return 35;
+            }
+            break;
+        case 7:
+            if (self.template.major.boolValue == NO) {
+                return 0;
+            } else {
+                return 35;
+            }
+            break;
+        case 8:
+            if (self.template.phoneNumber.boolValue == NO) {
+                return 0;
+            } else {
+                return 35;
+            }
+            break;
+        case 9:
+            if (self.template.home.boolValue == NO) {
+                return 0;
+            } else {
+                return 35;
+            }
+            break;
+        case 10:
+            if (self.template.location.boolValue == NO) {
+                return 0;
+            } else {
+                return 35;
+            }
+            break;
+        default:
+            return 35;
+            break;
+    }
 }
 
 //-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -136,7 +187,7 @@
 //}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 5;
+    return 11;
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

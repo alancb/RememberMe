@@ -13,4 +13,7 @@
 
 @interface AddViewController : UITableViewController
 
+- (void) updateViewWithCategory:(Group *)template;
++ (AddViewController *) sharedInstance;
+
 @end

@@ -35,7 +35,7 @@
                             home:(UISwitch *)homeSwitch
                         location:(UISwitch *)locationSwitch  {
     Group *group = [NSEntityDescription insertNewObjectForEntityForName:@"Group" inManagedObjectContext:[Stack sharedInstance].managedObjectContext];
-    group.name = name;
+    group.groupName = name;
     if (birthplaceSwitch.on) {
         group.birthplace = @1;
     }

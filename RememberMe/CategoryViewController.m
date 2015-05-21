@@ -10,6 +10,8 @@
 
 @interface CategoryViewController () <UITableViewDelegate, UITableViewDataSource>
 
+@property (strong, nonatomic) IBOutlet UITableView *categoryListTableView;
+
 @end
 
 @implementation CategoryViewController
@@ -45,9 +47,11 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"toPersonFromCategory"]) {
+        
         AddViewController *addView = segue.destinationViewController;
-        
-        
+        NSIndexPath *indexPath = [self.categoryListTableView indexPathForCell:sender];
+        [addView updateViewWithCategory:[CategoryController sharedInstance].groups [indexPath.row]];
+
     }
 }
 /*
