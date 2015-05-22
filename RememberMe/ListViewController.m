@@ -26,7 +26,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"entryCell"];
     
     
-    cell.textLabel.text = [NSString stringWithFormat:@"%@", person.email];
+    cell.textLabel.text = [NSString stringWithFormat:@"%@", person.name];
     
     return cell;
 }

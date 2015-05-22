@@ -9,19 +9,48 @@
 #import "AddViewController.h"
 #import "ListViewController.h"
 #import "InterestingFactCell.h"
+#import "PersonNameCell.h"
+#import "PhotoCell.h"
+#import "HomeCell.h"
+#import "MajorCell.h"
+#import "BirthDateCell.h"
+#import "BirthPlaceCell.h"
+#import "LocationCell.h"
+#import "EmailCell.h"
+#import "PhoneNumberCell.h"
+#import "PhysicalAttributeCell.h"
 
 typedef NS_ENUM(NSInteger, ContactAttribute) {
     ContactAttributeBirthDate = 0,
     ContactAttributeMajorText,
     ContactAttributeLocation,
-    ContactAttributeInterestingFact
+    ContactAttributeInterestingFact,
+    ContactAttributeName,
+    ContactAttributePhoto,
+    ContactAttributeHome,
+    ContactAttributeBirthPlace,
+    ContactAttributeEmail,
+    ContactAttributePhoneNumber,
+    ContactAttributePhysicalAttribute
 };
 
-@interface AddViewController () <UITableViewDataSource, UITableViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@interface AddViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (strong, nonatomic) Group *template;
 
 @property (strong, nonatomic) NSMutableArray *attributes;
+
+@property (strong, nonatomic) NSString *nameOfPerson;
+@property (strong, nonatomic) NSDate *birthDate;
+@property (strong, nonatomic) NSString *major;
+@property (strong, nonatomic) NSString *location;
+@property (strong, nonatomic) NSString *interestingFact;
+@property (strong, nonatomic) NSData *photo;
+@property (strong, nonatomic) NSString *home;
+@property (strong, nonatomic) NSString *birthPlace;
+@property (strong, nonatomic) NSString *email;
+@property (strong, nonatomic) NSString *phoneNumber;
+@property (strong, nonatomic) NSString *physicalAttribute;
 
 @end
 
@@ -30,11 +59,40 @@ typedef NS_ENUM(NSInteger, ContactAttribute) {
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.attributes = [NSMutableArray new];
+    
+    [self.attributes addObject:@(ContactAttributeName)];
+    
     if (self.template.interestingFact.boolValue) {
         [self.attributes addObject:@(ContactAttributeInterestingFact)];
     }
-//    self.attributes = @[ @(ContactAttributeInterestingFact) ].mutableCopy;
-    // Do any additional setup after loading the view.
+    if (self.template.photo.boolValue) {
+        [self.attributes addObject:@(ContactAttributePhoto)];
+    }
+    if (self.template.major.boolValue) {
+        [self.attributes addObject:@(ContactAttributeMajorText)];
+    }
+    if (self.template.home.boolValue) {
+        [self.attributes addObject:@(ContactAttributeHome)];
+    }
+    if (self.template.birthdate.boolValue) {
+        [self.attributes addObject:@(ContactAttributeBirthDate)];
+    }
+    if (self.template.birthplace.boolValue) {
+        [self.attributes addObject:@(ContactAttributeBirthPlace)];
+    }
+    if (self.template.location.boolValue) {
+        [self.attributes addObject:@(ContactAttributeLocation)];
+    }
+    if (self.template.email.boolValue) {
+        [self.attributes addObject:@(ContactAttributeEmail)];
+    }
+    if (self.template.physicalAttribute.boolValue) {
+        [self.attributes addObject:@(ContactAttributePhysicalAttribute)];
+    }
+    if (self.template.phoneNumber.boolValue) {
+        [self.attributes addObject:@(ContactAttributePhoneNumber)];
+    }
+
 }
 
 + (AddViewController *) sharedInstance {
@@ -45,16 +103,24 @@ typedef NS_ENUM(NSInteger, ContactAttribute) {
     });
     return sharedInstance;
 }
-- (void)updateWithCategory:(NSString *)categoty {
-    
-}
 - (void) updateViewWithCategory:(Group *)template {
     self.template = template;
 }
 
 - (IBAction)saveButton:(id)sender {
-    // TODO: get the photo to save correctly
-    [[PersonController sharedInstance] createPersonWithName:self.nameText.text birthPlace:self.birthplaceText.text birthDate:self.birthDatePicker.date interestingFact:self.interestingFactText.text email:self.emailAddressText.text physicalAttribute:self.physicallAttributeText.text photo:nil major:self.majorText.text phoneNumber:self.phoneNumerText.text home:self.homeText.text location:self.locationText.text];
+    // TODO: get the photo to save correctly, the datepicker to save, and check on what to do with phone number.
+    
+    [[PersonController sharedInstance] createPersonWithName:self.nameOfPerson
+                                                 birthPlace:self.birthPlace
+                                                  birthDate:self.birthDate
+                                            interestingFact:self.interestingFact
+                                                      email:self.email
+                                          physicalAttribute:self.physicalAttribute
+                                                      photo:self.photo
+                                                      major:self.major
+                                                phoneNumber:self.phoneNumber
+                                                       home:self.home
+                                                   location:self.location];
     
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
@@ -65,6 +131,48 @@ typedef NS_ENUM(NSInteger, ContactAttribute) {
             NSLog(@"Was interesting fact");
             return [self cellForInterestingFact];
             break;
+            
+        case ContactAttributeName:
+            NSLog(@"You have a name");
+            return [self cellForPersonsName];
+            break;
+            
+        case ContactAttributePhoto:
+            return [self cellForPhoto];
+            break;
+            
+        case ContactAttributeMajorText:
+            return [self cellforMajor];
+            break;
+            
+        case ContactAttributeHome:
+            return [self cellForHome];
+            break;
+            
+        case ContactAttributeBirthPlace:
+            return [self cellforBirthPlace];
+            break;
+            
+        case ContactAttributeBirthDate:
+            return [self cellForBirthDate];
+            break;
+            
+        case ContactAttributeLocation:
+            return [self cellForLocation];
+            break;
+            
+        case ContactAttributePhoneNumber:
+            return [self cellforPhoneNumber];
+            break;
+        
+        case ContactAttributePhysicalAttribute:
+            return [self cellForPhysicalAttribute];
+            break;
+            
+        case ContactAttributeEmail:
+            return [self cellForEmail];
+            break;
+            
         default: NSLog(@"didn't find one");
             return nil;
     }
@@ -74,12 +182,94 @@ typedef NS_ENUM(NSInteger, ContactAttribute) {
 
 - (UITableViewCell *)cellForInterestingFact {
     InterestingFactCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"InterestingFact"];
-    // customize cell...
-    cell.factField.text = @"Fact!";
-    cell.accessoryType = UITableViewCellAccessoryDetailButton;
     WeakSelf
     cell.didChangeText = ^(NSString *text) {
-        NSLog(@"%@", text);
+        self.interestingFact = text;
+    };
+    return cell;
+}
+- (UITableViewCell *)cellForPersonsName {
+    PersonNameCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"NameCell"];
+    WeakSelf
+    cell.didChangeText = ^(NSString *text) {
+        self.nameOfPerson = text;
+    };
+    return cell;
+}
+- (UITableViewCell *)cellForPhoto {
+    PhotoCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"PhotoCell"];
+    WeakSelf
+    cell.didChangePhoto = ^(NSData *data) {
+        self.photo = data;
+    };
+    return cell;
+}
+- (UITableViewCell *)cellForHome {
+    HomeCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"HomeCell"];
+    WeakSelf
+    cell.didChangeText = ^(NSString *text) {
+        self.home = text;
+    };
+    return cell;
+}
+
+- (UITableViewCell *)cellforMajor {
+    MajorCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"MajorCell"];
+    WeakSelf
+    cell.didChangeText = ^(NSString *text) {
+        self.major = text;
+    };
+    return cell;
+}
+
+- (UITableViewCell *)cellForBirthDate {
+    BirthDateCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"BirthDateCell"];
+    WeakSelf
+    cell.didChangeDate = ^(NSDate *date) {
+        self.birthDate = date;
+    };
+    return cell;
+}
+
+- (UITableViewCell *)cellforBirthPlace {
+    BirthPlaceCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"BirthPlaceCell"];
+    WeakSelf
+    cell.didChangeText = ^(NSString *text) {
+        self.birthPlace = text;
+    };
+    return cell;
+}
+- (UITableViewCell *)cellForLocation {
+    LocationCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"LocationCell"];
+    WeakSelf
+    cell.didChangeText = ^(NSString *text) {
+        self.location = text;
+    };
+    return cell;
+}
+
+- (UITableViewCell *)cellForEmail {
+    EmailCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"EmailCell"];
+    WeakSelf
+    cell.didChangeText = ^(NSString *text) {
+        self.email = text;
+    };
+    return cell;
+}
+- (UITableViewCell *)cellForPhysicalAttribute {
+    PhysicalAttributeCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"PhysicallAttributeCell"];
+    WeakSelf
+    cell.didChangeText = ^(NSString * text) {
+        self.physicalAttribute = text;
+    };
+    return cell;
+}
+
+- (UITableViewCell *)cellforPhoneNumber {
+    PhoneNumberCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"PhoneNumberCell"];
+    WeakSelf
+    cell.didChangeText= ^(NSString *text) {
+        self.phoneNumber = text;
     };
     return cell;
 }
@@ -90,8 +280,34 @@ typedef NS_ENUM(NSInteger, ContactAttribute) {
         case ContactAttributeInterestingFact:
             return 44;
             break;
+        case ContactAttributeName:
+            return 44;
+            break;
         case ContactAttributeMajorText:
-            NSLog(@"lll");
+            return 44;
+            break;
+        case ContactAttributePhoto:
+            return 111;
+            break;
+        case ContactAttributeHome:
+            return 44;
+            break;
+        case ContactAttributeBirthDate:
+            return 161;
+            break;
+        case ContactAttributeBirthPlace:
+            return 44;
+            break;
+        case ContactAttributeLocation:
+            return 44;
+            break;
+        case ContactAttributeEmail:
+            return 44;
+            break;
+        case ContactAttributePhoneNumber:
+            return 44;
+            break;
+        case ContactAttributePhysicalAttribute:
             return 44;
             break;
         default:
@@ -107,52 +323,6 @@ typedef NS_ENUM(NSInteger, ContactAttribute) {
     return self.attributes.count;
 }
 
-#pragma mark Image Picker Methods
-- (IBAction)addPhotoButton:(id)sender {
-    UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
-    imagePicker.delegate.self;
-    
-    UIAlertController *photoActionSheet = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
-    
-    UIAlertAction *cameraRollAction = [UIAlertAction actionWithTitle:@"From Library" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-        imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-        [self presentViewController:imagePicker animated:YES completion:nil];
-    }];
-    [photoActionSheet addAction:cameraRollAction];
-    
-    UIAlertAction *takePictureAction = [UIAlertAction actionWithTitle:@"Take Picture" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-        if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera] == YES) {
-            imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
-            imagePicker.cameraDevice = UIImagePickerControllerCameraDeviceFront;
-            imagePicker.allowsEditing = YES;
-            
-            [self presentViewController:imagePicker animated:YES completion:nil];
-        }
-        else {
-            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Camera Not Available on Device" message:@"This device does not have a camera option. Please choose photo from library." preferredStyle:UIAlertControllerStyleAlert];
-            
-            UIAlertAction *dismissAction = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
-                [self dismissViewControllerAnimated:YES completion:nil];
-            }];
-            [alert addAction:dismissAction];
-            
-            [self presentViewController:alert animated:YES completion:nil];
-        }
-    }];
-    
-    [photoActionSheet addAction:takePictureAction];
-    
-    [self presentViewController:photoActionSheet animated:YES completion:nil];
-}
-
--(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
-    UIImage *image = [info objectForKey:@"UIImagePickerControllerOriginalImage"];
-    
-    [picker dismissViewControllerAnimated:YES completion:nil];
-    
-    self.imageView.image = image;
-    
-}
 
 
 - (void)didReceiveMemoryWarning {

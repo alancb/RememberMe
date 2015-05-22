@@ -26,6 +26,15 @@
 		2CCB0D891B0D644500295D2F /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CCB0D881B0D644500295D2F /* Person.m */; };
 		2CCB0D8D1B0D7C9C00295D2F /* InterestingFactCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CCB0D8C1B0D7C9C00295D2F /* InterestingFactCell.m */; };
 		2CCB0D901B0D910300295D2F /* PersonNameCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CCB0D8F1B0D910300295D2F /* PersonNameCell.m */; };
+		2CCB0D931B0EA09E00295D2F /* PhotoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CCB0D921B0EA09E00295D2F /* PhotoCell.m */; };
+		2CCB0D961B0EA7B500295D2F /* MajorCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CCB0D951B0EA7B500295D2F /* MajorCell.m */; };
+		2CCB0D991B0EA92900295D2F /* HomeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CCB0D981B0EA92900295D2F /* HomeCell.m */; };
+		2CCB0D9C1B0EBA1300295D2F /* BirthDateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CCB0D9B1B0EBA1300295D2F /* BirthDateCell.m */; };
+		2CCB0D9F1B0EBA1F00295D2F /* BirthPlaceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CCB0D9E1B0EBA1F00295D2F /* BirthPlaceCell.m */; };
+		2CCB0DA21B0EC20700295D2F /* LocationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CCB0DA11B0EC20700295D2F /* LocationCell.m */; };
+		2CCB0DA51B0EC64F00295D2F /* EmailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CCB0DA41B0EC64F00295D2F /* EmailCell.m */; };
+		2CCB0DA81B0EC66000295D2F /* PhoneNumberCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CCB0DA71B0EC66000295D2F /* PhoneNumberCell.m */; };
+		2CCB0DAB1B0EC69800295D2F /* PhysicalAttributeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CCB0DAA1B0EC69800295D2F /* PhysicalAttributeCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +83,24 @@
 		2CCB0D8C1B0D7C9C00295D2F /* InterestingFactCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InterestingFactCell.m; sourceTree = "<group>"; };
 		2CCB0D8E1B0D910300295D2F /* PersonNameCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonNameCell.h; sourceTree = "<group>"; };
 		2CCB0D8F1B0D910300295D2F /* PersonNameCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonNameCell.m; sourceTree = "<group>"; };
+		2CCB0D911B0EA09E00295D2F /* PhotoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoCell.h; sourceTree = "<group>"; };
+		2CCB0D921B0EA09E00295D2F /* PhotoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoCell.m; sourceTree = "<group>"; };
+		2CCB0D941B0EA7B500295D2F /* MajorCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MajorCell.h; sourceTree = "<group>"; };
+		2CCB0D951B0EA7B500295D2F /* MajorCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MajorCell.m; sourceTree = "<group>"; };
+		2CCB0D971B0EA92900295D2F /* HomeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeCell.h; sourceTree = "<group>"; };
+		2CCB0D981B0EA92900295D2F /* HomeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeCell.m; sourceTree = "<group>"; };
+		2CCB0D9A1B0EBA1300295D2F /* BirthDateCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BirthDateCell.h; sourceTree = "<group>"; };
+		2CCB0D9B1B0EBA1300295D2F /* BirthDateCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BirthDateCell.m; sourceTree = "<group>"; };
+		2CCB0D9D1B0EBA1F00295D2F /* BirthPlaceCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BirthPlaceCell.h; sourceTree = "<group>"; };
+		2CCB0D9E1B0EBA1F00295D2F /* BirthPlaceCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BirthPlaceCell.m; sourceTree = "<group>"; };
+		2CCB0DA01B0EC20700295D2F /* LocationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationCell.h; sourceTree = "<group>"; };
+		2CCB0DA11B0EC20700295D2F /* LocationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationCell.m; sourceTree = "<group>"; };
+		2CCB0DA31B0EC64F00295D2F /* EmailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmailCell.h; sourceTree = "<group>"; };
+		2CCB0DA41B0EC64F00295D2F /* EmailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmailCell.m; sourceTree = "<group>"; };
+		2CCB0DA61B0EC66000295D2F /* PhoneNumberCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhoneNumberCell.h; sourceTree = "<group>"; };
+		2CCB0DA71B0EC66000295D2F /* PhoneNumberCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhoneNumberCell.m; sourceTree = "<group>"; };
+		2CCB0DA91B0EC69800295D2F /* PhysicalAttributeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhysicalAttributeCell.h; sourceTree = "<group>"; };
+		2CCB0DAA1B0EC69800295D2F /* PhysicalAttributeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhysicalAttributeCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -204,6 +231,24 @@
 				2CCB0D8F1B0D910300295D2F /* PersonNameCell.m */,
 				2CCB0D8B1B0D7C9C00295D2F /* InterestingFactCell.h */,
 				2CCB0D8C1B0D7C9C00295D2F /* InterestingFactCell.m */,
+				2CCB0D911B0EA09E00295D2F /* PhotoCell.h */,
+				2CCB0D921B0EA09E00295D2F /* PhotoCell.m */,
+				2CCB0D941B0EA7B500295D2F /* MajorCell.h */,
+				2CCB0D951B0EA7B500295D2F /* MajorCell.m */,
+				2CCB0D971B0EA92900295D2F /* HomeCell.h */,
+				2CCB0D981B0EA92900295D2F /* HomeCell.m */,
+				2CCB0D9A1B0EBA1300295D2F /* BirthDateCell.h */,
+				2CCB0D9B1B0EBA1300295D2F /* BirthDateCell.m */,
+				2CCB0D9D1B0EBA1F00295D2F /* BirthPlaceCell.h */,
+				2CCB0D9E1B0EBA1F00295D2F /* BirthPlaceCell.m */,
+				2CCB0DA01B0EC20700295D2F /* LocationCell.h */,
+				2CCB0DA11B0EC20700295D2F /* LocationCell.m */,
+				2CCB0DA31B0EC64F00295D2F /* EmailCell.h */,
+				2CCB0DA41B0EC64F00295D2F /* EmailCell.m */,
+				2CCB0DA61B0EC66000295D2F /* PhoneNumberCell.h */,
+				2CCB0DA71B0EC66000295D2F /* PhoneNumberCell.m */,
+				2CCB0DA91B0EC69800295D2F /* PhysicalAttributeCell.h */,
+				2CCB0DAA1B0EC69800295D2F /* PhysicalAttributeCell.m */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -310,18 +355,27 @@
 			files = (
 				2C836B8F1AFD60600066C6DE /* PersonController.m in Sources */,
 				2C836B8A1AFD5EAB0066C6DE /* Stack.m in Sources */,
+				2CCB0DAB1B0EC69800295D2F /* PhysicalAttributeCell.m in Sources */,
+				2CCB0DA21B0EC20700295D2F /* LocationCell.m in Sources */,
+				2CCB0DA81B0EC66000295D2F /* PhoneNumberCell.m in Sources */,
 				2C7FCECE1B0C139800710C0E /* Group.m in Sources */,
 				2CCB0D901B0D910300295D2F /* PersonNameCell.m in Sources */,
 				2C836B811AFD5DD40066C6DE /* ListViewController.m in Sources */,
 				2CCB0D8D1B0D7C9C00295D2F /* InterestingFactCell.m in Sources */,
+				2CCB0D931B0EA09E00295D2F /* PhotoCell.m in Sources */,
 				2C50C79F1B05AC42000D6899 /* CategoryController.m in Sources */,
 				2C836B591AFD5C660066C6DE /* AppDelegate.m in Sources */,
 				2CCB0D891B0D644500295D2F /* Person.m in Sources */,
+				2CCB0DA51B0EC64F00295D2F /* EmailCell.m in Sources */,
 				2CC686191B042C55005AC1D4 /* CategoryViewController.m in Sources */,
 				2CC6861C1B04381A005AC1D4 /* CategoryOptionsViewController.m in Sources */,
 				2C836B941AFD61170066C6DE /* Model.xcdatamodeld in Sources */,
+				2CCB0D9C1B0EBA1300295D2F /* BirthDateCell.m in Sources */,
+				2CCB0D991B0EA92900295D2F /* HomeCell.m in Sources */,
 				2C836B7E1AFD5DC70066C6DE /* AddViewController.m in Sources */,
 				2C836B561AFD5C660066C6DE /* main.m in Sources */,
+				2CCB0D9F1B0EBA1F00295D2F /* BirthPlaceCell.m in Sources */,
+				2CCB0D961B0EA7B500295D2F /* MajorCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
