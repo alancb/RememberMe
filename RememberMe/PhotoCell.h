@@ -8,17 +8,19 @@
 
 #import <UIKit/UIKit.h>
 
-//@protocol PhotoDelegate <NSObject>
+
+@protocol PhotoCellDelegate;
 
 @interface PhotoCell : UITableViewCell
 
 @property (copy, nonatomic) void (^didChangePhoto)(NSData *data);
 
+@property (weak, nonatomic) id<PhotoCellDelegate> delegate;
 
 @end
 
-//@protocol PhotoDelegate <NSObject>
-//
-//<#methods#>
-//
-//@end
+@protocol PhotoCellDelegate <NSObject>
+
+- (void)photoCellButtonTapped;
+
+@end

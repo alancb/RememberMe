@@ -10,10 +10,8 @@
 #import "PersonController.h"
 #import "CategoryController.h"
 
-
 @interface AddViewController : UITableViewController
 
 - (void) updateViewWithCategory:(Group *)template;
-+ (AddViewController *) sharedInstance;
 
 @end

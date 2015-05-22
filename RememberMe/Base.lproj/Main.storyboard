@@ -353,7 +353,7 @@
             </objects>
             <point key="canvasLocation" x="2797" y="349"/>
         </scene>
-        <!--Add View Controller-->
+        <!--Person-->
         <scene sceneID="iTN-34-6Cf">
             <objects>
                 <tableViewController id="uGX-ik-DW3" customClass="AddViewController" sceneMemberID="viewController">
@@ -409,10 +409,6 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Dt2-sR-Hbi" id="cHd-YI-ChD">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Yz9-cw-Urj">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="110"/>
-                                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                        </imageView>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oXE-4W-mVV">
                                             <rect key="frame" x="263" y="8" width="74" height="30"/>
                                             <state key="normal" title="Add Photo">
@@ -422,20 +418,18 @@
                                                 <action selector="addPhotoButton:" destination="Dt2-sR-Hbi" eventType="touchUpInside" id="P2b-Cr-5OD"/>
                                             </connections>
                                         </button>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Yz9-cw-Urj">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="110"/>
+                                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        </imageView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="bottom" secondItem="Yz9-cw-Urj" secondAttribute="bottom" id="73v-vK-ym3"/>
-                                        <constraint firstItem="Yz9-cw-Urj" firstAttribute="centerX" secondItem="oXE-4W-mVV" secondAttribute="centerX" id="Iqc-cx-eMA"/>
-                                        <constraint firstItem="Yz9-cw-Urj" firstAttribute="top" secondItem="cHd-YI-ChD" secondAttribute="top" id="JIW-6v-xVF"/>
-                                        <constraint firstItem="oXE-4W-mVV" firstAttribute="top" secondItem="cHd-YI-ChD" secondAttribute="topMargin" id="Tqf-qK-9oU"/>
-                                        <constraint firstItem="oXE-4W-mVV" firstAttribute="top" secondItem="cHd-YI-ChD" secondAttribute="topMargin" id="bnO-QA-Aaf"/>
-                                        <constraint firstAttribute="centerXWithinMargins" secondItem="oXE-4W-mVV" secondAttribute="centerXWithinMargins" id="cSP-yI-ZWI"/>
-                                        <constraint firstItem="Yz9-cw-Urj" firstAttribute="leading" secondItem="cHd-YI-ChD" secondAttribute="leading" id="fWr-ds-rT9"/>
-                                        <constraint firstItem="oXE-4W-mVV" firstAttribute="leading" secondItem="cHd-YI-ChD" secondAttribute="leadingMargin" constant="255" id="gEC-8d-NrT"/>
-                                        <constraint firstAttribute="centerYWithinMargins" secondItem="oXE-4W-mVV" secondAttribute="centerYWithinMargins" constant="32" id="lVU-vy-55Y"/>
-                                        <constraint firstAttribute="trailing" secondItem="Yz9-cw-Urj" secondAttribute="trailing" id="qoz-cG-jaB"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="oXE-4W-mVV" secondAttribute="trailing" constant="255" id="sxb-2D-RjP"/>
-                                        <constraint firstAttribute="centerXWithinMargins" secondItem="oXE-4W-mVV" secondAttribute="centerXWithinMargins" id="wOu-YH-WcZ"/>
+                                        <constraint firstAttribute="centerY" secondItem="oXE-4W-mVV" secondAttribute="centerY" constant="32" id="H3F-A8-Osi"/>
+                                        <constraint firstItem="Yz9-cw-Urj" firstAttribute="top" secondItem="cHd-YI-ChD" secondAttribute="topMargin" constant="-8" id="Vzr-Se-xSC"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="Yz9-cw-Urj" secondAttribute="trailing" constant="-8" id="ZDp-86-0TC"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="Yz9-cw-Urj" secondAttribute="bottom" constant="-8" id="it4-2o-mip"/>
+                                        <constraint firstItem="Yz9-cw-Urj" firstAttribute="leading" secondItem="cHd-YI-ChD" secondAttribute="leadingMargin" constant="-8" id="lYc-ni-VX8"/>
+                                        <constraint firstAttribute="centerX" secondItem="oXE-4W-mVV" secondAttribute="centerX" id="pLb-hP-Yxl"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -618,6 +612,13 @@
                             <outlet property="delegate" destination="uGX-ik-DW3" id="uqA-Jf-ioU"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Person" id="b0T-lN-w7X">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="ONq-kC-4AQ">
+                            <connections>
+                                <action selector="saveButton:" destination="uGX-ik-DW3" id="8iG-Ek-adc"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="diS-C7-LVj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

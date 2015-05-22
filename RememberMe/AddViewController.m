@@ -34,7 +34,7 @@ typedef NS_ENUM(NSInteger, ContactAttribute) {
     ContactAttributePhysicalAttribute
 };
 
-@interface AddViewController () <UITableViewDataSource, UITableViewDelegate>
+@interface AddViewController () <UITableViewDataSource, UITableViewDelegate, UIImagePickerControllerDelegate, PhotoCellDelegate>
 
 @property (strong, nonatomic) Group *template;
 
@@ -95,14 +95,59 @@ typedef NS_ENUM(NSInteger, ContactAttribute) {
 
 }
 
-+ (AddViewController *) sharedInstance {
-    static AddViewController *sharedInstance = nil;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        sharedInstance = [AddViewController new];
-    });
-    return sharedInstance;
+
+- (void)photoCellButtonTapped {
+    UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
+    
+    imagePicker.delegate.self;
+    
+    UIAlertController *photoActionSheet = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+    
+    UIAlertAction *cameraRollAction = [UIAlertAction actionWithTitle:@"From Library" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+        [self presentViewController:imagePicker animated:YES completion:nil];
+    }];
+    [photoActionSheet addAction:cameraRollAction];
+    
+    UIAlertAction *takePictureAction = [UIAlertAction actionWithTitle:@"Take Picture" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera] == YES) {
+            imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+            imagePicker.cameraDevice = UIImagePickerControllerCameraDeviceFront;
+            imagePicker.allowsEditing = YES;
+            
+            [self presentViewController:imagePicker animated:YES completion:nil];
+        }
+        else {
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Camera Not Available on Device" message:@"This device does not have a camera option. Please choose photo from library." preferredStyle:UIAlertControllerStyleAlert];
+            
+            UIAlertAction *dismissAction = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+                [self dismissViewControllerAnimated:YES completion:nil];
+            }];
+            [alert addAction:dismissAction];
+            
+            [self presentViewController:alert animated:YES completion:nil];
+        }
+    }];
+    
+    [photoActionSheet addAction:takePictureAction];
+    
+    [self presentViewController:photoActionSheet animated:YES completion:nil];
 }
+
+-(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+    UIImage *image = [info objectForKey:@"UIImagePickerControllerOriginalImage"];
+    
+    [picker dismissViewControllerAnimated:YES completion:nil];
+    
+    // set the image to the property on the model object
+    
+    // reload the table view
+    
+    // make sure that the photo cell updates with the correct data (including the image)
+    
+}
+
+
 - (void) updateViewWithCategory:(Group *)template {
     self.template = template;
 }
@@ -178,11 +223,9 @@ typedef NS_ENUM(NSInteger, ContactAttribute) {
     }
 }
 
-#define WeakSelf __weak typeof(self) weakSelf = self;
-
 - (UITableViewCell *)cellForInterestingFact {
     InterestingFactCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"InterestingFact"];
-    WeakSelf
+    
     cell.didChangeText = ^(NSString *text) {
         self.interestingFact = text;
     };
@@ -190,7 +233,7 @@ typedef NS_ENUM(NSInteger, ContactAttribute) {
 }
 - (UITableViewCell *)cellForPersonsName {
     PersonNameCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"NameCell"];
-    WeakSelf
+    
     cell.didChangeText = ^(NSString *text) {
         self.nameOfPerson = text;
     };
@@ -198,7 +241,8 @@ typedef NS_ENUM(NSInteger, ContactAttribute) {
 }
 - (UITableViewCell *)cellForPhoto {
     PhotoCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"PhotoCell"];
-    WeakSelf
+    cell.delegate = self;
+    
     cell.didChangePhoto = ^(NSData *data) {
         self.photo = data;
     };
@@ -206,7 +250,7 @@ typedef NS_ENUM(NSInteger, ContactAttribute) {
 }
 - (UITableViewCell *)cellForHome {
     HomeCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"HomeCell"];
-    WeakSelf
+    
     cell.didChangeText = ^(NSString *text) {
         self.home = text;
     };
@@ -215,7 +259,7 @@ typedef NS_ENUM(NSInteger, ContactAttribute) {
 
 - (UITableViewCell *)cellforMajor {
     MajorCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"MajorCell"];
-    WeakSelf
+    
     cell.didChangeText = ^(NSString *text) {
         self.major = text;
     };
@@ -224,7 +268,7 @@ typedef NS_ENUM(NSInteger, ContactAttribute) {
 
 - (UITableViewCell *)cellForBirthDate {
     BirthDateCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"BirthDateCell"];
-    WeakSelf
+    
     cell.didChangeDate = ^(NSDate *date) {
         self.birthDate = date;
     };
@@ -233,7 +277,7 @@ typedef NS_ENUM(NSInteger, ContactAttribute) {
 
 - (UITableViewCell *)cellforBirthPlace {
     BirthPlaceCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"BirthPlaceCell"];
-    WeakSelf
+    
     cell.didChangeText = ^(NSString *text) {
         self.birthPlace = text;
     };
@@ -241,7 +285,7 @@ typedef NS_ENUM(NSInteger, ContactAttribute) {
 }
 - (UITableViewCell *)cellForLocation {
     LocationCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"LocationCell"];
-    WeakSelf
+    
     cell.didChangeText = ^(NSString *text) {
         self.location = text;
     };
@@ -250,7 +294,7 @@ typedef NS_ENUM(NSInteger, ContactAttribute) {
 
 - (UITableViewCell *)cellForEmail {
     EmailCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"EmailCell"];
-    WeakSelf
+    
     cell.didChangeText = ^(NSString *text) {
         self.email = text;
     };
@@ -258,7 +302,7 @@ typedef NS_ENUM(NSInteger, ContactAttribute) {
 }
 - (UITableViewCell *)cellForPhysicalAttribute {
     PhysicalAttributeCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"PhysicallAttributeCell"];
-    WeakSelf
+    
     cell.didChangeText = ^(NSString * text) {
         self.physicalAttribute = text;
     };
@@ -267,7 +311,7 @@ typedef NS_ENUM(NSInteger, ContactAttribute) {
 
 - (UITableViewCell *)cellforPhoneNumber {
     PhoneNumberCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"PhoneNumberCell"];
-    WeakSelf
+    
     cell.didChangeText= ^(NSString *text) {
         self.phoneNumber = text;
     };
