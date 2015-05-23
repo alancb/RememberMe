@@ -16,6 +16,8 @@
 
 - (void)awakeFromNib {
     // Initialization code
+    self.physicalAttributeText.delegate = self;
+
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

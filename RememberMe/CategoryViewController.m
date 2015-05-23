@@ -23,6 +23,10 @@
 
 }
 
+-(void)viewWillAppear:(BOOL)animated {
+    [self.categoryListTableView reloadData];
+}
+
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     Group *group = [CategoryController sharedInstance].groups [indexPath.row];
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"categoryCell"];

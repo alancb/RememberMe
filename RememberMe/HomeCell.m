@@ -9,7 +9,6 @@
 #import "HomeCell.h"
 
 @interface HomeCell () <UITextFieldDelegate>
-@property (weak, nonatomic) IBOutlet UITextField *homeText;
 
 @end
 
@@ -17,6 +16,8 @@
 
 - (void)awakeFromNib {
     // Initialization code
+    self.homeText.delegate = self;
+
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

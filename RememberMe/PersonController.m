@@ -29,22 +29,54 @@
                   interestingFact:(NSString *)interestingFact
                             email:(NSString *)email
                 physicalAttribute:(NSString *)physicalAttribute
-                            photo:(NSData *)photo
+                            photo:(NSString *)photo
                             major:(NSString *)major
-                      phoneNumber:(NSString *)phoneNumber home:(NSString *)home
-                         location:(NSString *)location {
+                      phoneNumber:(NSString *)phoneNumber
+                             home:(NSString *)home
+                         location:(NSString *)location
+                         lastName:(NSString *)lastName
+                            group:(Group *)group {
     
     Person *person = [NSEntityDescription insertNewObjectForEntityForName:@"Person" inManagedObjectContext:[Stack sharedInstance].managedObjectContext];
-    person.name = name;
-    person.birthplace = birthPlace;
-    person.birthdate = birthDate;
-    person.interestingFact = interestingFact;
-    person.email = email;
-    person.physicalAttribute = physicalAttribute;
-    person.photo = photo;
-    person.major = major;
-    person.phoneNumber = phoneNumber;
-    person.location = location;
+    
+    if (name) {
+        person.name = name;
+    }
+    if (lastName) {
+        person.lastName = lastName;
+    }
+    if (birthPlace) {
+        person.birthplace = birthPlace;
+    }
+    if (birthDate) {
+        person.birthdate = birthDate;
+    }
+    if (interestingFact) {
+        person.interestingFact = interestingFact;
+    }
+    if (email) {
+        person.email = email;
+    }
+    if (physicalAttribute) {
+        person.physicalAttribute = physicalAttribute;
+    }
+    if (photo) {
+        person.photo = photo;
+    }
+    if (major) {
+        person.major = major;
+    }
+    if (phoneNumber) {
+        person.phoneNumber = phoneNumber;
+    }
+    if (location) {
+        person.location = location;
+    }
+    if (group) {
+        person.group = group;
+    } else {
+        NSLog(@"No Group");
+    }
 
     [self saveToPersistentStorage];
     
@@ -54,7 +86,13 @@
 
 // Saves down to core data
 - (void) saveToPersistentStorage {
-    [[Stack sharedInstance].managedObjectContext save:nil];
+    
+    NSError *error;
+    [[Stack sharedInstance].managedObjectContext save:&error];
+    
+    if (error) {
+        NSLog(@"%@", error.localizedDescription);
+    }
 }
 
 //Fetches the data from Core Date

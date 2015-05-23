@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		2C50C79F1B05AC42000D6899 /* CategoryController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C50C79E1B05AC42000D6899 /* CategoryController.m */; };
-		2C7FCECE1B0C139800710C0E /* Group.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C7FCECD1B0C139800710C0E /* Group.m */; };
 		2C836B561AFD5C660066C6DE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C836B551AFD5C660066C6DE /* main.m */; };
 		2C836B591AFD5C660066C6DE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C836B581AFD5C660066C6DE /* AppDelegate.m */; };
 		2C836B5F1AFD5C660066C6DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C836B5D1AFD5C660066C6DE /* Main.storyboard */; };
@@ -16,14 +15,12 @@
 		2C836B641AFD5C660066C6DE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C836B621AFD5C660066C6DE /* LaunchScreen.xib */; };
 		2C836B701AFD5C660066C6DE /* RememberMeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C836B6F1AFD5C660066C6DE /* RememberMeTests.m */; };
 		2C836B7E1AFD5DC70066C6DE /* AddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C836B7D1AFD5DC70066C6DE /* AddViewController.m */; };
-		2C836B811AFD5DD40066C6DE /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C836B801AFD5DD40066C6DE /* ListViewController.m */; };
 		2C836B8A1AFD5EAB0066C6DE /* Stack.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C836B891AFD5EAB0066C6DE /* Stack.m */; };
 		2C836B8F1AFD60600066C6DE /* PersonController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C836B8E1AFD60600066C6DE /* PersonController.m */; };
 		2C836B911AFD607E0066C6DE /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C836B901AFD607E0066C6DE /* CoreData.framework */; };
 		2C836B941AFD61170066C6DE /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2C836B921AFD61170066C6DE /* Model.xcdatamodeld */; };
 		2CC686191B042C55005AC1D4 /* CategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC686181B042C55005AC1D4 /* CategoryViewController.m */; };
 		2CC6861C1B04381A005AC1D4 /* CategoryOptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC6861B1B04381A005AC1D4 /* CategoryOptionsViewController.m */; };
-		2CCB0D891B0D644500295D2F /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CCB0D881B0D644500295D2F /* Person.m */; };
 		2CCB0D8D1B0D7C9C00295D2F /* InterestingFactCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CCB0D8C1B0D7C9C00295D2F /* InterestingFactCell.m */; };
 		2CCB0D901B0D910300295D2F /* PersonNameCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CCB0D8F1B0D910300295D2F /* PersonNameCell.m */; };
 		2CCB0D931B0EA09E00295D2F /* PhotoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CCB0D921B0EA09E00295D2F /* PhotoCell.m */; };
@@ -35,6 +32,10 @@
 		2CCB0DA51B0EC64F00295D2F /* EmailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CCB0DA41B0EC64F00295D2F /* EmailCell.m */; };
 		2CCB0DA81B0EC66000295D2F /* PhoneNumberCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CCB0DA71B0EC66000295D2F /* PhoneNumberCell.m */; };
 		2CCB0DAB1B0EC69800295D2F /* PhysicalAttributeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CCB0DAA1B0EC69800295D2F /* PhysicalAttributeCell.m */; };
+		2CCB0DAE1B0EF15D00295D2F /* ListViewTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CCB0DAD1B0EF15D00295D2F /* ListViewTableViewController.m */; };
+		2CCB0DC61B10F34800295D2F /* LastNameCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CCB0DC51B10F34800295D2F /* LastNameCell.m */; };
+		2CCB0DC91B10F4F500295D2F /* Group.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CCB0DC81B10F4F500295D2F /* Group.m */; };
+		2CCB0DCC1B10F4F600295D2F /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CCB0DCB1B10F4F600295D2F /* Person.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,8 +51,6 @@
 /* Begin PBXFileReference section */
 		2C50C79D1B05AC42000D6899 /* CategoryController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryController.h; sourceTree = "<group>"; };
 		2C50C79E1B05AC42000D6899 /* CategoryController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryController.m; sourceTree = "<group>"; };
-		2C7FCECC1B0C139700710C0E /* Group.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Group.h; sourceTree = "<group>"; };
-		2C7FCECD1B0C139800710C0E /* Group.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Group.m; sourceTree = "<group>"; };
 		2C836B501AFD5C660066C6DE /* RememberMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RememberMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C836B541AFD5C660066C6DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2C836B551AFD5C660066C6DE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -65,8 +64,6 @@
 		2C836B6F1AFD5C660066C6DE /* RememberMeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RememberMeTests.m; sourceTree = "<group>"; };
 		2C836B7C1AFD5DC70066C6DE /* AddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddViewController.h; sourceTree = "<group>"; };
 		2C836B7D1AFD5DC70066C6DE /* AddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddViewController.m; sourceTree = "<group>"; };
-		2C836B7F1AFD5DD40066C6DE /* ListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListViewController.h; sourceTree = "<group>"; };
-		2C836B801AFD5DD40066C6DE /* ListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewController.m; sourceTree = "<group>"; };
 		2C836B881AFD5EAB0066C6DE /* Stack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Stack.h; sourceTree = "<group>"; };
 		2C836B891AFD5EAB0066C6DE /* Stack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Stack.m; sourceTree = "<group>"; };
 		2C836B8D1AFD60600066C6DE /* PersonController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonController.h; sourceTree = "<group>"; };
@@ -77,8 +74,6 @@
 		2CC686181B042C55005AC1D4 /* CategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryViewController.m; sourceTree = "<group>"; };
 		2CC6861A1B04381A005AC1D4 /* CategoryOptionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryOptionsViewController.h; sourceTree = "<group>"; };
 		2CC6861B1B04381A005AC1D4 /* CategoryOptionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryOptionsViewController.m; sourceTree = "<group>"; };
-		2CCB0D871B0D644500295D2F /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
-		2CCB0D881B0D644500295D2F /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
 		2CCB0D8B1B0D7C9C00295D2F /* InterestingFactCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InterestingFactCell.h; sourceTree = "<group>"; };
 		2CCB0D8C1B0D7C9C00295D2F /* InterestingFactCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InterestingFactCell.m; sourceTree = "<group>"; };
 		2CCB0D8E1B0D910300295D2F /* PersonNameCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonNameCell.h; sourceTree = "<group>"; };
@@ -101,6 +96,14 @@
 		2CCB0DA71B0EC66000295D2F /* PhoneNumberCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhoneNumberCell.m; sourceTree = "<group>"; };
 		2CCB0DA91B0EC69800295D2F /* PhysicalAttributeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhysicalAttributeCell.h; sourceTree = "<group>"; };
 		2CCB0DAA1B0EC69800295D2F /* PhysicalAttributeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhysicalAttributeCell.m; sourceTree = "<group>"; };
+		2CCB0DAC1B0EF15D00295D2F /* ListViewTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListViewTableViewController.h; sourceTree = "<group>"; };
+		2CCB0DAD1B0EF15D00295D2F /* ListViewTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewTableViewController.m; sourceTree = "<group>"; };
+		2CCB0DC41B10F34800295D2F /* LastNameCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LastNameCell.h; sourceTree = "<group>"; };
+		2CCB0DC51B10F34800295D2F /* LastNameCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LastNameCell.m; sourceTree = "<group>"; };
+		2CCB0DC71B10F4F500295D2F /* Group.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Group.h; sourceTree = "<group>"; };
+		2CCB0DC81B10F4F500295D2F /* Group.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Group.m; sourceTree = "<group>"; };
+		2CCB0DCA1B10F4F600295D2F /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		2CCB0DCB1B10F4F600295D2F /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,7 +155,6 @@
 				2C836B5D1AFD5C660066C6DE /* Main.storyboard */,
 				2C836B601AFD5C660066C6DE /* Images.xcassets */,
 				2C836B621AFD5C660066C6DE /* LaunchScreen.xib */,
-				2C836B921AFD61170066C6DE /* Model.xcdatamodeld */,
 				2C836B531AFD5C660066C6DE /* Supporting Files */,
 			);
 			path = RememberMe;
@@ -187,10 +189,11 @@
 		2C836B8B1AFD5EB80066C6DE /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				2CCB0D871B0D644500295D2F /* Person.h */,
-				2CCB0D881B0D644500295D2F /* Person.m */,
-				2C7FCECC1B0C139700710C0E /* Group.h */,
-				2C7FCECD1B0C139800710C0E /* Group.m */,
+				2CCB0DCA1B10F4F600295D2F /* Person.h */,
+				2CCB0DCB1B10F4F600295D2F /* Person.m */,
+				2CCB0DC71B10F4F500295D2F /* Group.h */,
+				2CCB0DC81B10F4F500295D2F /* Group.m */,
+				2C836B921AFD61170066C6DE /* Model.xcdatamodeld */,
 				2C836B881AFD5EAB0066C6DE /* Stack.h */,
 				2C836B891AFD5EAB0066C6DE /* Stack.m */,
 			);
@@ -203,8 +206,8 @@
 				2CCB0D8A1B0D7C8000295D2F /* Cells */,
 				2C836B7C1AFD5DC70066C6DE /* AddViewController.h */,
 				2C836B7D1AFD5DC70066C6DE /* AddViewController.m */,
-				2C836B7F1AFD5DD40066C6DE /* ListViewController.h */,
-				2C836B801AFD5DD40066C6DE /* ListViewController.m */,
+				2CCB0DAC1B0EF15D00295D2F /* ListViewTableViewController.h */,
+				2CCB0DAD1B0EF15D00295D2F /* ListViewTableViewController.m */,
 				2CC686171B042C55005AC1D4 /* CategoryViewController.h */,
 				2CC686181B042C55005AC1D4 /* CategoryViewController.m */,
 				2CC6861A1B04381A005AC1D4 /* CategoryOptionsViewController.h */,
@@ -229,6 +232,8 @@
 			children = (
 				2CCB0D8E1B0D910300295D2F /* PersonNameCell.h */,
 				2CCB0D8F1B0D910300295D2F /* PersonNameCell.m */,
+				2CCB0DC41B10F34800295D2F /* LastNameCell.h */,
+				2CCB0DC51B10F34800295D2F /* LastNameCell.m */,
 				2CCB0D8B1B0D7C9C00295D2F /* InterestingFactCell.h */,
 				2CCB0D8C1B0D7C9C00295D2F /* InterestingFactCell.m */,
 				2CCB0D911B0EA09E00295D2F /* PhotoCell.h */,
@@ -358,23 +363,24 @@
 				2CCB0DAB1B0EC69800295D2F /* PhysicalAttributeCell.m in Sources */,
 				2CCB0DA21B0EC20700295D2F /* LocationCell.m in Sources */,
 				2CCB0DA81B0EC66000295D2F /* PhoneNumberCell.m in Sources */,
-				2C7FCECE1B0C139800710C0E /* Group.m in Sources */,
 				2CCB0D901B0D910300295D2F /* PersonNameCell.m in Sources */,
-				2C836B811AFD5DD40066C6DE /* ListViewController.m in Sources */,
 				2CCB0D8D1B0D7C9C00295D2F /* InterestingFactCell.m in Sources */,
 				2CCB0D931B0EA09E00295D2F /* PhotoCell.m in Sources */,
 				2C50C79F1B05AC42000D6899 /* CategoryController.m in Sources */,
 				2C836B591AFD5C660066C6DE /* AppDelegate.m in Sources */,
-				2CCB0D891B0D644500295D2F /* Person.m in Sources */,
 				2CCB0DA51B0EC64F00295D2F /* EmailCell.m in Sources */,
+				2CCB0DAE1B0EF15D00295D2F /* ListViewTableViewController.m in Sources */,
 				2CC686191B042C55005AC1D4 /* CategoryViewController.m in Sources */,
 				2CC6861C1B04381A005AC1D4 /* CategoryOptionsViewController.m in Sources */,
 				2C836B941AFD61170066C6DE /* Model.xcdatamodeld in Sources */,
+				2CCB0DC91B10F4F500295D2F /* Group.m in Sources */,
 				2CCB0D9C1B0EBA1300295D2F /* BirthDateCell.m in Sources */,
 				2CCB0D991B0EA92900295D2F /* HomeCell.m in Sources */,
+				2CCB0DCC1B10F4F600295D2F /* Person.m in Sources */,
 				2C836B7E1AFD5DC70066C6DE /* AddViewController.m in Sources */,
 				2C836B561AFD5C660066C6DE /* main.m in Sources */,
 				2CCB0D9F1B0EBA1F00295D2F /* BirthPlaceCell.m in Sources */,
+				2CCB0DC61B10F34800295D2F /* LastNameCell.m in Sources */,
 				2CCB0D961B0EA7B500295D2F /* MajorCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

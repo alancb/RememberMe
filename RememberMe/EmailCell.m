@@ -16,6 +16,8 @@
 
 - (void)awakeFromNib {
     // Initialization code
+    self.emailText.delegate = self;
+
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

@@ -16,6 +16,9 @@
 
 - (void)awakeFromNib {
     // TODO: Move the if statement to somewhere that it will be called.
+
+}
+- (IBAction)dateChosen:(id)sender {
     if (self.didChangeDate) {
         self.didChangeDate(self.datePicker.date);
     }

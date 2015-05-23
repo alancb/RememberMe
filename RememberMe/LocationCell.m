@@ -16,6 +16,8 @@
 
 - (void)awakeFromNib {
     // Initialization code
+    self.locationText.delegate = self;
+
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

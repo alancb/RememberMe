@@ -17,6 +17,8 @@
 - (void)awakeFromNib {
     // Initialization code
     self.nameTextField.delegate = self;
+    
+    [self.nameTextField addTarget:self action:@selector(textChanged) forControlEvents:UIControlEventEditingChanged];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -25,12 +27,10 @@
     // Configure the view for the selected state
 }
 
--(BOOL)textFieldShouldReturn:(UITextField *)textField {
+- (void)textChanged {
     if (self.didChangeText) {
         self.didChangeText(self.nameTextField.text);
     }
-    return YES;
 }
-
 
 @end

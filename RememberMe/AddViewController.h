@@ -13,5 +13,6 @@
 @interface AddViewController : UITableViewController
 
 - (void) updateViewWithCategory:(Group *)template;
+- (void) updateWithPerson:(Person *)person andGroup:(Group *)group;
 
 @end

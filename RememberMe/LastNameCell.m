@@ -1,22 +1,18 @@
 //
-//  MajorCell.m
+//  LastNameCell.m
 //  RememberMe
 //
-//  Created by Alan Barth on 5/21/15.
+//  Created by Alan Barth on 5/23/15.
 //  Copyright (c) 2015 Alan Barth. All rights reserved.
 //
 
-#import "MajorCell.h"
+#import "LastNameCell.h"
 
-@interface MajorCell () <UITextFieldDelegate>
-
-@end
-
-@implementation MajorCell
+@implementation LastNameCell
 
 - (void)awakeFromNib {
     // Initialization code
-    self.majorText.delegate = self;
+    [self.lastNameText addTarget:self action:@selector(textChanged) forControlEvents:UIControlEventEditingChanged];
 
 }
 
@@ -25,12 +21,10 @@
 
     // Configure the view for the selected state
 }
-
--(BOOL)textFieldShouldReturn:(UITextField *)textField {
+- (void)textChanged {
     if (self.didChangeText) {
-        self.didChangeText(self.majorText.text);
+        self.didChangeText(self.lastNameText.text);
     }
-    return YES;
 }
 
 @end

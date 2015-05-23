@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "Person.h"
 #import "AddViewController.h"
-#import "ListViewController.h"
+#import "ListViewTableViewController.h"
 #import "Stack.h"
 
 
@@ -25,9 +25,12 @@
                   interestingFact:(NSString *)interestingFact
                             email:(NSString *)email
                 physicalAttribute:(NSString *)physicalAttribute
-                            photo:(NSData *)photo
+                            photo:(NSString *)photo
                             major:(NSString *)major
-                      phoneNumber:(NSString *)phoneNumber home:(NSString *)home
-                         location:(NSString *)location;
+                      phoneNumber:(NSString *)phoneNumber
+                             home:(NSString *)home
+                         location:(NSString *)location
+                         lastName:(NSString *)lastName
+                            group:(Group *)group;
 
 @end
