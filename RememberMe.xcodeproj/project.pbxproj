@@ -21,19 +21,10 @@
 		2C836B941AFD61170066C6DE /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2C836B921AFD61170066C6DE /* Model.xcdatamodeld */; };
 		2CC686191B042C55005AC1D4 /* CategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC686181B042C55005AC1D4 /* CategoryViewController.m */; };
 		2CC6861C1B04381A005AC1D4 /* CategoryOptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC6861B1B04381A005AC1D4 /* CategoryOptionsViewController.m */; };
-		2CCB0D8D1B0D7C9C00295D2F /* InterestingFactCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CCB0D8C1B0D7C9C00295D2F /* InterestingFactCell.m */; };
-		2CCB0D901B0D910300295D2F /* PersonNameCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CCB0D8F1B0D910300295D2F /* PersonNameCell.m */; };
+		2CCB0D901B0D910300295D2F /* TextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CCB0D8F1B0D910300295D2F /* TextFieldCell.m */; };
 		2CCB0D931B0EA09E00295D2F /* PhotoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CCB0D921B0EA09E00295D2F /* PhotoCell.m */; };
-		2CCB0D961B0EA7B500295D2F /* MajorCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CCB0D951B0EA7B500295D2F /* MajorCell.m */; };
-		2CCB0D991B0EA92900295D2F /* HomeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CCB0D981B0EA92900295D2F /* HomeCell.m */; };
 		2CCB0D9C1B0EBA1300295D2F /* BirthDateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CCB0D9B1B0EBA1300295D2F /* BirthDateCell.m */; };
-		2CCB0D9F1B0EBA1F00295D2F /* BirthPlaceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CCB0D9E1B0EBA1F00295D2F /* BirthPlaceCell.m */; };
-		2CCB0DA21B0EC20700295D2F /* LocationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CCB0DA11B0EC20700295D2F /* LocationCell.m */; };
-		2CCB0DA51B0EC64F00295D2F /* EmailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CCB0DA41B0EC64F00295D2F /* EmailCell.m */; };
-		2CCB0DA81B0EC66000295D2F /* PhoneNumberCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CCB0DA71B0EC66000295D2F /* PhoneNumberCell.m */; };
-		2CCB0DAB1B0EC69800295D2F /* PhysicalAttributeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CCB0DAA1B0EC69800295D2F /* PhysicalAttributeCell.m */; };
 		2CCB0DAE1B0EF15D00295D2F /* ListViewTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CCB0DAD1B0EF15D00295D2F /* ListViewTableViewController.m */; };
-		2CCB0DC61B10F34800295D2F /* LastNameCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CCB0DC51B10F34800295D2F /* LastNameCell.m */; };
 		2CCB0DC91B10F4F500295D2F /* Group.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CCB0DC81B10F4F500295D2F /* Group.m */; };
 		2CCB0DCC1B10F4F600295D2F /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CCB0DCB1B10F4F600295D2F /* Person.m */; };
 /* End PBXBuildFile section */
@@ -74,32 +65,14 @@
 		2CC686181B042C55005AC1D4 /* CategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryViewController.m; sourceTree = "<group>"; };
 		2CC6861A1B04381A005AC1D4 /* CategoryOptionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryOptionsViewController.h; sourceTree = "<group>"; };
 		2CC6861B1B04381A005AC1D4 /* CategoryOptionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryOptionsViewController.m; sourceTree = "<group>"; };
-		2CCB0D8B1B0D7C9C00295D2F /* InterestingFactCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InterestingFactCell.h; sourceTree = "<group>"; };
-		2CCB0D8C1B0D7C9C00295D2F /* InterestingFactCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InterestingFactCell.m; sourceTree = "<group>"; };
-		2CCB0D8E1B0D910300295D2F /* PersonNameCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonNameCell.h; sourceTree = "<group>"; };
-		2CCB0D8F1B0D910300295D2F /* PersonNameCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonNameCell.m; sourceTree = "<group>"; };
+		2CCB0D8E1B0D910300295D2F /* TextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextFieldCell.h; sourceTree = "<group>"; };
+		2CCB0D8F1B0D910300295D2F /* TextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextFieldCell.m; sourceTree = "<group>"; };
 		2CCB0D911B0EA09E00295D2F /* PhotoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoCell.h; sourceTree = "<group>"; };
 		2CCB0D921B0EA09E00295D2F /* PhotoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoCell.m; sourceTree = "<group>"; };
-		2CCB0D941B0EA7B500295D2F /* MajorCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MajorCell.h; sourceTree = "<group>"; };
-		2CCB0D951B0EA7B500295D2F /* MajorCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MajorCell.m; sourceTree = "<group>"; };
-		2CCB0D971B0EA92900295D2F /* HomeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeCell.h; sourceTree = "<group>"; };
-		2CCB0D981B0EA92900295D2F /* HomeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeCell.m; sourceTree = "<group>"; };
 		2CCB0D9A1B0EBA1300295D2F /* BirthDateCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BirthDateCell.h; sourceTree = "<group>"; };
 		2CCB0D9B1B0EBA1300295D2F /* BirthDateCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BirthDateCell.m; sourceTree = "<group>"; };
-		2CCB0D9D1B0EBA1F00295D2F /* BirthPlaceCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BirthPlaceCell.h; sourceTree = "<group>"; };
-		2CCB0D9E1B0EBA1F00295D2F /* BirthPlaceCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BirthPlaceCell.m; sourceTree = "<group>"; };
-		2CCB0DA01B0EC20700295D2F /* LocationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationCell.h; sourceTree = "<group>"; };
-		2CCB0DA11B0EC20700295D2F /* LocationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationCell.m; sourceTree = "<group>"; };
-		2CCB0DA31B0EC64F00295D2F /* EmailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmailCell.h; sourceTree = "<group>"; };
-		2CCB0DA41B0EC64F00295D2F /* EmailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmailCell.m; sourceTree = "<group>"; };
-		2CCB0DA61B0EC66000295D2F /* PhoneNumberCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhoneNumberCell.h; sourceTree = "<group>"; };
-		2CCB0DA71B0EC66000295D2F /* PhoneNumberCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhoneNumberCell.m; sourceTree = "<group>"; };
-		2CCB0DA91B0EC69800295D2F /* PhysicalAttributeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhysicalAttributeCell.h; sourceTree = "<group>"; };
-		2CCB0DAA1B0EC69800295D2F /* PhysicalAttributeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhysicalAttributeCell.m; sourceTree = "<group>"; };
 		2CCB0DAC1B0EF15D00295D2F /* ListViewTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListViewTableViewController.h; sourceTree = "<group>"; };
 		2CCB0DAD1B0EF15D00295D2F /* ListViewTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewTableViewController.m; sourceTree = "<group>"; };
-		2CCB0DC41B10F34800295D2F /* LastNameCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LastNameCell.h; sourceTree = "<group>"; };
-		2CCB0DC51B10F34800295D2F /* LastNameCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LastNameCell.m; sourceTree = "<group>"; };
 		2CCB0DC71B10F4F500295D2F /* Group.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Group.h; sourceTree = "<group>"; };
 		2CCB0DC81B10F4F500295D2F /* Group.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Group.m; sourceTree = "<group>"; };
 		2CCB0DCA1B10F4F600295D2F /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
@@ -230,30 +203,12 @@
 		2CCB0D8A1B0D7C8000295D2F /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				2CCB0D8E1B0D910300295D2F /* PersonNameCell.h */,
-				2CCB0D8F1B0D910300295D2F /* PersonNameCell.m */,
-				2CCB0DC41B10F34800295D2F /* LastNameCell.h */,
-				2CCB0DC51B10F34800295D2F /* LastNameCell.m */,
-				2CCB0D8B1B0D7C9C00295D2F /* InterestingFactCell.h */,
-				2CCB0D8C1B0D7C9C00295D2F /* InterestingFactCell.m */,
+				2CCB0D8E1B0D910300295D2F /* TextFieldCell.h */,
+				2CCB0D8F1B0D910300295D2F /* TextFieldCell.m */,
 				2CCB0D911B0EA09E00295D2F /* PhotoCell.h */,
 				2CCB0D921B0EA09E00295D2F /* PhotoCell.m */,
-				2CCB0D941B0EA7B500295D2F /* MajorCell.h */,
-				2CCB0D951B0EA7B500295D2F /* MajorCell.m */,
-				2CCB0D971B0EA92900295D2F /* HomeCell.h */,
-				2CCB0D981B0EA92900295D2F /* HomeCell.m */,
 				2CCB0D9A1B0EBA1300295D2F /* BirthDateCell.h */,
 				2CCB0D9B1B0EBA1300295D2F /* BirthDateCell.m */,
-				2CCB0D9D1B0EBA1F00295D2F /* BirthPlaceCell.h */,
-				2CCB0D9E1B0EBA1F00295D2F /* BirthPlaceCell.m */,
-				2CCB0DA01B0EC20700295D2F /* LocationCell.h */,
-				2CCB0DA11B0EC20700295D2F /* LocationCell.m */,
-				2CCB0DA31B0EC64F00295D2F /* EmailCell.h */,
-				2CCB0DA41B0EC64F00295D2F /* EmailCell.m */,
-				2CCB0DA61B0EC66000295D2F /* PhoneNumberCell.h */,
-				2CCB0DA71B0EC66000295D2F /* PhoneNumberCell.m */,
-				2CCB0DA91B0EC69800295D2F /* PhysicalAttributeCell.h */,
-				2CCB0DAA1B0EC69800295D2F /* PhysicalAttributeCell.m */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -360,28 +315,19 @@
 			files = (
 				2C836B8F1AFD60600066C6DE /* PersonController.m in Sources */,
 				2C836B8A1AFD5EAB0066C6DE /* Stack.m in Sources */,
-				2CCB0DAB1B0EC69800295D2F /* PhysicalAttributeCell.m in Sources */,
-				2CCB0DA21B0EC20700295D2F /* LocationCell.m in Sources */,
-				2CCB0DA81B0EC66000295D2F /* PhoneNumberCell.m in Sources */,
-				2CCB0D901B0D910300295D2F /* PersonNameCell.m in Sources */,
-				2CCB0D8D1B0D7C9C00295D2F /* InterestingFactCell.m in Sources */,
+				2CCB0D901B0D910300295D2F /* TextFieldCell.m in Sources */,
 				2CCB0D931B0EA09E00295D2F /* PhotoCell.m in Sources */,
 				2C50C79F1B05AC42000D6899 /* CategoryController.m in Sources */,
 				2C836B591AFD5C660066C6DE /* AppDelegate.m in Sources */,
-				2CCB0DA51B0EC64F00295D2F /* EmailCell.m in Sources */,
 				2CCB0DAE1B0EF15D00295D2F /* ListViewTableViewController.m in Sources */,
 				2CC686191B042C55005AC1D4 /* CategoryViewController.m in Sources */,
 				2CC6861C1B04381A005AC1D4 /* CategoryOptionsViewController.m in Sources */,
 				2C836B941AFD61170066C6DE /* Model.xcdatamodeld in Sources */,
 				2CCB0DC91B10F4F500295D2F /* Group.m in Sources */,
 				2CCB0D9C1B0EBA1300295D2F /* BirthDateCell.m in Sources */,
-				2CCB0D991B0EA92900295D2F /* HomeCell.m in Sources */,
 				2CCB0DCC1B10F4F600295D2F /* Person.m in Sources */,
 				2C836B7E1AFD5DC70066C6DE /* AddViewController.m in Sources */,
 				2C836B561AFD5C660066C6DE /* main.m in Sources */,
-				2CCB0D9F1B0EBA1F00295D2F /* BirthPlaceCell.m in Sources */,
-				2CCB0DC61B10F34800295D2F /* LastNameCell.m in Sources */,
-				2CCB0D961B0EA7B500295D2F /* MajorCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

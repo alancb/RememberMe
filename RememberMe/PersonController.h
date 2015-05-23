@@ -33,4 +33,6 @@
                          lastName:(NSString *)lastName
                             group:(Group *)group;
 
+- (void) saveToPersistentStorage;
+
 @end

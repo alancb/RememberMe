@@ -6,19 +6,19 @@
 //  Copyright (c) 2015 Alan Barth. All rights reserved.
 //
 
-#import "PersonNameCell.h"
+#import "TextFieldCell.h"
 
-@interface PersonNameCell () <UITextFieldDelegate>
+@interface TextFieldCell () <UITextFieldDelegate>
 
 @end
 
-@implementation PersonNameCell
+@implementation TextFieldCell
 
 - (void)awakeFromNib {
     // Initialization code
-    self.nameTextField.delegate = self;
+    self.textField.delegate = self;
     
-    [self.nameTextField addTarget:self action:@selector(textChanged) forControlEvents:UIControlEventEditingChanged];
+    [self.textField addTarget:self action:@selector(textChanged) forControlEvents:UIControlEventEditingChanged];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -29,7 +29,7 @@
 
 - (void)textChanged {
     if (self.didChangeText) {
-        self.didChangeText(self.nameTextField.text);
+        self.didChangeText(self.textField.text);
     }
 }
 

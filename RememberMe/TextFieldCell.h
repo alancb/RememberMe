@@ -1,16 +1,17 @@
 //
-//  LocationCell.h
+//  PersonNameCell.h
 //  RememberMe
 //
-//  Created by Alan Barth on 5/21/15.
+//  Created by Alan Barth on 5/20/15.
 //  Copyright (c) 2015 Alan Barth. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface LocationCell : UITableViewCell
+@interface TextFieldCell : UITableViewCell
 
-@property (weak, nonatomic) IBOutlet UITextField *locationText;
+@property (weak, nonatomic) IBOutlet UITextField *textField;
+
 @property (copy, nonatomic) void (^didChangeText)(NSString *text);
 
 @end
