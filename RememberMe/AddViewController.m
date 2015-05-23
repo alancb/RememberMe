@@ -296,6 +296,9 @@ typedef NS_ENUM(NSInteger, ContactAttribute) {
     cell.didChangeText = ^(NSString *text) {
         self.major = text;
     };
+    if (self.person.major) {
+        cell.majorText.text = self.person.major;
+    }
     return cell;
 }
 
@@ -304,6 +307,9 @@ typedef NS_ENUM(NSInteger, ContactAttribute) {
     cell.didChangeDate = ^(NSDate *date) {
         self.birthDate = date;
     };
+    if (self.person.birthdate) {
+        cell.datePicker.date = self.person.birthdate;
+    }
     return cell;
 }
 
@@ -312,6 +318,9 @@ typedef NS_ENUM(NSInteger, ContactAttribute) {
     cell.didChangeText = ^(NSString *text) {
         self.birthPlace = text;
     };
+    if (self.person.birthplace) {
+        cell.birthPlaceText.text = self.person.birthplace;
+    }
     return cell;
 }
 - (UITableViewCell *)cellForLocation {
@@ -319,6 +328,9 @@ typedef NS_ENUM(NSInteger, ContactAttribute) {
     cell.didChangeText = ^(NSString *text) {
         self.location = text;
     };
+    if (self.person.location) {
+        cell.locationText.text = self.person.location;
+    }
     return cell;
 }
 
@@ -327,6 +339,9 @@ typedef NS_ENUM(NSInteger, ContactAttribute) {
     cell.didChangeText = ^(NSString *text) {
         self.email = text;
     };
+    if (self.person.email) {
+        cell.emailText.text = self.person.email;
+    }
     return cell;
 }
 - (UITableViewCell *)cellForPhysicalAttribute {
@@ -334,6 +349,9 @@ typedef NS_ENUM(NSInteger, ContactAttribute) {
     cell.didChangeText = ^(NSString * text) {
         self.physicalAttribute = text;
     };
+    if (self.person.physicalAttribute) {
+        cell.physicalAttributeText.text = self.person.physicalAttribute;
+    }
     return cell;
 }
 
@@ -342,6 +360,9 @@ typedef NS_ENUM(NSInteger, ContactAttribute) {
     cell.didChangeText= ^(NSString *text) {
         self.phoneNumber = text;
     };
+    if (self.person.phoneNumber) {
+        cell.phoneNumberText.text = self.person.phoneNumber;
+    }
     return cell;
 }
 
