@@ -39,9 +39,6 @@
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="csL-ol-BJA"/>
                     </toolbarItems>
                     <navigationItem key="navigationItem" title="People List" id="ri2-wD-QGz"/>
-                    <connections>
-                        <outlet property="listViewTableView" destination="zBa-pg-nmX" id="A0M-Ak-4yM"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TdC-6z-KZH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

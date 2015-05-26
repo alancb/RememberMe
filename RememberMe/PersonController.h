@@ -34,5 +34,7 @@
                             group:(Group *)group;
 
 - (void) saveToPersistentStorage;
+-(void) deleteEntry:(Person *) person;
+
 
 @end

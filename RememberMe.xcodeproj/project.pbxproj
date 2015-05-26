@@ -27,6 +27,7 @@
 		2CCB0DAE1B0EF15D00295D2F /* ListViewTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CCB0DAD1B0EF15D00295D2F /* ListViewTableViewController.m */; };
 		2CCB0DC91B10F4F500295D2F /* Group.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CCB0DC81B10F4F500295D2F /* Group.m */; };
 		2CCB0DCC1B10F4F600295D2F /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CCB0DCB1B10F4F600295D2F /* Person.m */; };
+		2CCB0DCF1B11170C00295D2F /* ResultsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CCB0DCE1B11170C00295D2F /* ResultsTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,8 @@
 		2CCB0DC81B10F4F500295D2F /* Group.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Group.m; sourceTree = "<group>"; };
 		2CCB0DCA1B10F4F600295D2F /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
 		2CCB0DCB1B10F4F600295D2F /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
+		2CCB0DCD1B11170C00295D2F /* ResultsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultsTableViewController.h; sourceTree = "<group>"; };
+		2CCB0DCE1B11170C00295D2F /* ResultsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultsTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +182,8 @@
 				2CCB0D8A1B0D7C8000295D2F /* Cells */,
 				2C836B7C1AFD5DC70066C6DE /* AddViewController.h */,
 				2C836B7D1AFD5DC70066C6DE /* AddViewController.m */,
+				2CCB0DCD1B11170C00295D2F /* ResultsTableViewController.h */,
+				2CCB0DCE1B11170C00295D2F /* ResultsTableViewController.m */,
 				2CCB0DAC1B0EF15D00295D2F /* ListViewTableViewController.h */,
 				2CCB0DAD1B0EF15D00295D2F /* ListViewTableViewController.m */,
 				2CC686171B042C55005AC1D4 /* CategoryViewController.h */,
@@ -313,6 +318,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CCB0DCF1B11170C00295D2F /* ResultsTableViewController.m in Sources */,
 				2C836B8F1AFD60600066C6DE /* PersonController.m in Sources */,
 				2C836B8A1AFD5EAB0066C6DE /* Stack.m in Sources */,
 				2CCB0D901B0D910300295D2F /* TextFieldCell.m in Sources */,

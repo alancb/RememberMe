@@ -108,7 +108,6 @@ typedef NS_ENUM(NSInteger, ContactAttribute) {
 
 - (IBAction)saveButton:(id)sender {
     if (self.person) {
-        [[PersonController sharedInstance] saveToPersistentStorage];
         self.person.name = self.nameOfPerson;
         self.person.birthplace = self.birthPlace;
         self.person.birthdate = self.birthDate;
@@ -120,6 +119,7 @@ typedef NS_ENUM(NSInteger, ContactAttribute) {
         self.person.home = self.home;
         self.person.location = self.location;
         self.person.lastName = self.lastName;
+        [[PersonController sharedInstance] saveToPersistentStorage];
     } else {
     [[PersonController sharedInstance] createPersonWithName:self.nameOfPerson
                                                  birthPlace:self.birthPlace
