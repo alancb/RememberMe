@@ -5,34 +5,42 @@
         <attribute name="birthplace" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="email" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="groupName" attributeType="String" syncable="YES"/>
+        <attribute name="hobbies" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="home" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="interestingFact" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="lastName" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="location" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="major" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="notes" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="occupation" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="personName" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="phoneNumber" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="photo" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="physicalAttribute" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="when" optional="YES" attributeType="Boolean" syncable="YES"/>
         <relationship name="people" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Person" inverseName="group" inverseEntity="Person" syncable="YES"/>
     </entity>
     <entity name="Person" representedClassName="Person" syncable="YES">
         <attribute name="birthdate" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="birthplace" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="hobbies" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="home" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="interestingFact" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="location" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="major" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="notes" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="occupation" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="phoneNumber" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="photo" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="physicalAttribute" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="group" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Group" inverseName="people" inverseEntity="Group" syncable="YES"/>
+        <attribute name="when" optional="YES" attributeType="Date" syncable="YES"/>
+        <relationship name="group" optional="YES" maxCount="1" deletionRule="No Action" destinationEntity="Group" inverseName="people" inverseEntity="Group" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Group" positionX="-54" positionY="54" width="128" height="255"/>
-        <element name="Person" positionX="-63" positionY="-18" width="128" height="240"/>
+        <element name="Group" positionX="-54" positionY="54" width="128" height="315"/>
+        <element name="Person" positionX="-63" positionY="-18" width="128" height="300"/>
     </elements>
 </model>

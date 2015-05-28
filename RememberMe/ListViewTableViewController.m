@@ -131,7 +131,7 @@
 -(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         Person *person = [PersonController sharedInstance].people[indexPath.row];
-        [[PersonController sharedInstance] deleteEntry:person];
+        [[PersonController sharedInstance] deletePerson:person];
         [tableView reloadData];
     }
 }

@@ -2,7 +2,7 @@
 //  Group.h
 //  RememberMe
 //
-//  Created by Alan Barth on 5/23/15.
+//  Created by Alan Barth on 5/28/15.
 //  Copyright (c) 2015 Alan Barth. All rights reserved.
 //
 
@@ -19,13 +19,17 @@
 @property (nonatomic, retain) NSString * groupName;
 @property (nonatomic, retain) NSNumber * home;
 @property (nonatomic, retain) NSNumber * interestingFact;
+@property (nonatomic, retain) NSNumber * lastName;
 @property (nonatomic, retain) NSNumber * location;
 @property (nonatomic, retain) NSNumber * major;
 @property (nonatomic, retain) NSNumber * personName;
 @property (nonatomic, retain) NSNumber * phoneNumber;
 @property (nonatomic, retain) NSNumber * photo;
 @property (nonatomic, retain) NSNumber * physicalAttribute;
-@property (nonatomic, retain) NSNumber * lastName;
+@property (nonatomic, retain) NSNumber * occupation;
+@property (nonatomic, retain) NSNumber * hobbies;
+@property (nonatomic, retain) NSNumber * notes;
+@property (nonatomic, retain) NSNumber * when;
 @property (nonatomic, retain) NSSet *people;
 @end
 

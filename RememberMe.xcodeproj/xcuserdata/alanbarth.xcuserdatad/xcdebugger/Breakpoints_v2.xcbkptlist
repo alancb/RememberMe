@@ -25,13 +25,29 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "RememberMe/ListViewTableViewController.m"
-            timestampString = "454288797.969136"
+            filePath = "RememberMe/AddViewController.m"
+            timestampString = "454474393.876487"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "114"
-            endingLineNumber = "114"
-            landmarkName = "-tableView:cellForRowAtIndexPath:"
+            startingLineNumber = "118"
+            endingLineNumber = "118"
+            landmarkName = "-saveButton:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RememberMe/AddViewController.m"
+            timestampString = "454474569.174324"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "126"
+            endingLineNumber = "126"
+            landmarkName = "-saveButton:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

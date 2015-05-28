@@ -2,7 +2,7 @@
 //  Person.h
 //  RememberMe
 //
-//  Created by Alan Barth on 5/23/15.
+//  Created by Alan Barth on 5/28/15.
 //  Copyright (c) 2015 Alan Barth. All rights reserved.
 //
 
@@ -18,13 +18,17 @@
 @property (nonatomic, retain) NSString * email;
 @property (nonatomic, retain) NSString * home;
 @property (nonatomic, retain) NSString * interestingFact;
+@property (nonatomic, retain) NSString * lastName;
 @property (nonatomic, retain) NSString * location;
 @property (nonatomic, retain) NSString * major;
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSString * phoneNumber;
 @property (nonatomic, retain) NSString * photo;
 @property (nonatomic, retain) NSString * physicalAttribute;
-@property (nonatomic, retain) NSString * lastName;
+@property (nonatomic, retain) NSDate * when;
+@property (nonatomic, retain) NSString * occupation;
+@property (nonatomic, retain) NSString * hobbies;
+@property (nonatomic, retain) NSString * notes;
 @property (nonatomic, retain) Group *group;
 
 @end

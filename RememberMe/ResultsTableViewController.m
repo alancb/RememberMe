@@ -47,7 +47,13 @@
     }
     
     Person *person = self.filteredList[indexPath.row];
-    cell.textLabel.text = [NSString stringWithFormat:@"%@ %@", person.name, person.lastName];
+    if (person.name.length > 0 && person.lastName.length) {
+        cell.textLabel.text = [NSString stringWithFormat:@"%@ %@", person.name, person.lastName];
+    } else if (person.name.length > 0 && person.lastName.length == 0) {
+        cell.textLabel.text = [NSString stringWithFormat:@"%@",person.name];
+    } else if (person.name.length == 0 && person.lastName.length > 0) {
+        cell.textLabel.text = [NSString stringWithFormat:@"%@", person.lastName];
+    }
     
     return cell;
 }

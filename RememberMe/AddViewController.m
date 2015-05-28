@@ -62,18 +62,28 @@ typedef NS_ENUM(NSInteger, ContactAttribute) {
     
     [self.attributes addObject:@(ContactAttributeName)];
     [self.attributes addObject:@(ContactAttributeLastName)];
-    
-    if (self.template.interestingFact.boolValue) {
-        [self.attributes addObject:@(ContactAttributeInterestingFact)];
-    }
     if (self.template.photo.boolValue) {
         [self.attributes addObject:@(ContactAttributePhoto)];
     }
+    if (self.template.location.boolValue) {
+        [self.attributes addObject:@(ContactAttributeLocation)];
+    }
+    // Add When
+    // Add Ocupation
     if (self.template.major.boolValue) {
         [self.attributes addObject:@(ContactAttributeMajorText)];
     }
+    if (self.template.phoneNumber.boolValue) {
+        [self.attributes addObject:@(ContactAttributePhoneNumber)];
+    }
+    if (self.template.email.boolValue) {
+        [self.attributes addObject:@(ContactAttributeEmail)];
+    }
     if (self.template.home.boolValue) {
         [self.attributes addObject:@(ContactAttributeHome)];
+    }
+    if (self.template.physicalAttribute.boolValue) {
+        [self.attributes addObject:@(ContactAttributePhysicalAttribute)];
     }
     if (self.template.birthdate.boolValue) {
         [self.attributes addObject:@(ContactAttributeBirthDate)];
@@ -81,18 +91,11 @@ typedef NS_ENUM(NSInteger, ContactAttribute) {
     if (self.template.birthplace.boolValue) {
         [self.attributes addObject:@(ContactAttributeBirthPlace)];
     }
-    if (self.template.location.boolValue) {
-        [self.attributes addObject:@(ContactAttributeLocation)];
+    if (self.template.interestingFact.boolValue) {
+        [self.attributes addObject:@(ContactAttributeInterestingFact)];
     }
-    if (self.template.email.boolValue) {
-        [self.attributes addObject:@(ContactAttributeEmail)];
-    }
-    if (self.template.physicalAttribute.boolValue) {
-        [self.attributes addObject:@(ContactAttributePhysicalAttribute)];
-    }
-    if (self.template.phoneNumber.boolValue) {
-        [self.attributes addObject:@(ContactAttributePhoneNumber)];
-    }
+    // Add Hobbies
+    // Add Notes
 
 }
 
@@ -103,11 +106,15 @@ typedef NS_ENUM(NSInteger, ContactAttribute) {
 - (void) updateWithPerson:(Person *)person andGroup:(Group *)group{
     self.person = person;
     self.template = group;
-    
 }
 
 - (IBAction)saveButton:(id)sender {
     if (self.person) {
+//        if (self.person.name != self.nameOfPerson) {
+//            self.person.name = self.nameOfPerson;
+//        } else {
+//            self.nameOfPerson = self.person.name;
+//        }
         self.person.name = self.nameOfPerson;
         self.person.birthplace = self.birthPlace;
         self.person.birthdate = self.birthDate;

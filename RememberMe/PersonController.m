@@ -98,13 +98,15 @@
 //Fetches the data from Core Date
 - (NSArray *) people {
     NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Person"];
+    fetchRequest.sortDescriptors  = @[[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES]];
     NSArray *fetchObjects = [[Stack sharedInstance].managedObjectContext executeFetchRequest:fetchRequest error:nil];
     return fetchObjects;
 }
 
 // Deletes Person
--(void) deleteEntry:(Person *) person {
+-(void) deletePerson:(Person *) person {
     [person.managedObjectContext deleteObject:person];
+    [self saveToPersistentStorage];
 }
 
 @end

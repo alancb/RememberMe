@@ -25,9 +25,10 @@
 		2CCB0D931B0EA09E00295D2F /* PhotoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CCB0D921B0EA09E00295D2F /* PhotoCell.m */; };
 		2CCB0D9C1B0EBA1300295D2F /* BirthDateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CCB0D9B1B0EBA1300295D2F /* BirthDateCell.m */; };
 		2CCB0DAE1B0EF15D00295D2F /* ListViewTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CCB0DAD1B0EF15D00295D2F /* ListViewTableViewController.m */; };
-		2CCB0DC91B10F4F500295D2F /* Group.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CCB0DC81B10F4F500295D2F /* Group.m */; };
-		2CCB0DCC1B10F4F600295D2F /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CCB0DCB1B10F4F600295D2F /* Person.m */; };
 		2CCB0DCF1B11170C00295D2F /* ResultsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CCB0DCE1B11170C00295D2F /* ResultsTableViewController.m */; };
+		2CCB0DD51B14E75400295D2F /* AppearanceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CCB0DD41B14E75400295D2F /* AppearanceController.m */; };
+		2CCB0DF01B17DB2E00295D2F /* Group.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CCB0DEF1B17DB2E00295D2F /* Group.m */; };
+		2CCB0DF31B17DB2F00295D2F /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CCB0DF21B17DB2F00295D2F /* Person.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,12 +75,14 @@
 		2CCB0D9B1B0EBA1300295D2F /* BirthDateCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BirthDateCell.m; sourceTree = "<group>"; };
 		2CCB0DAC1B0EF15D00295D2F /* ListViewTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListViewTableViewController.h; sourceTree = "<group>"; };
 		2CCB0DAD1B0EF15D00295D2F /* ListViewTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewTableViewController.m; sourceTree = "<group>"; };
-		2CCB0DC71B10F4F500295D2F /* Group.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Group.h; sourceTree = "<group>"; };
-		2CCB0DC81B10F4F500295D2F /* Group.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Group.m; sourceTree = "<group>"; };
-		2CCB0DCA1B10F4F600295D2F /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
-		2CCB0DCB1B10F4F600295D2F /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
 		2CCB0DCD1B11170C00295D2F /* ResultsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultsTableViewController.h; sourceTree = "<group>"; };
 		2CCB0DCE1B11170C00295D2F /* ResultsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultsTableViewController.m; sourceTree = "<group>"; };
+		2CCB0DD31B14E75400295D2F /* AppearanceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppearanceController.h; sourceTree = "<group>"; };
+		2CCB0DD41B14E75400295D2F /* AppearanceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppearanceController.m; sourceTree = "<group>"; };
+		2CCB0DEE1B17DB2E00295D2F /* Group.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Group.h; sourceTree = "<group>"; };
+		2CCB0DEF1B17DB2E00295D2F /* Group.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Group.m; sourceTree = "<group>"; };
+		2CCB0DF11B17DB2F00295D2F /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		2CCB0DF21B17DB2F00295D2F /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +128,8 @@
 			children = (
 				2C836B571AFD5C660066C6DE /* AppDelegate.h */,
 				2C836B581AFD5C660066C6DE /* AppDelegate.m */,
+				2CCB0DD31B14E75400295D2F /* AppearanceController.h */,
+				2CCB0DD41B14E75400295D2F /* AppearanceController.m */,
 				2C836B8B1AFD5EB80066C6DE /* Models */,
 				2C836B8C1AFD5ED30066C6DE /* Views */,
 				2CC686161B030748005AC1D4 /* Controllers */,
@@ -165,10 +170,10 @@
 		2C836B8B1AFD5EB80066C6DE /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				2CCB0DCA1B10F4F600295D2F /* Person.h */,
-				2CCB0DCB1B10F4F600295D2F /* Person.m */,
-				2CCB0DC71B10F4F500295D2F /* Group.h */,
-				2CCB0DC81B10F4F500295D2F /* Group.m */,
+				2CCB0DF11B17DB2F00295D2F /* Person.h */,
+				2CCB0DF21B17DB2F00295D2F /* Person.m */,
+				2CCB0DEE1B17DB2E00295D2F /* Group.h */,
+				2CCB0DEF1B17DB2E00295D2F /* Group.m */,
 				2C836B921AFD61170066C6DE /* Model.xcdatamodeld */,
 				2C836B881AFD5EAB0066C6DE /* Stack.h */,
 				2C836B891AFD5EAB0066C6DE /* Stack.m */,
@@ -318,9 +323,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CCB0DF01B17DB2E00295D2F /* Group.m in Sources */,
 				2CCB0DCF1B11170C00295D2F /* ResultsTableViewController.m in Sources */,
 				2C836B8F1AFD60600066C6DE /* PersonController.m in Sources */,
 				2C836B8A1AFD5EAB0066C6DE /* Stack.m in Sources */,
+				2CCB0DF31B17DB2F00295D2F /* Person.m in Sources */,
 				2CCB0D901B0D910300295D2F /* TextFieldCell.m in Sources */,
 				2CCB0D931B0EA09E00295D2F /* PhotoCell.m in Sources */,
 				2C50C79F1B05AC42000D6899 /* CategoryController.m in Sources */,
@@ -329,10 +336,9 @@
 				2CC686191B042C55005AC1D4 /* CategoryViewController.m in Sources */,
 				2CC6861C1B04381A005AC1D4 /* CategoryOptionsViewController.m in Sources */,
 				2C836B941AFD61170066C6DE /* Model.xcdatamodeld in Sources */,
-				2CCB0DC91B10F4F500295D2F /* Group.m in Sources */,
 				2CCB0D9C1B0EBA1300295D2F /* BirthDateCell.m in Sources */,
-				2CCB0DCC1B10F4F600295D2F /* Person.m in Sources */,
 				2C836B7E1AFD5DC70066C6DE /* AddViewController.m in Sources */,
+				2CCB0DD51B14E75400295D2F /* AppearanceController.m in Sources */,
 				2C836B561AFD5C660066C6DE /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

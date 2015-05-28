@@ -2,7 +2,7 @@
 //  Person.m
 //  RememberMe
 //
-//  Created by Alan Barth on 5/23/15.
+//  Created by Alan Barth on 5/28/15.
 //  Copyright (c) 2015 Alan Barth. All rights reserved.
 //
 
@@ -17,13 +17,17 @@
 @dynamic email;
 @dynamic home;
 @dynamic interestingFact;
+@dynamic lastName;
 @dynamic location;
 @dynamic major;
 @dynamic name;
 @dynamic phoneNumber;
 @dynamic photo;
 @dynamic physicalAttribute;
-@dynamic lastName;
+@dynamic when;
+@dynamic occupation;
+@dynamic hobbies;
+@dynamic notes;
 @dynamic group;
 
 @end
