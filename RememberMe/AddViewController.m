@@ -33,7 +33,7 @@ typedef NS_ENUM(NSInteger, ContactAttribute) {
     ContactAttributeHobbies
 };
 
-@interface AddViewController () <UITableViewDataSource, UITableViewDelegate, UIImagePickerControllerDelegate, PhotoCellDelegate>
+@interface AddViewController () <UITableViewDataSource, UITableViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, PhotoCellDelegate>
 
 @property (strong, nonatomic) Group *template;
 @property (strong, nonatomic) Person *person;
@@ -310,6 +310,7 @@ typedef NS_ENUM(NSInteger, ContactAttribute) {
     cell.didChangeText = ^(NSString *text) {
         self.interestingFact = text;
     };
+ //   cell.textField.keyboardType = UIKeyboardTypeEmailAddress
     cell.textField.placeholder = @"What is an interesting fact about them?";
     cell.label.text = @"Interesting Fact:";
     if (self.person.interestingFact) {
@@ -351,6 +352,9 @@ typedef NS_ENUM(NSInteger, ContactAttribute) {
         self.photo = data;
     };
     [self documentsPathForFileName:self.person.photo];
+    UIImage *img = [UIImage imageWithData:self.photo];
+    [cell.imageView setImage:img];
+// cell.imageView = self.photo;
 // TODO: Set photo!
     return cell;
 }
@@ -364,6 +368,8 @@ typedef NS_ENUM(NSInteger, ContactAttribute) {
     if (self.person.home) {
         cell.textField.text = self.person.home;
         self.home = self.person.home;
+    } else {
+        cell.textField.text = nil;
     }
     return cell;
 }
@@ -442,6 +448,7 @@ typedef NS_ENUM(NSInteger, ContactAttribute) {
     };
     cell.textField.placeholder = @"What is their email?";
     cell.label.text = @"Email:";
+    cell.textField.keyboardType = UIKeyboardTypeEmailAddress;
     if (self.person.email) {
         cell.textField.text = self.person.email;
         self.email = self.person.email;
@@ -469,6 +476,7 @@ typedef NS_ENUM(NSInteger, ContactAttribute) {
     };
     cell.textField.placeholder = @"What is their phoneNumber?";
     cell.label.text = @"Phone Number:";
+    cell.textField.keyboardType = UIKeyboardTypeNumberPad;
     if (self.person.phoneNumber) {
         cell.textField.text = self.person.phoneNumber;
         self.phoneNumber = self.person.phoneNumber;
@@ -522,7 +530,7 @@ typedef NS_ENUM(NSInteger, ContactAttribute) {
 - (void)photoCellButtonTapped {
     UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
     
-    imagePicker.delegate.self;
+    imagePicker.delegate = self;
     
     UIAlertController *photoActionSheet = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
     

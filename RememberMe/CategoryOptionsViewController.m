@@ -39,8 +39,7 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-
-    self.birthPlaceSwitch.thumbTintColor = [UIColor blueColor];
+    
     if (self.nameField.text.length == 0) {
         self.doneButton.enabled = NO;
     }

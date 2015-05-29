@@ -31,7 +31,7 @@
                     </tableView>
                     <toolbarItems>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="Zok-cg-xKD"/>
-                        <barButtonItem systemItem="add" id="CmV-R2-QB9">
+                        <barButtonItem title="Add a new person" id="CmV-R2-QB9">
                             <connections>
                                 <segue destination="ogf-ZL-uLt" kind="show" identifier="toCategoryFromList" id="1UM-wW-Tsy"/>
                             </connections>
@@ -70,7 +70,7 @@
                     </tableView>
                     <toolbarItems>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="w0K-to-IgN"/>
-                        <barButtonItem systemItem="add" id="IwE-We-Ueg">
+                        <barButtonItem title="Add a new category" id="IwE-We-Ueg">
                             <connections>
                                 <segue destination="cXb-dE-7dE" kind="presentation" id="pry-yA-Ikc"/>
                             </connections>
@@ -156,7 +156,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="imageView" destination="Yz9-cw-Urj" id="rGW-6F-eMG"/>
+                                    <outlet property="imageView" destination="Yz9-cw-Urj" id="Fyw-Um-yNA"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BirthDateCell" rowHeight="184" id="OOX-k9-1bB" customClass="BirthDateCell">

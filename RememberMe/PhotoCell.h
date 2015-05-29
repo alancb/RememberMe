@@ -16,6 +16,7 @@
 @property (copy, nonatomic) void (^didChangePhoto)(NSData *data);
 
 @property (weak, nonatomic) id<PhotoCellDelegate> delegate;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
 @end
 
