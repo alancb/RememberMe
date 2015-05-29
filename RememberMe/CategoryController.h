@@ -28,7 +28,11 @@
                           major:(UISwitch *)majorSwitch
                     phoneNumber:(UISwitch *)phoneNumberSwitch
                            home:(UISwitch *)homeSwitch
-                       location:(UISwitch *)locationSwitch;
+                       location:(UISwitch *)locationSwitch
+                           when: (UISwitch *)whenSwitch
+                        hobbies: (UISwitch *)hobbiesSwitch
+                           note: (UISwitch *)notesSwitch
+                     occupation: (UISwitch *)occupationSwitch;
 -(void) deleteEntry:(Group *) group;
 
 @end

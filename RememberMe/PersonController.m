@@ -35,6 +35,10 @@
                              home:(NSString *)home
                          location:(NSString *)location
                          lastName:(NSString *)lastName
+                             when:(NSDate *)when
+                       occupation:(NSString *)occupation
+                          hobbies:(NSString *)hobbies
+                            notes:(NSString *)notes
                             group:(Group *)group {
     
     Person *person = [NSEntityDescription insertNewObjectForEntityForName:@"Person" inManagedObjectContext:[Stack sharedInstance].managedObjectContext];
@@ -71,6 +75,18 @@
     }
     if (location) {
         person.location = location;
+    }
+    if (when) {
+        person.when = when;
+    }
+    if (hobbies) {
+        person.hobbies = hobbies;
+    }
+    if (occupation) {
+        person.occupation = occupation;
+    }
+    if (notes) {
+        person.notes = notes;
     }
     if (group) {
         person.group = group;

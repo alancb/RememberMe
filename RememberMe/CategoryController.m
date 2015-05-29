@@ -33,7 +33,11 @@
                            major:(UISwitch *)majorSwitch
                      phoneNumber:(UISwitch *)phoneNumberSwitch
                             home:(UISwitch *)homeSwitch
-                        location:(UISwitch *)locationSwitch  {
+                        location:(UISwitch *)locationSwitch
+                            when:(UISwitch *)whenSwitch
+                         hobbies:(UISwitch *)hobbiesSwitch
+                            note:(UISwitch *)notesSwitch
+                      occupation:(UISwitch *)occupationSwitch {
     Group *group = [NSEntityDescription insertNewObjectForEntityForName:@"Group" inManagedObjectContext:[Stack sharedInstance].managedObjectContext];
     group.groupName = name;
     if (birthplaceSwitch.on) {
@@ -65,6 +69,18 @@
     }
     if (locationSwitch.on) {
         group.location = @1;
+    }
+    if (whenSwitch.on) {
+        group.when = @1;
+    }
+    if (occupationSwitch.on) {
+        group.occupation = @1;
+    }
+    if (notesSwitch.on) {
+        group.notes = @1;
+    }
+    if (hobbiesSwitch.on) {
+        group.hobbies = @1;
     }
     
     [self saveToPersistentStorage];

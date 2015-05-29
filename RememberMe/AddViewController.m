@@ -26,7 +26,11 @@ typedef NS_ENUM(NSInteger, ContactAttribute) {
     ContactAttributeEmail,
     ContactAttributePhoneNumber,
     ContactAttributePhysicalAttribute,
-    ContactAttributeLastName
+    ContactAttributeLastName,
+    ContactAttributeWhen,
+    ContactAttributeNotes,
+    ContactAttributeOccupation,
+    ContactAttributeHobbies
 };
 
 @interface AddViewController () <UITableViewDataSource, UITableViewDelegate, UIImagePickerControllerDelegate, PhotoCellDelegate>
@@ -50,6 +54,11 @@ typedef NS_ENUM(NSInteger, ContactAttribute) {
 @property (strong, nonatomic) NSString *email;
 @property (strong, nonatomic) NSString *phoneNumber;
 @property (strong, nonatomic) NSString *physicalAttribute;
+@property (strong, nonatomic) NSString *notes;
+@property (strong, nonatomic) NSDate *when;
+@property (strong, nonatomic) NSString *occupation;
+@property (strong, nonatomic) NSString *hobbies;
+
 
 @property (strong, nonatomic) NSString *photoPath;
 @end
@@ -68,8 +77,12 @@ typedef NS_ENUM(NSInteger, ContactAttribute) {
     if (self.template.location.boolValue) {
         [self.attributes addObject:@(ContactAttributeLocation)];
     }
-    // Add When
-    // Add Ocupation
+    if (self.template.when.boolValue) {
+        [self.attributes addObject:@(ContactAttributeWhen)];
+    }
+    if (self.template.occupation.boolValue) {
+        [self.attributes addObject:@(ContactAttributeOccupation)];
+    }
     if (self.template.major.boolValue) {
         [self.attributes addObject:@(ContactAttributeMajorText)];
     }
@@ -94,9 +107,12 @@ typedef NS_ENUM(NSInteger, ContactAttribute) {
     if (self.template.interestingFact.boolValue) {
         [self.attributes addObject:@(ContactAttributeInterestingFact)];
     }
-    // Add Hobbies
-    // Add Notes
-
+    if (self.template.hobbies.boolValue) {
+        [self.attributes addObject:@(ContactAttributeHobbies)];
+    }
+    if (self.template.notes.boolValue) {
+        [self.attributes addObject:@(ContactAttributeNotes)];
+    }
 }
 
 - (void) updateViewWithCategory:(Group *)template {
@@ -126,21 +142,29 @@ typedef NS_ENUM(NSInteger, ContactAttribute) {
         self.person.home = self.home;
         self.person.location = self.location;
         self.person.lastName = self.lastName;
+        self.person.hobbies = self.hobbies;
+        self.person.notes = self.notes;
+        self.person.when = self.when;
+        self.person.occupation = self.occupation;
         [[PersonController sharedInstance] saveToPersistentStorage];
     } else {
-    [[PersonController sharedInstance] createPersonWithName:self.nameOfPerson
-                                                 birthPlace:self.birthPlace
-                                                  birthDate:self.birthDate
-                                            interestingFact:self.interestingFact
-                                                      email:self.email
-                                          physicalAttribute:self.physicalAttribute
-                                                      photo:self.photoPath
-                                                      major:self.major
-                                                phoneNumber:self.phoneNumber
-                                                       home:self.home
-                                                   location:self.location
-                                                   lastName:self.lastName
-                                                      group:self.template];
+        [[PersonController sharedInstance] createPersonWithName:self.nameOfPerson
+                                                     birthPlace:self.birthPlace
+                                                      birthDate:self.birthDate
+                                                interestingFact:self.interestingFact
+                                                          email:self.email
+                                              physicalAttribute:self.physicalAttribute
+                                                          photo:self.photoPath
+                                                          major:self.major
+                                                    phoneNumber:self.phoneNumber
+                                                           home:self.home
+                                                       location:self.location
+                                                       lastName:self.lastName
+                                                           when:self.when
+                                                     occupation:self.occupation
+                                                        hobbies:self.hobbies
+                                                          notes:self.notes
+                                                          group:self.template];
     }
     
     [self.navigationController popToRootViewControllerAnimated:YES];
@@ -198,6 +222,22 @@ typedef NS_ENUM(NSInteger, ContactAttribute) {
             return [self cellForEmail];
             break;
             
+        case ContactAttributeWhen:
+            return [self cellForWhen];
+            break;
+            
+        case ContactAttributeNotes:
+            return [self cellForNotes];
+            break;
+            
+        case ContactAttributeOccupation:
+            return [self cellForOccupation];
+            break;
+            
+        case ContactAttributeHobbies:
+            return [self cellForHobbies];
+            break;
+            
         default: NSLog(@"didn't find one");
             return nil;
     }
@@ -210,40 +250,52 @@ typedef NS_ENUM(NSInteger, ContactAttribute) {
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     switch ([self.attributes[indexPath.row] integerValue]) {
         case ContactAttributeInterestingFact:
-            return 44;
+            return 60;
             break;
         case ContactAttributeName:
-            return 44;
+            return 60;
             break;
         case ContactAttributeMajorText:
-            return 44;
+            return 60;
             break;
         case ContactAttributePhoto:
             return 111;
             break;
         case ContactAttributeHome:
-            return 44;
+            return 60;
             break;
         case ContactAttributeBirthDate:
-            return 161;
+            return 224;
             break;
         case ContactAttributeBirthPlace:
-            return 44;
+            return 60;
             break;
         case ContactAttributeLocation:
-            return 44;
+            return 60;
             break;
         case ContactAttributeEmail:
-            return 44;
+            return 60;
             break;
         case ContactAttributePhoneNumber:
-            return 44;
+            return 60;
             break;
         case ContactAttributePhysicalAttribute:
-            return 44;
+            return 60;
             break;
         case ContactAttributeLastName:
-            return 44;
+            return 60;
+            break;
+        case ContactAttributeNotes:
+            return 60;
+            break;
+        case ContactAttributeOccupation:
+            return 60;
+            break;
+        case ContactAttributeHobbies:
+            return 60;
+            break;
+        case ContactAttributeWhen:
+            return 224;
             break;
         default:
             NSLog(@"didn't find one");
@@ -259,8 +311,10 @@ typedef NS_ENUM(NSInteger, ContactAttribute) {
         self.interestingFact = text;
     };
     cell.textField.placeholder = @"What is an interesting fact about them?";
+    cell.label.text = @"Interesting Fact:";
     if (self.person.interestingFact) {
         cell.textField.text = self.person.interestingFact;
+        self.interestingFact = self.person.interestingFact;
     }
     return cell;
 }
@@ -270,8 +324,10 @@ typedef NS_ENUM(NSInteger, ContactAttribute) {
         self.nameOfPerson = text;
     };
     cell.textField.placeholder = @"What is their first name?";
+    cell.label.text = @"First Name:";
     if (self.person.name) {
         cell.textField.text = self.person.name;
+        self.nameOfPerson = self.person.name;
     }
     return cell;
 }
@@ -281,8 +337,10 @@ typedef NS_ENUM(NSInteger, ContactAttribute) {
         self.lastName = text;
     };
     cell.textField.placeholder = @"What is their last name?";
+    cell.label.text = @"Last Name:";
     if (self.person.lastName) {
         cell.textField.text = self.person.lastName;
+        self.lastName = self.person.lastName;
     }
     return cell;
 }
@@ -302,8 +360,10 @@ typedef NS_ENUM(NSInteger, ContactAttribute) {
         self.home = text;
     };
     cell.textField.placeholder = @"Where do they live?";
+    cell.label.text = @"Current Residence:";
     if (self.person.home) {
         cell.textField.text = self.person.home;
+        self.home = self.person.home;
     }
     return cell;
 }
@@ -314,8 +374,10 @@ typedef NS_ENUM(NSInteger, ContactAttribute) {
         self.major = text;
     };
     cell.textField.placeholder = @"What is their major?";
+    cell.label.text = @"Major:";
     if (self.person.major) {
         cell.textField.text = self.person.major;
+        self.major = self.person.major;
     }
     return cell;
 }
@@ -325,8 +387,23 @@ typedef NS_ENUM(NSInteger, ContactAttribute) {
     cell.didChangeDate = ^(NSDate *date) {
         self.birthDate = date;
     };
+    cell.label.text = @"When were they born?";
     if (self.person.birthdate) {
         cell.datePicker.date = self.person.birthdate;
+        self.birthDate = self.person.birthdate;
+    }
+    return cell;
+}
+
+-(UITableViewCell *)cellForWhen {
+    BirthDateCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"BirthDateCell"];
+    cell.didChangeDate = ^(NSDate *date) {
+        self.when = date;
+    };
+    cell.label.text = @"When did you meet them?";
+    if (self.person.when) {
+        cell.datePicker.date = self.person.when;
+        self.when = self.person.when;
     }
     return cell;
 }
@@ -337,8 +414,10 @@ typedef NS_ENUM(NSInteger, ContactAttribute) {
         self.birthPlace = text;
     };
     cell.textField.placeholder = @"Where were they born?";
+    cell.label.text = @"Home Town:";
     if (self.person.birthplace) {
         cell.textField.text = self.person.birthplace;
+        self.birthPlace = self.person.birthplace;
     }
     return cell;
 }
@@ -348,8 +427,10 @@ typedef NS_ENUM(NSInteger, ContactAttribute) {
         self.location = text;
     };
     cell.textField.placeholder = @"Where did you meet them?";
+    cell.label.text = @"Meeting Location:";
     if (self.person.location) {
         cell.textField.text = self.person.location;
+        self.location = self.person.location;
     }
     return cell;
 }
@@ -360,8 +441,10 @@ typedef NS_ENUM(NSInteger, ContactAttribute) {
         self.email = text;
     };
     cell.textField.placeholder = @"What is their email?";
+    cell.label.text = @"Email:";
     if (self.person.email) {
         cell.textField.text = self.person.email;
+        self.email = self.person.email;
     }
     return cell;
 }
@@ -371,8 +454,10 @@ typedef NS_ENUM(NSInteger, ContactAttribute) {
         self.physicalAttribute = text;
     };
     cell.textField.placeholder = @"What is a physical attribute?";
+    cell.label.text = @"Physical Attribute:";
     if (self.person.physicalAttribute) {
         cell.textField.text = self.person.physicalAttribute;
+        self.physicalAttribute = self.person.physicalAttribute;
     }
     return cell;
 }
@@ -383,12 +468,55 @@ typedef NS_ENUM(NSInteger, ContactAttribute) {
         self.phoneNumber = text;
     };
     cell.textField.placeholder = @"What is their phoneNumber?";
+    cell.label.text = @"Phone Number:";
     if (self.person.phoneNumber) {
         cell.textField.text = self.person.phoneNumber;
+        self.phoneNumber = self.person.phoneNumber;
     }
     return cell;
 }
 
+- (UITableViewCell *)cellForNotes {
+    TextFieldCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"TextFieldCell"];
+    cell.didChangeText = ^(NSString *text) {
+        self.notes = text;
+    };
+    cell.textField.placeholder = @"Notes about the person";
+    cell.label.text = @"Notes:";
+    if (self.person.notes) {
+        cell.textField.text = self.person.notes;
+        self.notes = self.person.notes;
+    }
+    return cell;
+}
+
+-(UITableViewCell *) cellForOccupation {
+    TextFieldCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"TextFieldCell"];
+    cell.didChangeText = ^(NSString *text) {
+        self.occupation = text;
+    };
+    cell.textField.placeholder = @"What is their occupation?";
+    cell.label.text = @"Occupation:";
+    if (self.person.occupation) {
+        cell.textField.text = self.person.occupation;
+        self.occupation = self.person.occupation;
+    }
+    return cell;
+}
+
+-(UITableViewCell *)cellForHobbies {
+    TextFieldCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"TextFieldCell"];
+    cell.didChangeText = ^(NSString *text) {
+        self.hobbies = text;
+    };
+    cell.textField.placeholder = @"What is one of their hobbies?";
+    cell.label.text = @"Hobby";
+    if (self.person.hobbies) {
+        cell.textField.text = self.person.hobbies;
+        self.hobbies = self.person.hobbies;
+    }
+    return cell;
+}
 #pragma mark Photo Stuff
 
 - (void)photoCellButtonTapped {

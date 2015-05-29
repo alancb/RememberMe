@@ -13,6 +13,7 @@
 @property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
 
 @property (copy, nonatomic) void (^didChangeDate)(NSDate *date);
+@property (weak, nonatomic) IBOutlet UILabel *label;
 
 
 @end

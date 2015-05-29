@@ -31,7 +31,11 @@
                              home:(NSString *)home
                          location:(NSString *)location
                          lastName:(NSString *)lastName
-                            group:(Group *)group;
+                             when:(NSDate *)when
+                       occupation:(NSString *)occupation
+                          hobbies:(NSString *)hobbies
+                            notes:(NSString *)notes
+                            group:(Group *)group ;
 
 - (void) saveToPersistentStorage;
 -(void) deletePerson:(Person *) person;

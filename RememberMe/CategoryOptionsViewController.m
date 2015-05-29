@@ -19,6 +19,10 @@
 @property (weak, nonatomic) IBOutlet UISwitch *phoneNumberSwitch;
 @property (weak, nonatomic) IBOutlet UISwitch *homeSwitch;
 @property (weak, nonatomic) IBOutlet UISwitch *locationSwitch;
+@property (weak, nonatomic) IBOutlet UISwitch *hobbiesSwitch;
+@property (weak, nonatomic) IBOutlet UISwitch *whenSwitch;
+@property (weak, nonatomic) IBOutlet UISwitch *occupationSwitch;
+@property (weak, nonatomic) IBOutlet UISwitch *notesSwitch;
 @property (weak, nonatomic) IBOutlet UITextField *nameField;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *doneButton;
 
@@ -43,7 +47,21 @@
 }
 - (IBAction)doneButton:(id)sender {
     if (self.nameField.text && self.nameField.text.length > 0) {
-        [[CategoryController sharedInstance] createGroupWithName:self.nameField.text birthPlace:self.birthPlaceSwitch birthDate:self.birthDateSwitch interestingFact:self.interestingFactSwitch email:self.emailSwitch phsyicalAttribute:self.physicalAttributeSwitch photo:self.photoSwitch major:self.majorSwitch phoneNumber:self.phoneNumberSwitch home:self.homeSwitch location:self.locationSwitch];
+        [[CategoryController sharedInstance] createGroupWithName:self.nameField.text
+                                                      birthPlace:self.birthPlaceSwitch
+                                                       birthDate:self.birthDateSwitch
+                                                 interestingFact:self.interestingFactSwitch
+                                                           email:self.emailSwitch
+                                               phsyicalAttribute:self.physicalAttributeSwitch
+                                                           photo:self.photoSwitch
+                                                           major:self.majorSwitch
+                                                     phoneNumber:self.phoneNumberSwitch
+                                                            home:self.homeSwitch
+                                                        location:self.locationSwitch
+                                                            when:self.whenSwitch
+                                                         hobbies:self.hobbiesSwitch
+                                                            note:self.notesSwitch
+                                                      occupation:self.occupationSwitch];
         [self dismissViewControllerAnimated:YES completion:nil];
     } else {
         // TODO: Add popup to tell them to enter a name.
