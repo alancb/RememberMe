@@ -102,13 +102,13 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tu3-59-4xv" id="GOm-r1-Ud3">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="What is their first name?" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dWV-z7-gOy">
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dWV-z7-gOy">
                                             <rect key="frame" x="1" y="29" width="598" height="30"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Khc-eo-ovU">
-                                            <rect key="frame" x="1" y="8" width="42" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Khc-eo-ovU">
+                                            <rect key="frame" x="1" y="12" width="37" height="17"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
@@ -127,36 +127,63 @@
                                     <outlet property="textField" destination="dWV-z7-gOy" id="IKO-s7-QmW"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PhotoCell" rowHeight="111" id="Dt2-sR-Hbi" customClass="PhotoCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PhotoCell" rowHeight="120" id="Dt2-sR-Hbi" customClass="PhotoCell">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Dt2-sR-Hbi" id="cHd-YI-ChD">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oXE-4W-mVV">
-                                            <rect key="frame" x="263" y="8" width="74" height="30"/>
-                                            <state key="normal" title="Add Photo">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yF7-O8-VVs">
+                                            <rect key="frame" x="42" y="9" width="100" height="100"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="100" id="FZs-8Q-J3k"/>
+                                                <constraint firstAttribute="width" constant="100" id="Hbb-cN-T2Z"/>
+                                            </constraints>
+                                            <state key="normal" title="Button">
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                             <connections>
-                                                <action selector="addPhotoButton:" destination="Dt2-sR-Hbi" eventType="touchUpInside" id="P2b-Cr-5OD"/>
+                                                <action selector="buttonTapped:" destination="Dt2-sR-Hbi" eventType="touchUpInside" id="Cth-ru-WkH"/>
                                             </connections>
                                         </button>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yz9-cw-Urj">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="110"/>
-                                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                        </imageView>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="What is their first name?" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0v6-im-yAJ">
+                                            <rect key="frame" x="181" y="27" width="411" height="30"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="First Name:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NHK-gP-y9f">
+                                            <rect key="frame" x="191" y="8" width="89" height="21"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="What is their last name?" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="82o-pE-G2b">
+                                            <rect key="frame" x="181" y="79" width="411" height="30"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Last Name:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oHV-Jh-erL">
+                                            <rect key="frame" x="191" y="60" width="88" height="21"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="centerY" secondItem="oXE-4W-mVV" secondAttribute="centerY" constant="32" id="H3F-A8-Osi"/>
-                                        <constraint firstItem="Yz9-cw-Urj" firstAttribute="top" secondItem="cHd-YI-ChD" secondAttribute="topMargin" constant="-8" id="Vzr-Se-xSC"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="Yz9-cw-Urj" secondAttribute="trailing" constant="-8" id="ZDp-86-0TC"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="Yz9-cw-Urj" secondAttribute="bottom" constant="-8" id="it4-2o-mip"/>
-                                        <constraint firstItem="Yz9-cw-Urj" firstAttribute="leading" secondItem="cHd-YI-ChD" secondAttribute="leadingMargin" constant="-8" id="lYc-ni-VX8"/>
-                                        <constraint firstAttribute="centerX" secondItem="oXE-4W-mVV" secondAttribute="centerX" id="pLb-hP-Yxl"/>
+                                        <constraint firstItem="yF7-O8-VVs" firstAttribute="top" secondItem="cHd-YI-ChD" secondAttribute="topMargin" constant="1" id="0hL-dn-Pu2"/>
+                                        <constraint firstItem="0v6-im-yAJ" firstAttribute="leading" secondItem="yF7-O8-VVs" secondAttribute="trailing" constant="39" id="7Lk-Ko-M5A"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="0v6-im-yAJ" secondAttribute="trailing" id="MP6-ku-wgO"/>
+                                        <constraint firstItem="82o-pE-G2b" firstAttribute="top" secondItem="0v6-im-yAJ" secondAttribute="bottom" constant="22" id="XWl-dY-4GP"/>
+                                        <constraint firstItem="yF7-O8-VVs" firstAttribute="bottom" secondItem="82o-pE-G2b" secondAttribute="bottom" id="fVL-pl-wol"/>
+                                        <constraint firstItem="0v6-im-yAJ" firstAttribute="leading" secondItem="82o-pE-G2b" secondAttribute="leading" id="ixy-QU-R5f"/>
+                                        <constraint firstItem="yF7-O8-VVs" firstAttribute="leading" secondItem="cHd-YI-ChD" secondAttribute="leadingMargin" constant="34" id="lSW-Pw-Hxt"/>
+                                        <constraint firstItem="0v6-im-yAJ" firstAttribute="trailing" secondItem="82o-pE-G2b" secondAttribute="trailing" id="odv-xn-Kbj"/>
+                                        <constraint firstItem="0v6-im-yAJ" firstAttribute="top" secondItem="cHd-YI-ChD" secondAttribute="topMargin" constant="19" id="v5w-bt-rhl"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="imageView" destination="Yz9-cw-Urj" id="Fyw-Um-yNA"/>
+                                    <outlet property="button" destination="yF7-O8-VVs" id="OmL-j7-HYJ"/>
+                                    <outlet property="firstNameField" destination="0v6-im-yAJ" id="dqx-vZ-NeC"/>
+                                    <outlet property="lastNameField" destination="82o-pE-G2b" id="ucW-Bl-Ca9"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BirthDateCell" rowHeight="184" id="OOX-k9-1bB" customClass="BirthDateCell">
@@ -174,7 +201,7 @@
                                             </connections>
                                         </datePicker>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cqm-Fa-We3">
-                                            <rect key="frame" x="-5" y="8" width="610" height="22"/>
+                                            <rect key="frame" x="-5" y="0.0" width="610" height="22"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="22" id="60X-EG-en6"/>
                                             </constraints>
@@ -185,9 +212,9 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="0g7-77-Idr" firstAttribute="leading" secondItem="R02-TS-AgT" secondAttribute="leading" id="AJ5-YJ-WUQ"/>
-                                        <constraint firstItem="cqm-Fa-We3" firstAttribute="top" secondItem="R02-TS-AgT" secondAttribute="topMargin" id="AZT-nD-bx3"/>
+                                        <constraint firstItem="cqm-Fa-We3" firstAttribute="top" secondItem="R02-TS-AgT" secondAttribute="topMargin" constant="-8" id="AZT-nD-bx3"/>
                                         <constraint firstAttribute="trailing" secondItem="0g7-77-Idr" secondAttribute="trailing" id="NM0-P3-ksc"/>
-                                        <constraint firstItem="0g7-77-Idr" firstAttribute="top" secondItem="cqm-Fa-We3" secondAttribute="bottom" constant="-11" id="V5N-fh-5on"/>
+                                        <constraint firstItem="0g7-77-Idr" firstAttribute="top" secondItem="cqm-Fa-We3" secondAttribute="bottom" constant="-3" id="V5N-fh-5on"/>
                                         <constraint firstItem="cqm-Fa-We3" firstAttribute="leading" secondItem="R02-TS-AgT" secondAttribute="leadingMargin" constant="-13" id="XGZ-IR-keD"/>
                                         <constraint firstItem="cqm-Fa-We3" firstAttribute="centerX" secondItem="0g7-77-Idr" secondAttribute="centerX" id="uST-NT-ydv"/>
                                     </constraints>

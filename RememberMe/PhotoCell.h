@@ -13,10 +13,17 @@
 
 @interface PhotoCell : UITableViewCell
 
-@property (copy, nonatomic) void (^didChangePhoto)(NSData *data);
+@property (weak, nonatomic) IBOutlet UIButton *button;
+@property (weak, nonatomic) IBOutlet UITextField *firstNameField;
+@property (weak, nonatomic) IBOutlet UITextField *lastNameField;
 
 @property (weak, nonatomic) id<PhotoCellDelegate> delegate;
-@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+
+@property (copy, nonatomic) void (^didChangeText)(NSString *text);
+
+@property (copy, nonatomic) void (^didChangeLastNameText)(NSString *text);
+
+
 
 @end
 

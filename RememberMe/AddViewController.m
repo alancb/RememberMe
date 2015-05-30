@@ -13,6 +13,7 @@
 #import "BirthDateCell.h"
 
 #import "TextFieldCell.h"
+#import <QuartzCore/QuartzCore.h>
 
 typedef NS_ENUM(NSInteger, ContactAttribute) {
     ContactAttributeBirthDate = 0,
@@ -20,13 +21,13 @@ typedef NS_ENUM(NSInteger, ContactAttribute) {
     ContactAttributeLocation,
     ContactAttributeInterestingFact,
     ContactAttributeName,
-    ContactAttributePhoto,
+ //   ContactAttributePhoto,
     ContactAttributeHome,
     ContactAttributeBirthPlace,
     ContactAttributeEmail,
     ContactAttributePhoneNumber,
     ContactAttributePhysicalAttribute,
-    ContactAttributeLastName,
+  //  ContactAttributeLastName,
     ContactAttributeWhen,
     ContactAttributeNotes,
     ContactAttributeOccupation,
@@ -70,10 +71,8 @@ typedef NS_ENUM(NSInteger, ContactAttribute) {
     self.attributes = [NSMutableArray new];
     
     [self.attributes addObject:@(ContactAttributeName)];
-    [self.attributes addObject:@(ContactAttributeLastName)];
-    if (self.template.photo.boolValue) {
-        [self.attributes addObject:@(ContactAttributePhoto)];
-    }
+ //   [self.attributes addObject:@(ContactAttributeLastName)];
+ //   [self.attributes addObject:@(ContactAttributePhoto)];
     if (self.template.location.boolValue) {
         [self.attributes addObject:@(ContactAttributeLocation)];
     }
@@ -132,6 +131,7 @@ typedef NS_ENUM(NSInteger, ContactAttribute) {
 //            self.nameOfPerson = self.person.name;
 //        }
         self.person.name = self.nameOfPerson;
+        self.person.photo = self.photoPath;
         self.person.birthplace = self.birthPlace;
         self.person.birthdate = self.birthDate;
         self.person.interestingFact = self.interestingFact;
@@ -179,14 +179,6 @@ typedef NS_ENUM(NSInteger, ContactAttribute) {
             break;
             
         case ContactAttributeName:
-            return [self cellForPersonsName];
-            break;
-            
-        case ContactAttributeLastName:
-            return [self cellForLastName];
-            break;
-            
-        case ContactAttributePhoto:
             return [self cellForPhoto];
             break;
             
@@ -253,13 +245,10 @@ typedef NS_ENUM(NSInteger, ContactAttribute) {
             return 60;
             break;
         case ContactAttributeName:
-            return 60;
+            return 120;
             break;
         case ContactAttributeMajorText:
             return 60;
-            break;
-        case ContactAttributePhoto:
-            return 111;
             break;
         case ContactAttributeHome:
             return 60;
@@ -282,9 +271,6 @@ typedef NS_ENUM(NSInteger, ContactAttribute) {
         case ContactAttributePhysicalAttribute:
             return 60;
             break;
-        case ContactAttributeLastName:
-            return 60;
-            break;
         case ContactAttributeNotes:
             return 60;
             break;
@@ -305,59 +291,79 @@ typedef NS_ENUM(NSInteger, ContactAttribute) {
 
 #pragma mark Custom Cells
 
-- (UITableViewCell *)cellForInterestingFact {
-    TextFieldCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"TextFieldCell"];
-    cell.didChangeText = ^(NSString *text) {
-        self.interestingFact = text;
-    };
- //   cell.textField.keyboardType = UIKeyboardTypeEmailAddress
-    cell.textField.placeholder = @"What is an interesting fact about them?";
-    cell.label.text = @"Interesting Fact:";
-    if (self.person.interestingFact) {
-        cell.textField.text = self.person.interestingFact;
-        self.interestingFact = self.person.interestingFact;
-    }
-    return cell;
-}
-- (UITableViewCell *)cellForPersonsName {
-    TextFieldCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"TextFieldCell"];
-    cell.didChangeText = ^(NSString *text) {
-        self.nameOfPerson = text;
-    };
-    cell.textField.placeholder = @"What is their first name?";
-    cell.label.text = @"First Name:";
-    if (self.person.name) {
-        cell.textField.text = self.person.name;
-        self.nameOfPerson = self.person.name;
-    }
-    return cell;
-}
-- (UITableViewCell *)cellForLastName {
-    TextFieldCell *cell = [self.tableview dequeueReusableCellWithIdentifier:@"TextFieldCell"];
-    cell.didChangeText = ^(NSString *text) {
-        self.lastName = text;
-    };
-    cell.textField.placeholder = @"What is their last name?";
-    cell.label.text = @"Last Name:";
-    if (self.person.lastName) {
-        cell.textField.text = self.person.lastName;
-        self.lastName = self.person.lastName;
-    }
-    return cell;
-}
 - (UITableViewCell *)cellForPhoto {
     PhotoCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"PhotoCell"];
     cell.delegate = self;
-    cell.didChangePhoto = ^(NSData *data) {
-        self.photo = data;
+    
+    //First Name stuff
+    cell.didChangeText = ^(NSString *text) {
+        self.nameOfPerson = text;
     };
-    [self documentsPathForFileName:self.person.photo];
-    UIImage *img = [UIImage imageWithData:self.photo];
-    [cell.imageView setImage:img];
-// cell.imageView = self.photo;
-// TODO: Set photo!
+    if (self.person.name) {
+        cell.firstNameField.text = self.person.name;
+        self.nameOfPerson = self.person.name;
+    } else {
+        cell.firstNameField.text = nil;
+    }
+    
+    //Last Name stuff
+    cell.didChangeLastNameText = ^(NSString *text) {
+        self.lastName = text;
+    };
+    if (self.person.lastName) {
+        cell.lastNameField.text = self.person.lastName;
+        self.lastName = self.person.lastName;
+    } else {
+        cell.lastNameField.text = nil;
+    }
+    
+    //Photo Stuff
+    
+    UIImage *profileImage;
+    if (self.person.photo) {
+        profileImage = [UIImage imageWithContentsOfFile:[self documentsPathForFileName:self.person.photo]];
+        
+    } else {
+        [cell.button setTitle:@"Add Photo" forState:UIControlStateNormal];
+        profileImage = [UIImage imageWithData:self.photo];
+    }
+    
+    [cell.button setImage:profileImage forState:UIControlStateNormal];
+
+    [cell.button setBackgroundColor:[UIColor colorWithRed:137/255.0 green:144/255.0 blue:159/255.0 alpha:1]];
     return cell;
 }
+
+- (UITableViewCell *)cellForBirthDate {
+    BirthDateCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"BirthDateCell"];
+    cell.didChangeDate = ^(NSDate *date) {
+        self.birthDate = date;
+    };
+    cell.label.text = @"When were they born?";
+    if (self.person.birthdate) {
+        cell.datePicker.date = self.person.birthdate;
+        self.birthDate = self.person.birthdate;
+    } else {
+        cell.datePicker.date = [NSDate date];
+    }
+    return cell;
+}
+
+-(UITableViewCell *)cellForWhen {
+    BirthDateCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"BirthDateCell"];
+    cell.didChangeDate = ^(NSDate *date) {
+        self.when = date;
+    };
+    cell.label.text = @"When did you meet them?";
+    if (self.person.when) {
+        cell.datePicker.date = self.person.when;
+        self.when = self.person.when;
+    } else {
+        cell.datePicker.date = [NSDate date];
+    }
+    return cell;
+}
+
 - (UITableViewCell *)cellForHome {
     TextFieldCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"TextFieldCell"];
     cell.didChangeText = ^(NSString *text) {
@@ -374,6 +380,22 @@ typedef NS_ENUM(NSInteger, ContactAttribute) {
     return cell;
 }
 
+- (UITableViewCell *)cellForInterestingFact {
+    TextFieldCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"TextFieldCell"];
+    cell.didChangeText = ^(NSString *text) {
+        self.interestingFact = text;
+    };
+    cell.textField.placeholder = @"What is an interesting fact about them?";
+    cell.label.text = @"Interesting Fact:";
+    if (self.person.interestingFact) {
+        cell.textField.text = self.person.interestingFact;
+        self.interestingFact = self.person.interestingFact;
+    } else {
+        cell.textField.text = nil;
+    }
+    return cell;
+}
+
 - (UITableViewCell *)cellforMajor {
     TextFieldCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"TextFieldCell"];
     cell.didChangeText = ^(NSString *text) {
@@ -384,32 +406,8 @@ typedef NS_ENUM(NSInteger, ContactAttribute) {
     if (self.person.major) {
         cell.textField.text = self.person.major;
         self.major = self.person.major;
-    }
-    return cell;
-}
-
-- (UITableViewCell *)cellForBirthDate {
-    BirthDateCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"BirthDateCell"];
-    cell.didChangeDate = ^(NSDate *date) {
-        self.birthDate = date;
-    };
-    cell.label.text = @"When were they born?";
-    if (self.person.birthdate) {
-        cell.datePicker.date = self.person.birthdate;
-        self.birthDate = self.person.birthdate;
-    }
-    return cell;
-}
-
--(UITableViewCell *)cellForWhen {
-    BirthDateCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"BirthDateCell"];
-    cell.didChangeDate = ^(NSDate *date) {
-        self.when = date;
-    };
-    cell.label.text = @"When did you meet them?";
-    if (self.person.when) {
-        cell.datePicker.date = self.person.when;
-        self.when = self.person.when;
+    } else {
+        cell.textField.text = nil;
     }
     return cell;
 }
@@ -424,6 +422,8 @@ typedef NS_ENUM(NSInteger, ContactAttribute) {
     if (self.person.birthplace) {
         cell.textField.text = self.person.birthplace;
         self.birthPlace = self.person.birthplace;
+    } else {
+        cell.textField.text = nil;
     }
     return cell;
 }
@@ -437,6 +437,8 @@ typedef NS_ENUM(NSInteger, ContactAttribute) {
     if (self.person.location) {
         cell.textField.text = self.person.location;
         self.location = self.person.location;
+    } else {
+        cell.textField.text = nil;
     }
     return cell;
 }
@@ -452,6 +454,8 @@ typedef NS_ENUM(NSInteger, ContactAttribute) {
     if (self.person.email) {
         cell.textField.text = self.person.email;
         self.email = self.person.email;
+    } else {
+        cell.textField.text = nil;
     }
     return cell;
 }
@@ -465,6 +469,8 @@ typedef NS_ENUM(NSInteger, ContactAttribute) {
     if (self.person.physicalAttribute) {
         cell.textField.text = self.person.physicalAttribute;
         self.physicalAttribute = self.person.physicalAttribute;
+    } else {
+        cell.textField.text = nil;
     }
     return cell;
 }
@@ -480,6 +486,8 @@ typedef NS_ENUM(NSInteger, ContactAttribute) {
     if (self.person.phoneNumber) {
         cell.textField.text = self.person.phoneNumber;
         self.phoneNumber = self.person.phoneNumber;
+    } else {
+        cell.textField.text = nil;
     }
     return cell;
 }
@@ -494,6 +502,8 @@ typedef NS_ENUM(NSInteger, ContactAttribute) {
     if (self.person.notes) {
         cell.textField.text = self.person.notes;
         self.notes = self.person.notes;
+    } else {
+        cell.textField.text = nil;
     }
     return cell;
 }
@@ -508,6 +518,8 @@ typedef NS_ENUM(NSInteger, ContactAttribute) {
     if (self.person.occupation) {
         cell.textField.text = self.person.occupation;
         self.occupation = self.person.occupation;
+    } else {
+        cell.textField.text = nil;
     }
     return cell;
 }
@@ -522,6 +534,8 @@ typedef NS_ENUM(NSInteger, ContactAttribute) {
     if (self.person.hobbies) {
         cell.textField.text = self.person.hobbies;
         self.hobbies = self.person.hobbies;
+    } else {
+        cell.textField.text = nil;
     }
     return cell;
 }
@@ -583,15 +597,7 @@ typedef NS_ENUM(NSInteger, ContactAttribute) {
     NSString *name= [NSString stringWithFormat:@"%@", currentDate];
     self.photoPath = name;
     
-    
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *documentsPath = [paths objectAtIndex:0];
-    NSString *filePath = [documentsPath stringByAppendingString:name];
-    [self.photo writeToFile:filePath atomically:YES];
-    
-    
-    // make sure that the photo cell updates with the correct data (including the image)
-    
+    [self.photo writeToFile:[self documentsPathForFileName:name] atomically:YES];
 }
 
 - (NSString *)documentsPathForFileName:(NSString *)name
