@@ -30,8 +30,13 @@
   //  [[UIView appearance] setBackgroundColor:[UIColor greenColor]];
     [[UITextField appearance] setBackgroundColor:[UIColor blueColor]];
     
- //Why does this not effect cells that have something in them?
-    [[UITableView appearance] setBackgroundColor:[UIColor colorWithRed:78/255.0 green:161/255.0 blue:255/255.0 alpha:1]];
+
+//    [[UITableViewCell appearance] setBackgroundColor:[UIColor colorWithRed:78/255.0 green:161/255.0 blue:255/255.0 alpha:1]];
+//    [[UITableView appearance] setBackgroundColor:[UIColor colorWithRed:78/255.0 green:161/255.0 blue:255/255.0 alpha:1]];
+    [[UITableViewCell appearance] setBackgroundColor:[UIColor colorWithRed:155/255.0 green:189/255.0 blue:249/255.0 alpha:1]];
+    [[UITableView appearance] setBackgroundColor:[UIColor colorWithRed:155/255.0 green:189/255.0 blue:249/255.0 alpha:1]];
+
+
     
     [[UIDatePicker appearance] setBackgroundColor:[UIColor grayColor]];
 }
