@@ -19,6 +19,8 @@
 		2C836B8F1AFD60600066C6DE /* PersonController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C836B8E1AFD60600066C6DE /* PersonController.m */; };
 		2C836B911AFD607E0066C6DE /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C836B901AFD607E0066C6DE /* CoreData.framework */; };
 		2C836B941AFD61170066C6DE /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2C836B921AFD61170066C6DE /* Model.xcdatamodeld */; };
+		2CBC5D5C1B1E1F3400778D6F /* CateogoryNameCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CBC5D5B1B1E1F3400778D6F /* CateogoryNameCell.m */; };
+		2CBC5D5F1B1E1F6A00778D6F /* CategorySwitchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CBC5D5E1B1E1F6A00778D6F /* CategorySwitchCell.m */; };
 		2CC686191B042C55005AC1D4 /* CategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC686181B042C55005AC1D4 /* CategoryViewController.m */; };
 		2CC6861C1B04381A005AC1D4 /* CategoryOptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC6861B1B04381A005AC1D4 /* CategoryOptionsViewController.m */; };
 		2CCB0D901B0D910300295D2F /* TextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CCB0D8F1B0D910300295D2F /* TextFieldCell.m */; };
@@ -29,6 +31,12 @@
 		2CCB0DD51B14E75400295D2F /* AppearanceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CCB0DD41B14E75400295D2F /* AppearanceController.m */; };
 		2CCB0DF01B17DB2E00295D2F /* Group.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CCB0DEF1B17DB2E00295D2F /* Group.m */; };
 		2CCB0DF31B17DB2F00295D2F /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CCB0DF21B17DB2F00295D2F /* Person.m */; };
+		2CCB0E001B1A3A4100295D2F /* StoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CCB0DF81B1A3A4100295D2F /* StoreViewController.m */; };
+		2CCB0E011B1A3A4100295D2F /* StoreViewDatasource.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CCB0DFA1B1A3A4100295D2F /* StoreViewDatasource.m */; };
+		2CCB0E021B1A3A4100295D2F /* StorePurchaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CCB0DFC1B1A3A4100295D2F /* StorePurchaseController.m */; };
+		2CCB0E031B1A3A4100295D2F /* PurchasedDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CCB0DFE1B1A3A4100295D2F /* PurchasedDataController.m */; };
+		2CCB0E041B1A3A4100295D2F /* Products.json in Resources */ = {isa = PBXBuildFile; fileRef = 2CCB0DFF1B1A3A4100295D2F /* Products.json */; };
+		2CCB0E081B1A49B800295D2F /* UIColor+AppColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CCB0E071B1A49B800295D2F /* UIColor+AppColors.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +71,10 @@
 		2C836B8E1AFD60600066C6DE /* PersonController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonController.m; sourceTree = "<group>"; };
 		2C836B901AFD607E0066C6DE /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		2C836B931AFD61170066C6DE /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		2CBC5D5A1B1E1F3400778D6F /* CateogoryNameCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CateogoryNameCell.h; sourceTree = "<group>"; };
+		2CBC5D5B1B1E1F3400778D6F /* CateogoryNameCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CateogoryNameCell.m; sourceTree = "<group>"; };
+		2CBC5D5D1B1E1F6A00778D6F /* CategorySwitchCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategorySwitchCell.h; sourceTree = "<group>"; };
+		2CBC5D5E1B1E1F6A00778D6F /* CategorySwitchCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategorySwitchCell.m; sourceTree = "<group>"; };
 		2CC686171B042C55005AC1D4 /* CategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryViewController.h; sourceTree = "<group>"; };
 		2CC686181B042C55005AC1D4 /* CategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryViewController.m; sourceTree = "<group>"; };
 		2CC6861A1B04381A005AC1D4 /* CategoryOptionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryOptionsViewController.h; sourceTree = "<group>"; };
@@ -83,6 +95,17 @@
 		2CCB0DEF1B17DB2E00295D2F /* Group.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Group.m; sourceTree = "<group>"; };
 		2CCB0DF11B17DB2F00295D2F /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
 		2CCB0DF21B17DB2F00295D2F /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
+		2CCB0DF71B1A3A4100295D2F /* StoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StoreViewController.h; path = "../../../../Downloads/SimpleStore-solution/SimpleStore/StoreViewController.h"; sourceTree = "<group>"; };
+		2CCB0DF81B1A3A4100295D2F /* StoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StoreViewController.m; path = "../../../../Downloads/SimpleStore-solution/SimpleStore/StoreViewController.m"; sourceTree = "<group>"; };
+		2CCB0DF91B1A3A4100295D2F /* StoreViewDatasource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StoreViewDatasource.h; path = "../../../../Downloads/SimpleStore-solution/SimpleStore/StoreViewDatasource.h"; sourceTree = "<group>"; };
+		2CCB0DFA1B1A3A4100295D2F /* StoreViewDatasource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StoreViewDatasource.m; path = "../../../../Downloads/SimpleStore-solution/SimpleStore/StoreViewDatasource.m"; sourceTree = "<group>"; };
+		2CCB0DFB1B1A3A4100295D2F /* StorePurchaseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StorePurchaseController.h; path = "../../../../Downloads/SimpleStore-solution/SimpleStore/StorePurchaseController.h"; sourceTree = "<group>"; };
+		2CCB0DFC1B1A3A4100295D2F /* StorePurchaseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StorePurchaseController.m; path = "../../../../Downloads/SimpleStore-solution/SimpleStore/StorePurchaseController.m"; sourceTree = "<group>"; };
+		2CCB0DFD1B1A3A4100295D2F /* PurchasedDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PurchasedDataController.h; path = "../../../../Downloads/SimpleStore-solution/SimpleStore/PurchasedDataController.h"; sourceTree = "<group>"; };
+		2CCB0DFE1B1A3A4100295D2F /* PurchasedDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PurchasedDataController.m; path = "../../../../Downloads/SimpleStore-solution/SimpleStore/PurchasedDataController.m"; sourceTree = "<group>"; };
+		2CCB0DFF1B1A3A4100295D2F /* Products.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = Products.json; path = "../../../../Downloads/SimpleStore-solution/SimpleStore/Products.json"; sourceTree = "<group>"; };
+		2CCB0E061B1A49B800295D2F /* UIColor+AppColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+AppColors.h"; sourceTree = "<group>"; };
+		2CCB0E071B1A49B800295D2F /* UIColor+AppColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+AppColors.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,14 +151,14 @@
 			children = (
 				2C836B571AFD5C660066C6DE /* AppDelegate.h */,
 				2C836B581AFD5C660066C6DE /* AppDelegate.m */,
-				2CCB0DD31B14E75400295D2F /* AppearanceController.h */,
-				2CCB0DD41B14E75400295D2F /* AppearanceController.m */,
+				2CCB0E051B1A3CCE00295D2F /* Store */,
 				2C836B8B1AFD5EB80066C6DE /* Models */,
 				2C836B8C1AFD5ED30066C6DE /* Views */,
 				2CC686161B030748005AC1D4 /* Controllers */,
 				2C836B5D1AFD5C660066C6DE /* Main.storyboard */,
 				2C836B601AFD5C660066C6DE /* Images.xcassets */,
 				2C836B621AFD5C660066C6DE /* LaunchScreen.xib */,
+				2CCB0DFF1B1A3A4100295D2F /* Products.json */,
 				2C836B531AFD5C660066C6DE /* Supporting Files */,
 			);
 			path = RememberMe;
@@ -202,6 +225,10 @@
 		2CC686161B030748005AC1D4 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				2CCB0E061B1A49B800295D2F /* UIColor+AppColors.h */,
+				2CCB0E071B1A49B800295D2F /* UIColor+AppColors.m */,
+				2CCB0DD31B14E75400295D2F /* AppearanceController.h */,
+				2CCB0DD41B14E75400295D2F /* AppearanceController.m */,
 				2C836B8D1AFD60600066C6DE /* PersonController.h */,
 				2C836B8E1AFD60600066C6DE /* PersonController.m */,
 				2C50C79D1B05AC42000D6899 /* CategoryController.h */,
@@ -219,8 +246,27 @@
 				2CCB0D921B0EA09E00295D2F /* PhotoCell.m */,
 				2CCB0D9A1B0EBA1300295D2F /* BirthDateCell.h */,
 				2CCB0D9B1B0EBA1300295D2F /* BirthDateCell.m */,
+				2CBC5D5A1B1E1F3400778D6F /* CateogoryNameCell.h */,
+				2CBC5D5B1B1E1F3400778D6F /* CateogoryNameCell.m */,
+				2CBC5D5D1B1E1F6A00778D6F /* CategorySwitchCell.h */,
+				2CBC5D5E1B1E1F6A00778D6F /* CategorySwitchCell.m */,
 			);
 			name = Cells;
+			sourceTree = "<group>";
+		};
+		2CCB0E051B1A3CCE00295D2F /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				2CCB0DF71B1A3A4100295D2F /* StoreViewController.h */,
+				2CCB0DF81B1A3A4100295D2F /* StoreViewController.m */,
+				2CCB0DF91B1A3A4100295D2F /* StoreViewDatasource.h */,
+				2CCB0DFA1B1A3A4100295D2F /* StoreViewDatasource.m */,
+				2CCB0DFB1B1A3A4100295D2F /* StorePurchaseController.h */,
+				2CCB0DFC1B1A3A4100295D2F /* StorePurchaseController.m */,
+				2CCB0DFD1B1A3A4100295D2F /* PurchasedDataController.h */,
+				2CCB0DFE1B1A3A4100295D2F /* PurchasedDataController.m */,
+			);
+			name = Store;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -305,6 +351,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C836B5F1AFD5C660066C6DE /* Main.storyboard in Resources */,
+				2CCB0E041B1A3A4100295D2F /* Products.json in Resources */,
 				2C836B641AFD5C660066C6DE /* LaunchScreen.xib in Resources */,
 				2C836B611AFD5C660066C6DE /* Images.xcassets in Resources */,
 			);
@@ -331,16 +378,23 @@
 				2CCB0DF31B17DB2F00295D2F /* Person.m in Sources */,
 				2CCB0D901B0D910300295D2F /* TextFieldCell.m in Sources */,
 				2CCB0D931B0EA09E00295D2F /* PhotoCell.m in Sources */,
+				2CCB0E011B1A3A4100295D2F /* StoreViewDatasource.m in Sources */,
 				2C50C79F1B05AC42000D6899 /* CategoryController.m in Sources */,
 				2C836B591AFD5C660066C6DE /* AppDelegate.m in Sources */,
+				2CCB0E001B1A3A4100295D2F /* StoreViewController.m in Sources */,
 				2CCB0DAE1B0EF15D00295D2F /* ListViewTableViewController.m in Sources */,
 				2CC686191B042C55005AC1D4 /* CategoryViewController.m in Sources */,
 				2CC6861C1B04381A005AC1D4 /* CategoryOptionsViewController.m in Sources */,
+				2CCB0E021B1A3A4100295D2F /* StorePurchaseController.m in Sources */,
 				2C836B941AFD61170066C6DE /* Model.xcdatamodeld in Sources */,
 				2CCB0D9C1B0EBA1300295D2F /* BirthDateCell.m in Sources */,
 				2C836B7E1AFD5DC70066C6DE /* AddViewController.m in Sources */,
+				2CBC5D5C1B1E1F3400778D6F /* CateogoryNameCell.m in Sources */,
 				2CCB0DD51B14E75400295D2F /* AppearanceController.m in Sources */,
+				2CCB0E081B1A49B800295D2F /* UIColor+AppColors.m in Sources */,
 				2C836B561AFD5C660066C6DE /* main.m in Sources */,
+				2CCB0E031B1A3A4100295D2F /* PurchasedDataController.m in Sources */,
+				2CBC5D5F1B1E1F6A00778D6F /* CategorySwitchCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

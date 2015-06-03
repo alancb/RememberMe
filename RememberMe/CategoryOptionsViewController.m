@@ -8,23 +8,27 @@
 
 #import "CategoryOptionsViewController.h"
 
-@interface CategoryOptionsViewController () <UITextFieldDelegate>
-@property (weak, nonatomic) IBOutlet UISwitch *birthPlaceSwitch;
-@property (weak, nonatomic) IBOutlet UISwitch *birthDateSwitch;
-@property (weak, nonatomic) IBOutlet UISwitch *interestingFactSwitch;
-@property (weak, nonatomic) IBOutlet UISwitch *emailSwitch;
-@property (weak, nonatomic) IBOutlet UISwitch *physicalAttributeSwitch;
-@property (weak, nonatomic) IBOutlet UISwitch *photoSwitch;
-@property (weak, nonatomic) IBOutlet UISwitch *majorSwitch;
-@property (weak, nonatomic) IBOutlet UISwitch *phoneNumberSwitch;
-@property (weak, nonatomic) IBOutlet UISwitch *homeSwitch;
-@property (weak, nonatomic) IBOutlet UISwitch *locationSwitch;
-@property (weak, nonatomic) IBOutlet UISwitch *hobbiesSwitch;
-@property (weak, nonatomic) IBOutlet UISwitch *whenSwitch;
-@property (weak, nonatomic) IBOutlet UISwitch *occupationSwitch;
-@property (weak, nonatomic) IBOutlet UISwitch *notesSwitch;
-@property (weak, nonatomic) IBOutlet UITextField *nameField;
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *doneButton;
+
+
+@interface CategoryOptionsViewController () <UITextFieldDelegate, UITableViewDataSource, SwitchCellDelegate>
+
+
+@property (strong, nonatomic) UISwitch* birthPlaceSwitch;
+@property (strong, nonatomic) UISwitch* birthDateSwitch;
+@property (strong, nonatomic) UISwitch* interestingFactSwitch;
+@property (strong, nonatomic) UISwitch* emailSwitch;
+@property (strong, nonatomic) UISwitch* physicalAttributeSwitch;
+@property (strong, nonatomic) UISwitch* majorSwitch;
+@property (strong, nonatomic) UISwitch* phoneNumberSwitch;
+@property (strong, nonatomic) UISwitch* homeSwitch;
+@property (strong, nonatomic) UISwitch* locationSwitch;
+@property (strong, nonatomic) UISwitch* whenSwitch;
+@property (strong, nonatomic) UISwitch* hobbiesSwitch;
+@property (strong, nonatomic) UISwitch* notesSwitch;
+@property (strong, nonatomic) UISwitch* occupationSwitch;
+@property (strong, nonatomic) NSString *nameField;
+
+
 
 
 @end
@@ -40,19 +44,22 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    if (self.nameField.text.length == 0) {
-        self.doneButton.enabled = NO;
-    }
+//    if (self.nameField.text.length == 0) {
+//        self.saveButton.enabled = NO;
+//    }
 }
-- (IBAction)doneButton:(id)sender {
-    if (self.nameField.text && self.nameField.text.length > 0) {
-        [[CategoryController sharedInstance] createGroupWithName:self.nameField.text
+- (IBAction)cancelButton:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+
+}
+- (IBAction)saveButton:(id)sender {
+  //  if (self.nameField.text && self.nameField.text.length > 0) {
+        [[CategoryController sharedInstance] createGroupWithName:self.nameField
                                                       birthPlace:self.birthPlaceSwitch
                                                        birthDate:self.birthDateSwitch
                                                  interestingFact:self.interestingFactSwitch
                                                            email:self.emailSwitch
                                                phsyicalAttribute:self.physicalAttributeSwitch
-                                                           photo:self.photoSwitch
                                                            major:self.majorSwitch
                                                      phoneNumber:self.phoneNumberSwitch
                                                             home:self.homeSwitch
@@ -62,12 +69,10 @@
                                                             note:self.notesSwitch
                                                       occupation:self.occupationSwitch];
         [self dismissViewControllerAnimated:YES completion:nil];
-    } else {
-        // TODO: Add popup to tell them to enter a name.
-    }
-}
-- (IBAction)cancelButton:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
+//    }
+//else {
+//        // TODO: Add popup to tell them to enter a name.
+//    }
 }
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField {
@@ -75,88 +80,153 @@
     return YES;
 }
 
-- (void)textFieldDidEndEditing:(UITextField *)textField {
-    if (self.nameField.text.length >0 ) {
-        self.doneButton.enabled = YES;
-    } else {
-        self.doneButton.enabled = NO;
-    }
-}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-//#pragma mark - Table view data source
-//-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-//    UITableViewCell *cell;
-//    
-//    if (indexPath.section == 0) {
-//        cell = [tableView dequeueReusableCellWithIdentifier:@"categoryOptionsCell"];
-//    }
-//    else if (indexPath.section == 1)
-//    {
-//        cell = [tableView dequeueReusableCellWithIdentifier:@"categoryOptionsCell2"];
-//    }
-//    return cell;
-//}
-//
-//- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-//    return 1;
-//}
-
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    if (section == 0) {
+        return 1;
+    } else {
+        return 13;
+    }
     
-    // Configure the cell...
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    if (section == 0) {
+        return @"What is the name of the Category?";
+    }
+    if (section == 1) {
+        return @"Select what attributes for the Category:";
+    }
+    else {
+        return @"";
+    }
+    
+    
+}
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 2;
+}
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if (indexPath.section == 0) {
+        return [self cellForCategoryName];
+    } else {
+        return [self cellForSwitch:indexPath];
+    }
+
+}
+
+- (UITableViewCell *) cellForCategoryName {
+    CateogoryNameCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"nameCell"];
     
     return cell;
 }
-*/
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+- (UITableViewCell *) cellForSwitch:(NSIndexPath *)indexPath {
+    CategorySwitchCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"switchCell"];
+    cell.delegate = self;
+    switch (indexPath.row) {
+        case 0:
+            cell.Label.text = @"Where you met them";
+            break;
+        case 1:
+            cell.Label.text = @"When you met them";
+            break;
+        case 2:
+            cell.Label.text = @"Their Occupation";
+            break;
+        case 3:
+            cell.Label.text = @"Their Major";
+            break;
+        case 4:
+            cell.Label.text = @"Their Phone Number";
+            break;
+        case 5:
+            cell.Label.text = @"Their Email";
+            break;
+        case 6:
+            cell.Label.text = @"Where they live";
+            break;
+        case 7:
+            cell.Label.text = @"A Unique Characteristic";
+            break;
+        case 8:
+            cell.Label.text = @"Their BirthDate";
+            break;
+        case 9:
+            cell.Label.text = @"Where they were born";
+            break;
+        case 10:
+            cell.Label.text = @"An Interesting Fact";
+            break;
+        case 11:
+            cell.Label.text = @"Their Hobbies";
+            break;
+        case 12:
+            cell.Label.text = @"Notes";
+            break;
+            
+        default:
+            break;
+    }
+    return cell;
 }
-*/
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+- (void)toggle:(UISwitch *)toggle toggledFromSender:(CategorySwitchCell *)sender {
+    NSIndexPath *path = [self.tableView indexPathForCell:sender];
+    switch (path.row) {
+        case 0:
+            self.locationSwitch = toggle;
+            break;
+        case 1:
+            self.whenSwitch = toggle;
+            break;
+        case 2:
+            self.occupationSwitch = toggle;
+            break;
+        case 3:
+            self.majorSwitch = toggle;
+            break;
+        case 4:
+            self.phoneNumberSwitch = toggle;
+            break;
+        case 5:
+            self.emailSwitch = toggle;
+            break;
+        case 6:
+            self.homeSwitch = toggle;
+            break;
+        case 7:
+            self.physicalAttributeSwitch = toggle;
+            break;
+        case 8:
+            self.birthDateSwitch = toggle;
+            break;
+        case 9:
+            self.birthPlaceSwitch = toggle;
+            break;
+        case 10:
+            self.interestingFactSwitch = toggle;
+            break;
+        case 11:
+            self.hobbiesSwitch = toggle;
+            break;
+        case 12:
+            self.notesSwitch = toggle;
+            break;
+
+        default:
+            break;
+    }
+    
 }
-*/
 
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
 
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

@@ -29,7 +29,6 @@
                  interestingFact:(UISwitch *)interestingFactSwitch
                            email:(UISwitch *)emailSwitch
                phsyicalAttribute:(UISwitch *)physicalAttributeSwitch
-                           photo:(UISwitch *)photoSwitch
                            major:(UISwitch *)majorSwitch
                      phoneNumber:(UISwitch *)phoneNumberSwitch
                             home:(UISwitch *)homeSwitch
@@ -54,9 +53,6 @@
     }
     if (physicalAttributeSwitch.on) {
         group.physicalAttribute = @1;
-    }
-    if (photoSwitch.on) {
-        group.photo = @1;
     }
     if (majorSwitch.on) {
         group.major = @1;

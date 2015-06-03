@@ -8,9 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "CategoryController.h"
+#import "CategorySwitchCell.h"
+#import "CateogoryNameCell.h"
 
 @interface CategoryOptionsViewController : UITableViewController
 
 @property (strong, nonatomic) Group *group;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *saveButton;
+
 
 @end

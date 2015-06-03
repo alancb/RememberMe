@@ -51,6 +51,7 @@
 }
 
 -(void)viewWillAppear:(BOOL)animated {
+    self.title = @"People List";
     [self.tableView reloadData];
 }
 
@@ -148,6 +149,9 @@
         Person *person = [PersonController sharedInstance].people[indexPath.row];
         [addView updateWithPerson:person andGroup:person.group];
     }
+    
+    self.title = @"";
+
 }
 
 

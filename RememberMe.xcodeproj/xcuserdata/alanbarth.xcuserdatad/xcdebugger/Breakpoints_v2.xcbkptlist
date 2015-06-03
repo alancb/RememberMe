@@ -41,13 +41,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "RememberMe/AddViewController.m"
-            timestampString = "454695221.083421"
+            filePath = "RememberMe/CategoryOptionsViewController.m"
+            timestampString = "454998121.534042"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "324"
-            endingLineNumber = "324"
-            landmarkName = "-cellForPhoto"
+            startingLineNumber = "183"
+            endingLineNumber = "183"
+            landmarkName = "-toggle:toggledFromSender:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

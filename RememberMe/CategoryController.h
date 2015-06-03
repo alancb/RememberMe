@@ -24,7 +24,6 @@
                 interestingFact:(UISwitch *)interestingFactSwitch
                           email:(UISwitch *)emailSwitch
               phsyicalAttribute:(UISwitch *)physicalAttributeSwitch
-                          photo:(UISwitch *)photoSwitch
                           major:(UISwitch *)majorSwitch
                     phoneNumber:(UISwitch *)phoneNumberSwitch
                            home:(UISwitch *)homeSwitch
