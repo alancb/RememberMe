@@ -19,19 +19,19 @@
 + (CategoryController *) sharedInstance;
 
 - (Group *) createGroupWithName:(NSString *)name
-                     birthPlace:(UISwitch *)birthplaceSwitch
-                      birthDate:(UISwitch *)birthDateSwitch
-                interestingFact:(UISwitch *)interestingFactSwitch
-                          email:(UISwitch *)emailSwitch
-              phsyicalAttribute:(UISwitch *)physicalAttributeSwitch
-                          major:(UISwitch *)majorSwitch
-                    phoneNumber:(UISwitch *)phoneNumberSwitch
-                           home:(UISwitch *)homeSwitch
-                       location:(UISwitch *)locationSwitch
-                           when: (UISwitch *)whenSwitch
-                        hobbies: (UISwitch *)hobbiesSwitch
-                           note: (UISwitch *)notesSwitch
-                     occupation: (UISwitch *)occupationSwitch;
+                     birthPlace:(BOOL)birthplace
+                      birthDate:(BOOL)birthDate
+                interestingFact:(BOOL)interestingFact
+                          email:(BOOL)email
+              phsyicalAttribute:(BOOL)physicalAttribute
+                          major:(BOOL)major
+                    phoneNumber:(BOOL)phoneNumber
+                           home:(BOOL)home
+                       location:(BOOL)location
+                           when:(BOOL)when
+                        hobbies:(BOOL)hobbies
+                           note:(BOOL)notes
+                     occupation:(BOOL)occupation;
 -(void) deleteEntry:(Group *) group;
 
 @end

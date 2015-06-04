@@ -24,61 +24,36 @@
 
 // Puts into ManagesObjectContext, then saves down
 - (Group *) createGroupWithName:(NSString *)name
-                      birthPlace:(UISwitch *)birthplaceSwitch
-                       birthDate:(UISwitch *)birthDateSwitch
-                 interestingFact:(UISwitch *)interestingFactSwitch
-                           email:(UISwitch *)emailSwitch
-               phsyicalAttribute:(UISwitch *)physicalAttributeSwitch
-                           major:(UISwitch *)majorSwitch
-                     phoneNumber:(UISwitch *)phoneNumberSwitch
-                            home:(UISwitch *)homeSwitch
-                        location:(UISwitch *)locationSwitch
-                            when:(UISwitch *)whenSwitch
-                         hobbies:(UISwitch *)hobbiesSwitch
-                            note:(UISwitch *)notesSwitch
-                      occupation:(UISwitch *)occupationSwitch {
+                      birthPlace:(BOOL)birthplace
+                       birthDate:(BOOL)birthDate
+                 interestingFact:(BOOL)interestingFact
+                           email:(BOOL)email
+               phsyicalAttribute:(BOOL)physicalAttribute
+                           major:(BOOL)major
+                     phoneNumber:(BOOL)phoneNumber
+                            home:(BOOL)home
+                        location:(BOOL)location
+                            when:(BOOL)when
+                         hobbies:(BOOL)hobbies
+                            note:(BOOL)notes
+                      occupation:(BOOL)occupation {
     Group *group = [NSEntityDescription insertNewObjectForEntityForName:@"Group" inManagedObjectContext:[Stack sharedInstance].managedObjectContext];
     group.groupName = name;
-    if (birthplaceSwitch.on) {
-        group.birthplace = @1;
-    }
-    if (birthDateSwitch.on) {
-        group.birthdate = @1;
-    }
-    if (interestingFactSwitch.on) {
-        group.interestingFact = @1;
-    }
-    if (emailSwitch.on) {
-        group.email = @1;
-    }
-    if (physicalAttributeSwitch.on) {
-        group.physicalAttribute = @1;
-    }
-    if (majorSwitch.on) {
-        group.major = @1;
-    }
-    if (phoneNumberSwitch.on) {
-        group.phoneNumber = @1;
-    }
-    if (homeSwitch.on) {
-        group.home = @1;
-    }
-    if (locationSwitch.on) {
-        group.location = @1;
-    }
-    if (whenSwitch.on) {
-        group.when = @1;
-    }
-    if (occupationSwitch.on) {
-        group.occupation = @1;
-    }
-    if (notesSwitch.on) {
-        group.notes = @1;
-    }
-    if (hobbiesSwitch.on) {
-        group.hobbies = @1;
-    }
-    
+
+    group.birthplace = @(birthplace);
+    group.birthdate = @(birthDate);
+    group.interestingFact = @(interestingFact);
+    group.email = @(email);
+    group.physicalAttribute = @(physicalAttribute);
+    group.major = @(major);
+    group.phoneNumber = @(phoneNumber);
+    group.home = @(home);
+    group.location = @(location);
+    group.when = @(when);
+    group.hobbies = @(hobbies);
+    group.notes = @(notes);
+    group.occupation = @(occupation);
+
     [self saveToPersistentStorage];
     return group;
 }
@@ -98,6 +73,7 @@
 // Deletes Person
 -(void) deleteEntry:(Group *) group {
     [group.managedObjectContext deleteObject:group];
+    [self saveToPersistentStorage];
 }
 
 

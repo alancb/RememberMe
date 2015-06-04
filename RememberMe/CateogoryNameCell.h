@@ -10,4 +10,9 @@
 
 @interface CateogoryNameCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UITextField *nameField;
+
+@property (copy, nonatomic) void (^didChangeText)(NSString *text);
+
+
 @end

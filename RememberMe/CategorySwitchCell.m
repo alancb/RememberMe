@@ -16,7 +16,7 @@
 @implementation CategorySwitchCell
 
 - (IBAction)switched:(id)sender {
-    [self.delegate toggle:self.switchControl toggledFromSender:self];
+    [self.delegate toggle:sender toggledFromSender:self];
 }
 
 @end

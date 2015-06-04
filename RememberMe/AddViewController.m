@@ -499,6 +499,7 @@ typedef NS_ENUM(NSInteger, ContactAttribute) {
     };
     cell.textField.placeholder = @"Notes about the person";
     cell.label.text = @"Notes:";
+    cell.textField.keyboardType = UIKeyboardAppearanceDefault;
     if (self.person.notes) {
         cell.textField.text = self.person.notes;
         self.notes = self.person.notes;

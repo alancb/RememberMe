@@ -13,19 +13,19 @@
 @interface CategoryOptionsViewController () <UITextFieldDelegate, UITableViewDataSource, SwitchCellDelegate>
 
 
-@property (strong, nonatomic) UISwitch* birthPlaceSwitch;
-@property (strong, nonatomic) UISwitch* birthDateSwitch;
-@property (strong, nonatomic) UISwitch* interestingFactSwitch;
-@property (strong, nonatomic) UISwitch* emailSwitch;
-@property (strong, nonatomic) UISwitch* physicalAttributeSwitch;
-@property (strong, nonatomic) UISwitch* majorSwitch;
-@property (strong, nonatomic) UISwitch* phoneNumberSwitch;
-@property (strong, nonatomic) UISwitch* homeSwitch;
-@property (strong, nonatomic) UISwitch* locationSwitch;
-@property (strong, nonatomic) UISwitch* whenSwitch;
-@property (strong, nonatomic) UISwitch* hobbiesSwitch;
-@property (strong, nonatomic) UISwitch* notesSwitch;
-@property (strong, nonatomic) UISwitch* occupationSwitch;
+@property (assign, nonatomic) BOOL birthPlace;
+@property (assign, nonatomic) BOOL birthDate;
+@property (assign, nonatomic) BOOL interestingFact;
+@property (assign, nonatomic) BOOL email;
+@property (assign, nonatomic) BOOL physicalAttribute;
+@property (assign, nonatomic) BOOL major;
+@property (assign, nonatomic) BOOL phoneNumber;
+@property (assign, nonatomic) BOOL home;
+@property (assign, nonatomic) BOOL location;
+@property (assign, nonatomic) BOOL when;
+@property (assign, nonatomic) BOOL hobbies;
+@property (assign, nonatomic) BOOL notes;
+@property (assign, nonatomic) BOOL occupation;
 @property (strong, nonatomic) NSString *nameField;
 
 
@@ -38,6 +38,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.birthPlace = YES;
+    self.birthDate = YES;
+    self.interestingFact = YES;
+    self.email = YES;
+    self.physicalAttribute = YES;
+    self.phoneNumber = YES;
+    self.home = YES;
+    self.location = YES;
+    self.when = YES;
+    self.hobbies = YES;
+    self.notes = YES;
+    self.occupation = YES;
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -53,26 +65,21 @@
 
 }
 - (IBAction)saveButton:(id)sender {
-  //  if (self.nameField.text && self.nameField.text.length > 0) {
-        [[CategoryController sharedInstance] createGroupWithName:self.nameField
-                                                      birthPlace:self.birthPlaceSwitch
-                                                       birthDate:self.birthDateSwitch
-                                                 interestingFact:self.interestingFactSwitch
-                                                           email:self.emailSwitch
-                                               phsyicalAttribute:self.physicalAttributeSwitch
-                                                           major:self.majorSwitch
-                                                     phoneNumber:self.phoneNumberSwitch
-                                                            home:self.homeSwitch
-                                                        location:self.locationSwitch
-                                                            when:self.whenSwitch
-                                                         hobbies:self.hobbiesSwitch
-                                                            note:self.notesSwitch
-                                                      occupation:self.occupationSwitch];
-        [self dismissViewControllerAnimated:YES completion:nil];
-//    }
-//else {
-//        // TODO: Add popup to tell them to enter a name.
-//    }
+    [[CategoryController sharedInstance] createGroupWithName:self.nameField
+                                                  birthPlace:self.birthPlace
+                                                   birthDate:self.birthDate
+                                             interestingFact:self.interestingFact
+                                                       email:self.email
+                                           phsyicalAttribute:self.physicalAttribute
+                                                       major:self.major
+                                                 phoneNumber:self.phoneNumber
+                                                        home:self.home
+                                                    location:self.location
+                                                        when:self.when
+                                                     hobbies:self.hobbies
+                                                        note:self.notes
+                                                  occupation:self.occupation];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField {
@@ -122,6 +129,9 @@
 
 - (UITableViewCell *) cellForCategoryName {
     CateogoryNameCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"nameCell"];
+    cell.didChangeText = ^(NSString *text) {
+        self.nameField = text;
+    };
     
     return cell;
 }
@@ -155,7 +165,7 @@
             cell.Label.text = @"A Unique Characteristic";
             break;
         case 8:
-            cell.Label.text = @"Their BirthDate";
+            cell.Label.text = @"Their Birth date";
             break;
         case 9:
             cell.Label.text = @"Where they were born";
@@ -180,43 +190,43 @@
     NSIndexPath *path = [self.tableView indexPathForCell:sender];
     switch (path.row) {
         case 0:
-            self.locationSwitch = toggle;
+            self.location = toggle.on;
             break;
         case 1:
-            self.whenSwitch = toggle;
+            self.when = toggle.on;
             break;
         case 2:
-            self.occupationSwitch = toggle;
+            self.occupation = toggle.on;
             break;
         case 3:
-            self.majorSwitch = toggle;
+            self.major = toggle.on;
             break;
         case 4:
-            self.phoneNumberSwitch = toggle;
+            self.phoneNumber = toggle.on;
             break;
         case 5:
-            self.emailSwitch = toggle;
+            self.email = toggle.on;
             break;
         case 6:
-            self.homeSwitch = toggle;
+            self.home = toggle.on;
             break;
         case 7:
-            self.physicalAttributeSwitch = toggle;
+            self.physicalAttribute = toggle.on;
             break;
         case 8:
-            self.birthDateSwitch = toggle;
+            self.birthDate = toggle.on;
             break;
         case 9:
-            self.birthPlaceSwitch = toggle;
+            self.birthPlace = toggle.on;
             break;
         case 10:
-            self.interestingFactSwitch = toggle;
+            self.interestingFact = toggle.on;
             break;
         case 11:
-            self.hobbiesSwitch = toggle;
+            self.hobbies = toggle.on;
             break;
         case 12:
-            self.notesSwitch = toggle;
+            self.notes = toggle.on;
             break;
 
         default:
