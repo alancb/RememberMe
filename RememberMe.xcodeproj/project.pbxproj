@@ -21,6 +21,9 @@
 		2C836B941AFD61170066C6DE /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2C836B921AFD61170066C6DE /* Model.xcdatamodeld */; };
 		2CBC5D5C1B1E1F3400778D6F /* CateogoryNameCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CBC5D5B1B1E1F3400778D6F /* CateogoryNameCell.m */; };
 		2CBC5D5F1B1E1F6A00778D6F /* CategorySwitchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CBC5D5E1B1E1F6A00778D6F /* CategorySwitchCell.m */; };
+		2CBC5D621B1FF15C00778D6F /* NoCategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CBC5D611B1FF15C00778D6F /* NoCategoryCell.m */; };
+		2CBC5D651B1FF1AA00778D6F /* inAppPurchaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CBC5D641B1FF1AA00778D6F /* inAppPurchaseCell.m */; };
+		2CBC5D681B1FF1E700778D6F /* GroupCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CBC5D671B1FF1E700778D6F /* GroupCell.m */; };
 		2CC686191B042C55005AC1D4 /* CategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC686181B042C55005AC1D4 /* CategoryViewController.m */; };
 		2CC6861C1B04381A005AC1D4 /* CategoryOptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC6861B1B04381A005AC1D4 /* CategoryOptionsViewController.m */; };
 		2CCB0D901B0D910300295D2F /* TextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CCB0D8F1B0D910300295D2F /* TextFieldCell.m */; };
@@ -75,6 +78,12 @@
 		2CBC5D5B1B1E1F3400778D6F /* CateogoryNameCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CateogoryNameCell.m; sourceTree = "<group>"; };
 		2CBC5D5D1B1E1F6A00778D6F /* CategorySwitchCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategorySwitchCell.h; sourceTree = "<group>"; };
 		2CBC5D5E1B1E1F6A00778D6F /* CategorySwitchCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategorySwitchCell.m; sourceTree = "<group>"; };
+		2CBC5D601B1FF15C00778D6F /* NoCategoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoCategoryCell.h; sourceTree = "<group>"; };
+		2CBC5D611B1FF15C00778D6F /* NoCategoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoCategoryCell.m; sourceTree = "<group>"; };
+		2CBC5D631B1FF1AA00778D6F /* inAppPurchaseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = inAppPurchaseCell.h; sourceTree = "<group>"; };
+		2CBC5D641B1FF1AA00778D6F /* inAppPurchaseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = inAppPurchaseCell.m; sourceTree = "<group>"; };
+		2CBC5D661B1FF1E700778D6F /* GroupCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupCell.h; sourceTree = "<group>"; };
+		2CBC5D671B1FF1E700778D6F /* GroupCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupCell.m; sourceTree = "<group>"; };
 		2CC686171B042C55005AC1D4 /* CategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryViewController.h; sourceTree = "<group>"; };
 		2CC686181B042C55005AC1D4 /* CategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryViewController.m; sourceTree = "<group>"; };
 		2CC6861A1B04381A005AC1D4 /* CategoryOptionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryOptionsViewController.h; sourceTree = "<group>"; };
@@ -250,6 +259,12 @@
 				2CBC5D5B1B1E1F3400778D6F /* CateogoryNameCell.m */,
 				2CBC5D5D1B1E1F6A00778D6F /* CategorySwitchCell.h */,
 				2CBC5D5E1B1E1F6A00778D6F /* CategorySwitchCell.m */,
+				2CBC5D601B1FF15C00778D6F /* NoCategoryCell.h */,
+				2CBC5D611B1FF15C00778D6F /* NoCategoryCell.m */,
+				2CBC5D631B1FF1AA00778D6F /* inAppPurchaseCell.h */,
+				2CBC5D641B1FF1AA00778D6F /* inAppPurchaseCell.m */,
+				2CBC5D661B1FF1E700778D6F /* GroupCell.h */,
+				2CBC5D671B1FF1E700778D6F /* GroupCell.m */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -372,9 +387,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				2CCB0DF01B17DB2E00295D2F /* Group.m in Sources */,
+				2CBC5D651B1FF1AA00778D6F /* inAppPurchaseCell.m in Sources */,
+				2CBC5D621B1FF15C00778D6F /* NoCategoryCell.m in Sources */,
 				2CCB0DCF1B11170C00295D2F /* ResultsTableViewController.m in Sources */,
 				2C836B8F1AFD60600066C6DE /* PersonController.m in Sources */,
 				2C836B8A1AFD5EAB0066C6DE /* Stack.m in Sources */,
+				2CBC5D681B1FF1E700778D6F /* GroupCell.m in Sources */,
 				2CCB0DF31B17DB2F00295D2F /* Person.m in Sources */,
 				2CCB0D901B0D910300295D2F /* TextFieldCell.m in Sources */,
 				2CCB0D931B0EA09E00295D2F /* PhotoCell.m in Sources */,

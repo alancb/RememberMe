@@ -17,6 +17,7 @@
 @property (strong, nonatomic) NSArray *filteredList;
 @property (strong, nonatomic) NSFetchRequest *searchFetchRequest;
 @property (strong, nonatomic) ResultsTableViewController *resultsTableController;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *storeButton;
 
 @end
 
@@ -43,7 +44,6 @@
     
     // we want to be the delegate for our filtered table so didSelectRowAtIndexPath is called for both tables
     self.resultsTableController.tableView.delegate = self;
-//    self.searchController.delegate = self;
     
     self.tableView.tableHeaderView = self.searchController.searchBar;
     self.definesPresentationContext = YES;

@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "AddViewController.h"
 #import "CategoryController.h"
+#import "NoCategoryCell.h"
+#import "inAppPurchaseCell.h"
+#import "GroupCell.h"
 
 
 @interface CategoryViewController : UITableViewController

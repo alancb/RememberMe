@@ -10,7 +10,23 @@
 
 @interface CategoryViewController () <UITableViewDelegate, UITableViewDataSource>
 
+@property (assign, nonatomic) BOOL birthPlace;
+@property (assign, nonatomic) BOOL birthDate;
+@property (assign, nonatomic) BOOL interestingFact;
+@property (assign, nonatomic) BOOL email;
+@property (assign, nonatomic) BOOL physicalAttribute;
+@property (assign, nonatomic) BOOL major;
+@property (assign, nonatomic) BOOL phoneNumber;
+@property (assign, nonatomic) BOOL home;
+@property (assign, nonatomic) BOOL location;
+@property (assign, nonatomic) BOOL when;
+@property (assign, nonatomic) BOOL hobbies;
+@property (assign, nonatomic) BOOL notes;
+@property (assign, nonatomic) BOOL occupation;
+@property (strong, nonatomic) NSString *nameField;
+
 @property (strong, nonatomic) IBOutlet UITableView *categoryListTableView;
+@property (strong ,nonatomic) Group *noGroup;
 
 @end
 
@@ -19,8 +35,27 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.birthPlace = YES;
+    self.birthDate = YES;
+    self.interestingFact = YES;
+    self.email = YES;
+    self.physicalAttribute = YES;
+    self.phoneNumber = YES;
+    self.home = YES;
+    self.location = YES;
+    self.when = YES;
+    self.hobbies = YES;
+    self.notes = YES;
+    self.occupation = YES;
+    self.nameField = @"No Category";
     self.navigationController.toolbarHidden = NO;
-
+    
+    Group *group = [CategoryController sharedInstance].groups;
+    if ([group.groupName isEqualToString: @"No Category"]) {
+        NSLog(@"This category already exists");
+    } else {
+    self.noGroup = [[CategoryController sharedInstance]createGroupWithName:self.nameField birthPlace:self.birthPlace birthDate:self.birthDate interestingFact:self.interestingFact email:self.email phsyicalAttribute:self.physicalAttribute major:self.major phoneNumber:self.phoneNumber home:self.home location:self.location when:self.when hobbies:self.hobbies note:self.notes occupation:self.occupation];
+    }
 }
 
 -(void)viewWillAppear:(BOOL)animated {
@@ -28,14 +63,34 @@
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.row < [CategoryController sharedInstance].groups.count - 1) {
+        return [self groupCell:indexPath];
+    } else if (indexPath.row < [CategoryController sharedInstance].groups.count){
+        return [self noCategoryCell];
+    } else if (indexPath.row < [CategoryController sharedInstance].groups.count + 1) {
+        return [self inAppPurchaseCell];
+    } else {
+        return nil;
+    }
+}
+
+-(UITableViewCell *) groupCell:(NSIndexPath *) indexPath{
     Group *group = [CategoryController sharedInstance].groups [indexPath.row];
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"categoryCell"];
+    GroupCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"categoryCell"];
     cell.textLabel.text = group.groupName;
+    return cell;
+}
+-(UITableViewCell *) noCategoryCell {
+    NoCategoryCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"noCategoryCell"];
+    return cell;
+}
+-(UITableViewCell *) inAppPurchaseCell {
+    inAppPurchaseCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"inAppPurchaseCell"];
     return cell;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [CategoryController sharedInstance].groups.count;
+    return [CategoryController sharedInstance].groups.count + 1;
 }
 
 -(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -58,6 +113,11 @@
 
         [addView updateViewWithCategory:[CategoryController sharedInstance].groups [indexPath.row]];
 
+    }
+    if ([segue.identifier isEqualToString:@"noCategoryToPerson"]) {
+
+        AddViewController *addView = segue.destinationViewController;
+        [addView updateViewWithCategory:self.noGroup];
     }
 }
 /*
