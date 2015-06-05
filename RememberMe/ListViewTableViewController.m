@@ -10,6 +10,7 @@
 #import "AddViewController.h"
 #import "PersonController.h"
 #import "ResultsTableViewController.h"
+#import "PurchasedDataController.h"
 
 @interface ListViewTableViewController () <UITableViewDataSource, UITableViewDelegate, UISearchResultsUpdating, UISearchBarDelegate>
 

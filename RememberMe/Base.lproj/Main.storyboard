@@ -89,39 +89,22 @@
                                     <segue destination="uGX-ik-DW3" kind="show" identifier="toPersonFromCategory" id="5Vg-ts-qP7"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="noCategoryCell" id="Iha-Sd-UBE">
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Iha-Sd-UBE" id="fwc-qa-Bmu">
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Category" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nwD-kZ-OEC">
-                                            <rect key="frame" x="251" y="11" width="98" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="nwD-kZ-OEC" firstAttribute="centerX" secondItem="fwc-qa-Bmu" secondAttribute="centerX" id="DyS-UL-aHZ"/>
-                                        <constraint firstItem="nwD-kZ-OEC" firstAttribute="centerY" secondItem="fwc-qa-Bmu" secondAttribute="centerY" id="ko1-ME-PjA"/>
-                                    </constraints>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="uGX-ik-DW3" kind="show" identifier="noCategoryToPerson" id="zB5-b8-SXE"/>
-                                </connections>
-                            </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="inAppPurchaseCell" id="g3e-z2-MtR">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="g3e-z2-MtR" id="api-UV-gBl">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="In-App Purchase" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sHH-Y7-gYm">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="In-App Purchase" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sHH-Y7-gYm">
                                             <rect key="frame" x="236" y="11" width="129" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="sHH-Y7-gYm" firstAttribute="centerX" secondItem="api-UV-gBl" secondAttribute="centerX" id="L7Q-05-woh"/>
+                                        <constraint firstItem="sHH-Y7-gYm" firstAttribute="centerY" secondItem="api-UV-gBl" secondAttribute="centerY" id="nR7-un-HnN"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <segue destination="7NM-0u-lhc" kind="show" id="jPv-9H-uny"/>
@@ -439,7 +422,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="asl-eB-GVb"/>
-        <segue reference="ABZ-aX-5IM"/>
+        <segue reference="5Vg-ts-qP7"/>
+        <segue reference="jPv-9H-uny"/>
     </inferredMetricsTieBreakers>
 </document>

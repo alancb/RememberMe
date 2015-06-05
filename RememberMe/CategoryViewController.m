@@ -24,6 +24,7 @@
 @property (assign, nonatomic) BOOL notes;
 @property (assign, nonatomic) BOOL occupation;
 @property (strong, nonatomic) NSString *nameField;
+@property (assign, nonatomic) BOOL thereisANoCategory;
 
 @property (strong, nonatomic) IBOutlet UITableView *categoryListTableView;
 @property (strong ,nonatomic) Group *noGroup;
@@ -50,11 +51,17 @@
     self.nameField = @"No Category";
     self.navigationController.toolbarHidden = NO;
     
-    Group *group = [CategoryController sharedInstance].groups;
-    if ([group.groupName isEqualToString: @"No Category"]) {
-        NSLog(@"This category already exists");
-    } else {
-    self.noGroup = [[CategoryController sharedInstance]createGroupWithName:self.nameField birthPlace:self.birthPlace birthDate:self.birthDate interestingFact:self.interestingFact email:self.email phsyicalAttribute:self.physicalAttribute major:self.major phoneNumber:self.phoneNumber home:self.home location:self.location when:self.when hobbies:self.hobbies note:self.notes occupation:self.occupation];
+    NSArray *groups = [CategoryController sharedInstance].groups;
+
+    for (Group *group in groups) {
+        if (group.groupName == self.nameField) {
+            self.thereisANoCategory = YES;
+        } else {
+            self.thereisANoCategory = NO;
+        }
+    }
+    if (self.thereisANoCategory == NO) {
+       self.noGroup = [[CategoryController sharedInstance] createGroupWithName:self.nameField birthPlace:self.birthPlace birthDate:self.birthDate interestingFact:self.interestingFact email:self.email phsyicalAttribute:self.physicalAttribute major:self.major phoneNumber:self.phoneNumber home:self.home location:self.location when:self.when hobbies:self.hobbies note:self.notes occupation:self.occupation];
     }
 }
 
@@ -65,9 +72,7 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row < [CategoryController sharedInstance].groups.count - 1) {
         return [self groupCell:indexPath];
-    } else if (indexPath.row < [CategoryController sharedInstance].groups.count){
-        return [self noCategoryCell];
-    } else if (indexPath.row < [CategoryController sharedInstance].groups.count + 1) {
+    } else if (indexPath.row < [CategoryController sharedInstance].groups.count) {
         return [self inAppPurchaseCell];
     } else {
         return nil;
@@ -80,17 +85,14 @@
     cell.textLabel.text = group.groupName;
     return cell;
 }
--(UITableViewCell *) noCategoryCell {
-    NoCategoryCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"noCategoryCell"];
-    return cell;
-}
+
 -(UITableViewCell *) inAppPurchaseCell {
     inAppPurchaseCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"inAppPurchaseCell"];
     return cell;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [CategoryController sharedInstance].groups.count + 1;
+    return [CategoryController sharedInstance].groups.count;
 }
 
 -(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
