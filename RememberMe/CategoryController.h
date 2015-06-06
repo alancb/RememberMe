@@ -32,6 +32,8 @@
                         hobbies:(BOOL)hobbies
                            note:(BOOL)notes
                      occupation:(BOOL)occupation;
--(void) deleteEntry:(Group *) group;
+-(void) deleteGroup:(Group *) group;
+- (void)gatherGroups;
+- (void)checkAndCreateDefaultGroup;
 
 @end

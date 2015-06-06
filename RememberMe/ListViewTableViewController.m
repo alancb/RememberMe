@@ -11,14 +11,17 @@
 #import "PersonController.h"
 #import "ResultsTableViewController.h"
 #import "PurchasedDataController.h"
+#import "StorePurchaseController.h"
 
-@interface ListViewTableViewController () <UITableViewDataSource, UITableViewDelegate, UISearchResultsUpdating, UISearchBarDelegate>
+@interface ListViewTableViewController ()<UITableViewDataSource, UITableViewDelegate, UISearchResultsUpdating, UISearchBarDelegate>
 
 @property (strong, nonatomic) UISearchController *searchController;
 @property (strong, nonatomic) NSArray *filteredList;
 @property (strong, nonatomic) NSFetchRequest *searchFetchRequest;
 @property (strong, nonatomic) ResultsTableViewController *resultsTableController;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *storeButton;
+
+@property (assign, nonatomic) BOOL inAppPurchaseUnlocked;
 
 @end
 
@@ -32,6 +35,8 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.navigationController.toolbarHidden = NO;
+
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     
@@ -49,11 +54,26 @@
     self.tableView.tableHeaderView = self.searchController.searchBar;
     self.definesPresentationContext = YES;
     [self.searchController.searchBar sizeToFit];
+    
+    if (self.inAppPurchaseUnlocked == YES) {
+        self.navigationItem.leftBarButtonItem = nil;
+    }
 }
 
 -(void)viewWillAppear:(BOOL)animated {
     self.title = @"People List";
     [self.tableView reloadData];
+}
+
+#pragma mark - In-App Purchase Notifications
+
+- (void) registerForNotifications {
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(inAppPurchaseEnabled) name: kInAppPurchaseCompletedNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(inAppPurchaseEnabled) name:kInAppPurchaseRestoredNotification object:nil];
+}
+
+- (void)inAppPurchaseEnabled {
+    self.inAppPurchaseUnlocked = YES;
 }
 
 #pragma mark - Search Controller Methods

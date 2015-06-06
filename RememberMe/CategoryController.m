@@ -9,6 +9,12 @@
 #import "CategoryController.h"
 #import "Stack.h"
 
+@interface CategoryController()
+
+@property (nonatomic, strong) NSArray *groups;
+
+@end
+
 @implementation CategoryController
 
 + (CategoryController *) sharedInstance {
@@ -16,6 +22,7 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         sharedInstance = [CategoryController new];
+        [sharedInstance gatherGroups];
     });
     return sharedInstance;
 }
@@ -55,6 +62,7 @@
     group.occupation = @(occupation);
 
     [self saveToPersistentStorage];
+    [self gatherGroups];
     return group;
 }
 
@@ -64,14 +72,22 @@
 }
 
 //Fetches the data from Core Date
-- (NSArray *) groups {
+- (void)gatherGroups {
     NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Group"];
     NSArray *fetchObjects = [[Stack sharedInstance].managedObjectContext executeFetchRequest:fetchRequest error:nil];
-    return fetchObjects;
+    self.groups = fetchObjects;
 }
 
-// Deletes Person
--(void) deleteEntry:(Group *) group {
+- (void)checkAndCreateDefaultGroup {
+    if (self.groups.count == 0) {
+        [self createGroupWithName:@"No Category" birthPlace:YES birthDate:YES interestingFact:YES email:YES phsyicalAttribute:YES major:YES phoneNumber:YES home:YES location:YES when:YES hobbies:YES note:YES occupation:YES];
+        [self gatherGroups];
+        // Create the default groups and save it to Core Date and update the groups ([self gatherGroups])
+    }
+}
+
+// Deletes Group
+-(void) deleteGroup:(Group *) group {
     [group.managedObjectContext deleteObject:group];
     [self saveToPersistentStorage];
 }

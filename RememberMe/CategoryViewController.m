@@ -7,24 +7,12 @@
 //
 
 #import "CategoryViewController.h"
+#import "StorePurchaseController.h"
 
 @interface CategoryViewController () <UITableViewDelegate, UITableViewDataSource>
 
-@property (assign, nonatomic) BOOL birthPlace;
-@property (assign, nonatomic) BOOL birthDate;
-@property (assign, nonatomic) BOOL interestingFact;
-@property (assign, nonatomic) BOOL email;
-@property (assign, nonatomic) BOOL physicalAttribute;
-@property (assign, nonatomic) BOOL major;
-@property (assign, nonatomic) BOOL phoneNumber;
-@property (assign, nonatomic) BOOL home;
-@property (assign, nonatomic) BOOL location;
-@property (assign, nonatomic) BOOL when;
-@property (assign, nonatomic) BOOL hobbies;
-@property (assign, nonatomic) BOOL notes;
-@property (assign, nonatomic) BOOL occupation;
-@property (strong, nonatomic) NSString *nameField;
-@property (assign, nonatomic) BOOL thereisANoCategory;
+
+@property (assign, nonatomic) BOOL inAppPurchaseUnlocked;
 
 @property (strong, nonatomic) IBOutlet UITableView *categoryListTableView;
 @property (strong ,nonatomic) Group *noGroup;
@@ -36,33 +24,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.birthPlace = YES;
-    self.birthDate = YES;
-    self.interestingFact = YES;
-    self.email = YES;
-    self.physicalAttribute = YES;
-    self.phoneNumber = YES;
-    self.home = YES;
-    self.location = YES;
-    self.when = YES;
-    self.hobbies = YES;
-    self.notes = YES;
-    self.occupation = YES;
-    self.nameField = @"No Category";
-    self.navigationController.toolbarHidden = NO;
     
-    NSArray *groups = [CategoryController sharedInstance].groups;
-
-    for (Group *group in groups) {
-        if (group.groupName == self.nameField) {
-            self.thereisANoCategory = YES;
-        } else {
-            self.thereisANoCategory = NO;
-        }
+    if (self.inAppPurchaseUnlocked == YES) {
+        self.navigationController.toolbarHidden = NO;
     }
-    if (self.thereisANoCategory == NO) {
-       self.noGroup = [[CategoryController sharedInstance] createGroupWithName:self.nameField birthPlace:self.birthPlace birthDate:self.birthDate interestingFact:self.interestingFact email:self.email phsyicalAttribute:self.physicalAttribute major:self.major phoneNumber:self.phoneNumber home:self.home location:self.location when:self.when hobbies:self.hobbies note:self.notes occupation:self.occupation];
-    }
+    
+    [[CategoryController sharedInstance] checkAndCreateDefaultGroup];
 }
 
 -(void)viewWillAppear:(BOOL)animated {
@@ -70,12 +37,16 @@
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.row < [CategoryController sharedInstance].groups.count - 1) {
+    if (self.inAppPurchaseUnlocked == YES) {
         return [self groupCell:indexPath];
-    } else if (indexPath.row < [CategoryController sharedInstance].groups.count) {
-        return [self inAppPurchaseCell];
     } else {
-        return nil;
+        if (indexPath.row < [CategoryController sharedInstance].groups.count) {
+            return [self groupCell:indexPath];
+        } else if (indexPath.row < [CategoryController sharedInstance].groups.count + 1) {
+            return [self inAppPurchaseCell];
+        } else {
+            return nil;
+        }
     }
 }
 
@@ -92,16 +63,32 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [CategoryController sharedInstance].groups.count;
+    return [CategoryController sharedInstance].groups.count + 1;
 }
 
 -(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         Group *group = [CategoryController sharedInstance].groups[indexPath.row];
-        [[CategoryController sharedInstance] deleteEntry:group];
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Delete Category" message:@"Deleting this category will delete all the people associated with it!" preferredStyle:UIAlertControllerStyleAlert];
+        [alert addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil]];
+        [alert addAction:[UIAlertAction actionWithTitle:@"Delete" style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action) {
+            [[CategoryController sharedInstance] deleteGroup:group];
+        }]];
         [tableView reloadData];
     }
 }
+
+#pragma mark - In-App Purchase Notifications
+
+- (void) registerForNotifications {
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(inAppPurchaseEnabled) name: kInAppPurchaseCompletedNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(inAppPurchaseEnabled) name:kInAppPurchaseRestoredNotification object:nil];
+}
+
+- (void)inAppPurchaseEnabled {
+    self.inAppPurchaseUnlocked = YES;
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -115,11 +102,6 @@
 
         [addView updateViewWithCategory:[CategoryController sharedInstance].groups [indexPath.row]];
 
-    }
-    if ([segue.identifier isEqualToString:@"noCategoryToPerson"]) {
-
-        AddViewController *addView = segue.destinationViewController;
-        [addView updateViewWithCategory:self.noGroup];
     }
 }
 /*
