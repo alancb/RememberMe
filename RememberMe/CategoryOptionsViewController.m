@@ -8,8 +8,6 @@
 
 #import "CategoryOptionsViewController.h"
 
-
-
 @interface CategoryOptionsViewController () <UITextFieldDelegate, UITableViewDataSource, SwitchCellDelegate>
 
 
@@ -27,9 +25,6 @@
 @property (assign, nonatomic) BOOL notes;
 @property (assign, nonatomic) BOOL occupation;
 @property (strong, nonatomic) NSString *nameField;
-
-
-
 
 @end
 
@@ -65,6 +60,12 @@
 
 }
 - (IBAction)saveButton:(id)sender {
+    if (!self.nameField) {
+        // alert for not having a name.
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Unable to save" message:@"Please enter a name for your category" preferredStyle:UIAlertControllerStyleAlert];
+        [alert addAction:[UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleCancel handler:nil]];
+        [self presentViewController:alert animated:YES completion:nil];
+    } else {
     [[CategoryController sharedInstance] createGroupWithName:self.nameField
                                                   birthPlace:self.birthPlace
                                                    birthDate:self.birthDate
@@ -80,6 +81,7 @@
                                                         note:self.notes
                                                   occupation:self.occupation];
     [self dismissViewControllerAnimated:YES completion:nil];
+    }
 }
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField {
@@ -132,6 +134,7 @@
     cell.didChangeText = ^(NSString *text) {
         self.nameField = text;
     };
+
     
     return cell;
 }

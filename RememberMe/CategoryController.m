@@ -74,6 +74,7 @@
 //Fetches the data from Core Date
 - (void)gatherGroups {
     NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Group"];
+    fetchRequest.sortDescriptors  = @[[NSSortDescriptor sortDescriptorWithKey:@"groupName" ascending:YES]];
     NSArray *fetchObjects = [[Stack sharedInstance].managedObjectContext executeFetchRequest:fetchRequest error:nil];
     self.groups = fetchObjects;
 }
@@ -90,6 +91,7 @@
 -(void) deleteGroup:(Group *) group {
     [group.managedObjectContext deleteObject:group];
     [self saveToPersistentStorage];
+    [self gatherGroups];
 }
 
 

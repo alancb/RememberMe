@@ -37,6 +37,7 @@
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
     if (self.inAppPurchaseUnlocked == YES) {
         return [self groupCell:indexPath];
     } else {
@@ -69,15 +70,10 @@
 -(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         Group *group = [CategoryController sharedInstance].groups[indexPath.row];
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Delete Category" message:@"Deleting this category will delete all the people associated with it!" preferredStyle:UIAlertControllerStyleAlert];
-        [alert addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil]];
-        [alert addAction:[UIAlertAction actionWithTitle:@"Delete" style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action) {
-            [[CategoryController sharedInstance] deleteGroup:group];
-        }]];
+        [[CategoryController sharedInstance] deleteGroup:group];
         [tableView reloadData];
-    }
 }
-
+}
 #pragma mark - In-App Purchase Notifications
 
 - (void) registerForNotifications {
