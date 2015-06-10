@@ -25,7 +25,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    if (self.inAppPurchaseUnlocked == YES) {
+    self.inAppPurchaseUnlocked = NO;
+    
+    if (self.inAppPurchaseUnlocked == NO) {
         self.navigationController.toolbarHidden = NO;
     }
     
@@ -68,11 +70,24 @@
 }
 
 -(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Delete this category" message:@"Deleting this category will delete all people associated with it!" preferredStyle:UIAlertControllerStyleAlert];
+    [alert addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil]];
+    [alert addAction:[UIAlertAction actionWithTitle:@"Delete!" style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action) {
         Group *group = [CategoryController sharedInstance].groups[indexPath.row];
         [[CategoryController sharedInstance] deleteGroup:group];
         [tableView reloadData];
-}
+        NSLog(@"I was deleted");
+    }]];
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+//        Group *group = [CategoryController sharedInstance].groups[indexPath.row];
+//        [[CategoryController sharedInstance] deleteGroup:group];
+//        [tableView reloadData];
+
+        [self presentViewController:alert animated:YES completion:nil];
+
+    }
+    
+
 }
 #pragma mark - In-App Purchase Notifications
 

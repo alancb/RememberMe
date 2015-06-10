@@ -21,13 +21,11 @@ typedef NS_ENUM(NSInteger, ContactAttribute) {
     ContactAttributeLocation,
     ContactAttributeInterestingFact,
     ContactAttributeName,
- //   ContactAttributePhoto,
     ContactAttributeHome,
     ContactAttributeBirthPlace,
     ContactAttributeEmail,
     ContactAttributePhoneNumber,
     ContactAttributePhysicalAttribute,
-  //  ContactAttributeLastName,
     ContactAttributeWhen,
     ContactAttributeNotes,
     ContactAttributeOccupation,
@@ -45,23 +43,25 @@ typedef NS_ENUM(NSInteger, ContactAttribute) {
 
 @property (strong, nonatomic) NSString *nameOfPerson;
 @property (strong, nonatomic) NSString *lastName;
-@property (strong, nonatomic) NSDate *birthDate;
 @property (strong, nonatomic) NSString *major;
 @property (strong, nonatomic) NSString *location;
 @property (strong, nonatomic) NSString *interestingFact;
-@property (strong, nonatomic) NSData *photo;
 @property (strong, nonatomic) NSString *home;
 @property (strong, nonatomic) NSString *birthPlace;
 @property (strong, nonatomic) NSString *email;
 @property (strong, nonatomic) NSString *phoneNumber;
 @property (strong, nonatomic) NSString *physicalAttribute;
 @property (strong, nonatomic) NSString *notes;
-@property (strong, nonatomic) NSDate *when;
 @property (strong, nonatomic) NSString *occupation;
 @property (strong, nonatomic) NSString *hobbies;
-
-
 @property (strong, nonatomic) NSString *photoPath;
+@property (strong, nonatomic) NSDate *when;
+@property (strong, nonatomic) NSDate *birthDate;
+@property (strong, nonatomic) NSData *photo;
+
+
+
+
 @end
 
 @implementation AddViewController
@@ -71,8 +71,6 @@ typedef NS_ENUM(NSInteger, ContactAttribute) {
     self.attributes = [NSMutableArray new];
     
     [self.attributes addObject:@(ContactAttributeName)];
- //   [self.attributes addObject:@(ContactAttributeLastName)];
- //   [self.attributes addObject:@(ContactAttributePhoto)];
     if (self.template.location.boolValue) {
         [self.attributes addObject:@(ContactAttributeLocation)];
     }

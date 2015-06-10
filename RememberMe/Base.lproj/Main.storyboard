@@ -32,10 +32,24 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ListCell" id="ePo-3N-2Cz">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ListCell" textLabel="O00-LC-6rq" detailTextLabel="x9M-j1-lLg" style="IBUITableViewCellStyleSubtitle" id="ePo-3N-2Cz">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ePo-3N-2Cz" id="ptd-fJ-nvO">
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="O00-LC-6rq">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="x9M-j1-lLg">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
                                 <connections>
                                     <segue destination="uGX-ik-DW3" kind="show" identifier="toPersonFromList" id="asl-eB-GVb"/>
@@ -89,18 +103,32 @@
                                     <segue destination="uGX-ik-DW3" kind="show" identifier="toPersonFromCategory" id="5Vg-ts-qP7"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="inAppPurchaseCell" rowHeight="90" id="g3e-z2-MtR">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="inAppPurchaseCell" rowHeight="44" id="g3e-z2-MtR">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="g3e-z2-MtR" id="api-UV-gBl">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R3y-1G-3kT">
-                                            <rect key="frame" x="279" y="34" width="42" height="21"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconmonstr-lock-7-icon-256" translatesAutoresizingMaskIntoConstraints="NO" id="AYH-hK-h5k">
+                                            <rect key="frame" x="8" y="8" width="37" height="27"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="37" id="AiL-bl-TS3"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Unlock new category for $1.99" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R3y-1G-3kT">
+                                            <rect key="frame" x="53" y="11" width="539" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="AYH-hK-h5k" firstAttribute="top" secondItem="api-UV-gBl" secondAttribute="topMargin" id="6Um-ie-1wf"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="AYH-hK-h5k" secondAttribute="bottom" id="7X7-xY-iuU"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="R3y-1G-3kT" secondAttribute="trailing" id="HNY-9m-emQ"/>
+                                        <constraint firstItem="AYH-hK-h5k" firstAttribute="leading" secondItem="api-UV-gBl" secondAttribute="leadingMargin" id="cvW-by-XqO"/>
+                                        <constraint firstItem="R3y-1G-3kT" firstAttribute="leading" secondItem="AYH-hK-h5k" secondAttribute="trailing" constant="8" id="f7i-ED-Kvk"/>
+                                        <constraint firstItem="R3y-1G-3kT" firstAttribute="centerY" secondItem="api-UV-gBl" secondAttribute="centerY" id="wJ3-aE-ien"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <segue destination="7NM-0u-lhc" kind="show" id="jPv-9H-uny"/>
@@ -417,8 +445,11 @@
             <point key="canvasLocation" x="1922" y="1193"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="iconmonstr-lock-7-icon-256" width="256" height="256"/>
+    </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="5Vg-ts-qP7"/>
         <segue reference="jPv-9H-uny"/>
+        <segue reference="5Vg-ts-qP7"/>
     </inferredMetricsTieBreakers>
 </document>

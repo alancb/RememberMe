@@ -35,7 +35,6 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    self.navigationController.toolbarHidden = NO;
 
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
@@ -58,11 +57,14 @@
     if (self.inAppPurchaseUnlocked == YES) {
         self.navigationItem.leftBarButtonItem = nil;
     }
+
 }
 
 -(void)viewWillAppear:(BOOL)animated {
+    self.navigationController.toolbarHidden = NO;
     self.title = @"People List";
     [self.tableView reloadData];
+
 }
 
 #pragma mark - In-App Purchase Notifications
@@ -133,6 +135,8 @@
         Person *person = [PersonController sharedInstance].people[indexPath.row];
         
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ListCell"];
+    
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@", person.group.groupName];
         
     if (person.name.length > 0 && person.lastName.length) {
         cell.textLabel.text = [NSString stringWithFormat:@"%@ %@", person.name, person.lastName];
