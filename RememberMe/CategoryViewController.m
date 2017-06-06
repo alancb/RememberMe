@@ -7,7 +7,7 @@
 //
 
 #import "CategoryViewController.h"
-#import "StorePurchaseController.h"
+//#import "StorePurchaseController.h"
 
 @interface CategoryViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -24,13 +24,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-    self.inAppPurchaseUnlocked = NO;
-    
-    if (self.inAppPurchaseUnlocked == NO) {
-        self.navigationController.toolbarHidden = NO;
-    }
-    
+
     [[CategoryController sharedInstance] checkAndCreateDefaultGroup];
 }
 
@@ -40,16 +34,10 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    if (self.inAppPurchaseUnlocked == YES) {
+    if (indexPath.row < [CategoryController sharedInstance].groups.count) {
         return [self groupCell:indexPath];
     } else {
-        if (indexPath.row < [CategoryController sharedInstance].groups.count) {
-            return [self groupCell:indexPath];
-        } else if (indexPath.row < [CategoryController sharedInstance].groups.count + 1) {
-            return [self inAppPurchaseCell];
-        } else {
-            return nil;
-        }
+        return nil;
     }
 }
 
@@ -60,13 +48,13 @@
     return cell;
 }
 
--(UITableViewCell *) inAppPurchaseCell {
-    inAppPurchaseCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"inAppPurchaseCell"];
-    return cell;
-}
+//-(UITableViewCell *) inAppPurchaseCell {
+//    inAppPurchaseCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"inAppPurchaseCell"];
+//    return cell;
+//}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [CategoryController sharedInstance].groups.count + 1;
+    return [CategoryController sharedInstance].groups.count;
 }
 
 -(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -91,19 +79,19 @@
 }
 #pragma mark - In-App Purchase Notifications
 
-- (void) registerForNotifications {
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(inAppPurchaseEnabled) name: kInAppPurchaseCompletedNotification object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(inAppPurchaseEnabled) name:kInAppPurchaseRestoredNotification object:nil];
-}
+//- (void) registerForNotifications {
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(inAppPurchaseEnabled) name: kInAppPurchaseCompletedNotification object:nil];
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(inAppPurchaseEnabled) name:kInAppPurchaseRestoredNotification object:nil];
+//}
 
-- (void)inAppPurchaseEnabled {
-    self.inAppPurchaseUnlocked = YES;
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+//- (void)inAppPurchaseEnabled {
+//    self.inAppPurchaseUnlocked = YES;
+//}
+//
+//- (void)didReceiveMemoryWarning {
+//    [super didReceiveMemoryWarning];
+//    // Dispose of any resources that can be recreated.
+//}
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"toPersonFromCategory"]) {

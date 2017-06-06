@@ -10,8 +10,8 @@
 #import "AddViewController.h"
 #import "PersonController.h"
 #import "ResultsTableViewController.h"
-#import "PurchasedDataController.h"
-#import "StorePurchaseController.h"
+//#import "PurchasedDataController.h"
+//#import "StorePurchaseController.h"
 
 @interface ListViewTableViewController ()<UITableViewDataSource, UITableViewDelegate, UISearchResultsUpdating, UISearchBarDelegate>
 
@@ -19,7 +19,7 @@
 @property (strong, nonatomic) NSArray *filteredList;
 @property (strong, nonatomic) NSFetchRequest *searchFetchRequest;
 @property (strong, nonatomic) ResultsTableViewController *resultsTableController;
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *storeButton;
+//@property (weak, nonatomic) IBOutlet UIBarButtonItem *storeButton;
 
 @property (assign, nonatomic) BOOL inAppPurchaseUnlocked;
 
@@ -69,14 +69,14 @@
 
 #pragma mark - In-App Purchase Notifications
 
-- (void) registerForNotifications {
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(inAppPurchaseEnabled) name: kInAppPurchaseCompletedNotification object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(inAppPurchaseEnabled) name:kInAppPurchaseRestoredNotification object:nil];
-}
+//- (void) registerForNotifications {
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(inAppPurchaseEnabled) name: kInAppPurchaseCompletedNotification object:nil];
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(inAppPurchaseEnabled) name:kInAppPurchaseRestoredNotification object:nil];
+//}
 
-- (void)inAppPurchaseEnabled {
-    self.inAppPurchaseUnlocked = YES;
-}
+//- (void)inAppPurchaseEnabled {
+//    self.inAppPurchaseUnlocked = YES;
+//}
 
 #pragma mark - Search Controller Methods
 
