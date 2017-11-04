@@ -19,6 +19,7 @@
     self.textField.delegate = self;
     
     [self.textField addTarget:self action:@selector(textChanged) forControlEvents:UIControlEventEditingChanged];
+    [super awakeFromNib];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

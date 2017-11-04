@@ -16,7 +16,7 @@
 
 - (void)awakeFromNib {
     // TODO: Move the if statement to somewhere that it will be called.
-
+    [super awakeFromNib];
 }
 - (IBAction)dateChosen:(id)sender {
     if (self.didChangeDate) {

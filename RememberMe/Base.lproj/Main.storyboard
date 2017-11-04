@@ -10,24 +10,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Store View Controller-->
-        <scene sceneID="wFQ-2U-kSf">
-            <objects>
-                <viewController id="7NM-0u-lhc" customClass="StoreViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="rmB-YR-ZtY"/>
-                        <viewControllerLayoutGuide type="bottom" id="pAL-k9-jF4"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="3Uz-fE-qXU">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="CrX-qV-BAI" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1123" y="-341"/>
-        </scene>
         <!--People List-->
         <scene sceneID="DtT-wj-YHR">
             <objects>
