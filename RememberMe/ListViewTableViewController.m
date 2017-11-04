@@ -61,11 +61,10 @@
 }
 
 -(void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:true];
     self.navigationController.toolbarHidden = NO;
-    self.navigationController.navigationItem.title = @"People List";
+    self.title = @"Person List";
     [self.tableView reloadData];
-
+    [super viewWillAppear:animated];
 }
 
 #pragma mark - In-App Purchase Notifications
@@ -175,8 +174,6 @@
         Person *person = [PersonController sharedInstance].people[indexPath.row];
         [addView updateWithPerson:person andGroup:person.group];
     }
-    
-    self.title = @"";
 
 }
 

@@ -17,7 +17,8 @@
 
 
     [[UIBarButtonItem appearance] setTintColor:[UIColor whiteColor]];
-    [[UIBarButtonItem appearanceWhenContainedIn:[UIToolbar class], nil] setTintColor:[UIColor primaryAppColor]];
+    
+    [[UIBarButtonItem appearanceWhenContainedInInstancesOfClasses:@[[UIToolbar class]]] setTintColor:[UIColor whiteColor]];
     
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
     if (@available(iOS 11.0, *)) {
@@ -25,6 +26,9 @@
     } else {
         [[UINavigationBar appearance] setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor],NSForegroundColorAttributeName, nil]];
     }
+    
+    [[UIToolbar appearance] setBarTintColor:[UIColor primaryAppColor]];
+    
     
     
     
@@ -37,3 +41,5 @@
 }
 
 @end
+
+
