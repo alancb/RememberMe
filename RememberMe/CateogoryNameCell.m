@@ -18,7 +18,7 @@
 
 -(void)awakeFromNib {
     [self.nameField addTarget:self action:@selector(textChanged) forControlEvents:UIControlEventEditingChanged];
-
+    [super awakeFromNib];
 }
 
 //- (void)textFieldDidEndEditing:(UITextField *)textField {

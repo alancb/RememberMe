@@ -28,6 +28,7 @@
     [self.firstNameField addTarget:self action:@selector(firstTextChanged) forControlEvents:UIControlEventEditingChanged];
     [self.lastNameField addTarget:self action:@selector(lastTextChanged) forControlEvents:UIControlEventEditingChanged];
 
+    [super awakeFromNib];
 }
 
 - (void) firstTextChanged {

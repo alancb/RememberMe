@@ -61,8 +61,9 @@
 }
 
 -(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:true];
     self.navigationController.toolbarHidden = NO;
-    self.title = @"People List";
+    self.navigationController.navigationItem.title = @"People List";
     [self.tableView reloadData];
 
 }
